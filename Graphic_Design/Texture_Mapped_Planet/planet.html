@@ -1,0 +1,214 @@
+<!Doctype html>
+
+<html>
+
+	<head>
+
+		<title>Project 4 - Planet</title>
+		<link href="planet.css" rel="stylesheet">
+
+		<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/MV.js"></script>
+		<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/initShaders.js"></script>
+		<script type="text/javascript" src="planet.js"></script>
+
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			attribute vec4 vNormal;
+			attribute vec2 vTexCoord;
+			    
+			uniform float xang;
+			uniform float yang;
+			uniform float zang;
+			uniform float scale;
+			uniform vec4 lightPosition;
+			    
+			varying vec3 N, L, E;
+			varying vec2 fTexCoord;
+
+			void main()
+			{
+			    
+			    float s_z = sin( zang );
+			    float c_z = cos( zang );
+			    
+			    mat4 Rz = mat4( c_z, -s_z, 0.0, 0.0,
+					           s_z, c_z, 0.0, 0.0,
+					           0.0, 0.0, 1.0, 0.0,
+					           0.0, 0.0, 0.0, 1.0 );
+			    
+			    float s_y = sin( yang );
+			    float c_y = cos( yang );
+			    
+			    mat4 Ry = mat4( c_y, 0.0, s_y, 0.0,
+					           0.0, 1.0, 0.0, 0.0,
+					           -s_y, 0.0, c_y, 0.0,
+					           0.0, 0.0, 0.0, 1.0 );
+			    
+			    float s_x = sin( xang );
+			    float c_x = cos( xang );
+			    
+			    mat4 Rx = mat4( 1.0, 0.0, 0.0, 0.0,
+					           0.0, c_x, s_x, 0.0,
+					           0.0, -s_x, c_x, 0.0,
+					           0.0, 0.0, 0.0, 1.0 );
+			    
+			    mat4 S = mat4( scale, 0.0, 0.0, 0.0,
+					           0.0, scale, 0.0, 0.0,
+					           0.0, 0.0, scale, 0.0,
+					           0.0, 0.0, 0.0, 1.0 );
+			    
+			    mat4 modelViewMatrix=S*Rz*Ry*Rx;
+			    
+			    vec3 pos = (vPosition*modelViewMatrix).xyz;
+			    vec3 light = lightPosition.xyz;
+			    
+			    L = normalize( light - pos );
+			    E = -normalize( pos );
+			    N = normalize( pos.xyz);
+			    
+			    gl_Position = vPosition*modelViewMatrix;
+
+			    fTexCoord = vTexCoord;
+
+			}
+		</script>
+
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			    
+			uniform vec4 ambientProduct;
+			uniform vec4 diffuseProduct;
+			uniform vec4 specularProduct;
+			uniform float shininess;
+			    
+			varying vec3 N, L, E;
+
+			varying vec2 fTexCoord;
+
+			uniform sampler2D texture;
+
+			void main()
+			{
+			    
+			    vec3 H = normalize( L + E );
+			    vec4 ambient = ambientProduct;
+
+			    float Kd = max( dot(L, N), 0.0 );
+			    vec4  diffuse = Kd*diffuseProduct;
+
+			    float Ks = pow( max(dot(N, H), 0.0), shininess );
+			    vec4  specular = Ks * specularProduct;
+			    
+			    if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
+
+			    vec4 fColor = ambient + diffuse + specular;
+
+			    // ------------------------------------
+                // TODO Step 4 
+
+			    gl_FragColor = texture2D( texture, fTexCoord );
+			    
+			}
+		</script>
+		
+	</head>
+
+	<body onload="config()">
+	    <div id="container">    
+	        <div id="view">
+	            <canvas id="gl-canvas" width="1024" height="1024">
+				Oops ... your browser doesn't support the HTML5 canvas element
+				</canvas>
+	        </div>
+	        <div id="toolbar">
+	            Rx
+	            <select id="rotx">
+	                <option value="0">0</option>
+	                <option value="20">20</option>
+	                <option value="40">40</option>
+	                <option value="60">60</option>
+	                <option value="80">80</option>
+	                <option value="80">90</option>
+	                <option value="100">100</option>
+	                <option value="120">120</option>
+	                <option value="140">140</option>
+	                <option value="160">160</option>
+	                <option value="180">180</option>
+	                <option value="200">200</option>
+	                <option value="220">220</option>
+	                <option value="240">240</option>
+	                <option value="260">260</option>
+	                <option value="280">280</option>
+	                <option value="300">300</option>
+	                <option value="320">320</option>
+	                <option value="340">340</option>
+	                <option value="360">360</option>
+	            </select>
+	            Ry
+	            <select id="roty">
+	                <option value="0">0</option>
+	                <option value="20">20</option>
+	                <option value="40">40</option>
+	                <option value="60">60</option>
+	                <option value="80">80</option>
+	                <option value="90">90</option>
+	                <option value="100">100</option>
+	                <option value="120">120</option>
+	                <option value="140">140</option>
+	                <option value="160">160</option>
+	                <option value="180">180</option>
+	                <option value="200">200</option>
+	                <option value="220">220</option>
+	                <option value="240">240</option>
+	                <option value="260">260</option>
+	                <option value="280">280</option>
+	                <option value="300">300</option>
+	                <option value="320">320</option>
+	                <option value="340">340</option>
+	                <option value="360">360</option>
+	            </select>
+	            Rz
+	            <select id="rotz">
+	                <option value="0">0</option>
+	                <option value="20">20</option>
+	                <option value="40">40</option>
+	                <option value="60">60</option>
+	                <option value="80">80</option>
+	                <option value="90">90</option>
+	                <option value="100">100</option>
+	                <option value="120">120</option>
+	                <option value="140">140</option>
+	                <option value="160">160</option>
+	                <option value="180">180</option>
+	                <option value="200">200</option>
+	                <option value="220">220</option>
+	                <option value="240">240</option>
+	                <option value="260">260</option>
+	                <option value="280">280</option>
+	                <option value="300">300</option>
+	                <option value="320">320</option>
+	                <option value="340">340</option>
+	                <option value="360">360</option>
+	            </select>
+	            S
+	            <select id="scale">
+	                <option value="0.25">0.25</option>
+	                <option value="0.5">0.50</option>
+	                <option value="1" selected="selected">1.0</option>
+	                <option value="1.25">1.25</option>
+	                <option value="1.5">1.5</option>
+	                <option value="2">2.0</option>
+	                <option value="2.25">2.25</option>
+	                <option value="2.5">2.5</option>
+	                <option value="3">3.0</option>
+	                <option value="3.25">3.25</option>
+	                <option value="3.5">3.5</option>
+	                <option value="4">4.0</option>
+	            </select>
+	        </div>
+	    </div>
+	    <img id="textureImage" width="2048" height="1024" src="earth.png" hidden></img>
+	</body>
+
+</html>
