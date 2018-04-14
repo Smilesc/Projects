@@ -12,14 +12,14 @@ var texArray = new Array();
 var lightPosition = vec4(1.0, 1.0, 0.0, 0.0 );
 
 // Light Source Color Components
-var lightAmbient = vec4(0.35, 0.35, 0.35, 1.0 );
+var lightAmbient = vec4(0.05, 0.05, 0.05, 1.0 );
 var lightDiffuse = vec4( 1.0, 1.0, 1.0, 1.0 );
 var lightSpecular = vec4( 1.0, 1.0, 1.0, 1.0 );
 
 // Material Properties
-var materialAmbient = vec4( 1.0, 0.0, 0.0, 1.0 );  // k_a
-var materialDiffuse = vec4( 1.0, 0.0, 0.0, 1.0 );  // k_d
-var materialSpecular = vec4( 1.0, 0.0, 0.0, 1.0 ); // k_s
+var materialAmbient = vec4( 1.0, 0.91, 0.74, 1.0 );  // k_a
+var materialDiffuse = vec4( 1.0, 0.91, 0.74, 1.0 );  // k_d
+var materialSpecular = vec4( 1.0, 0.91, 0.74, 1.0 ); // k_s
 var materialShininess = 20;
 
 var ambientProduct, diffuseProduct, specularProduct;
@@ -79,6 +79,10 @@ function config() {
     
 }
 
+function orbit(){
+    
+}
+
 
 function configureTexture() {
 
@@ -92,11 +96,11 @@ function configureTexture() {
     texture = gl.createTexture();
 
     gl.bindTexture( gl.TEXTURE_2D, texture );
-    gl.pixelStorei( gl.UNPACK_FLIP_Y_WEBGL, true );
+    gl.pixelStorei( gl.UNPACK_FLIP_Y_WEBGL, false );
     gl.texImage2D( gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img );
     gl.generateMipmap( gl.TEXTURE_2D );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
+    //gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
+    //gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
 
     gl.uniform1i(gl.getUniformLocation(program, "texture"), 0);
 
@@ -147,9 +151,9 @@ function createMesh() {
                 // ------------------------------------
                 // TODO Step 2 
 
-                texArray.push( vec2( (2*Math.pi) - (theta1/(2*Math.pi)), (phi1/(2*Math.pi)) ) );
-                texArray.push( vec2( (2*Math.pi) - (theta2/(2*Math.pi)), (phi2/(2*Math.pi)) ) );
-                texArray.push( vec2( (2*Math.pi) - (theta3/(2*Math.pi)), (phi3/(2*Math.pi)) ) );
+                texArray.push( vec2( ((twopi) - (theta1/(twopi))), (phi1/(PI)) ) );
+                texArray.push( vec2( ((twopi) - (theta2/(twopi))), (phi2/(PI)) ) );
+                texArray.push( vec2( ((twopi) - (theta3/(twopi))), (phi3/(PI)) ) );
 
 
 
@@ -179,9 +183,9 @@ function createMesh() {
                 // ------------------------------------
                 // TODO Step 2
 
-                texArray.push( vec2( (2*Math.pi) - (theta1/(2*Math.pi)), (phi1/(2*Math.pi)) ) );
-                texArray.push( vec2( (2*Math.pi) - (theta2/(2*Math.pi)), (phi2/(2*Math.pi)) ) );
-                texArray.push( vec2( (2*Math.pi) - (theta3/(2*Math.pi)), (phi3/(2*Math.pi)) ) );
+                texArray.push( vec2( ((twopi) - (theta1/(twopi))), (phi1/(PI)) ) );
+                texArray.push( vec2( ((twopi) - (theta2/(twopi))), (phi2/(PI)) ) );
+                texArray.push( vec2( ((twopi) - (theta3/(twopi))), (phi3/(PI)) ) );
                 
 			}
 	 } 
