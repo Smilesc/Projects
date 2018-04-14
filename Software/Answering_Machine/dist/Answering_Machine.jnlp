@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Answering_Machine.jar" size="6410" download="eager" />
+    <jar href="Answering_Machine.jar" size="6457" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Answering_Machine" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="com.csci360.AnsweringMachine.Answering_Machine"  name="Answering_Machine" />
+  <jfx:javafx-desc  width="800" height="600" main-class="com.csci360.AnsweringMachine.Answering_Machine_FXMLLoader"  name="Answering_Machine" />
   <update check="always"/>
 </jnlp>
