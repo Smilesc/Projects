@@ -90,40 +90,60 @@ def startGame(board, playerSide, ai):
             return
 
         if board.currentSide == playerSide:
-            # printPointAdvantage(board)
-            move = None
-            command = input("It's your move."
-                            " Type '?' for options. ? ")
-            if command.lower() == 'u':
-                undoLastTwoMoves(board)
-                continue
-            elif command.lower() == '?':
-                printCommandOptions()
-                continue
-            elif command.lower() == 'l':
-                printAllLegalMoves(board, parser)
-                continue
-            elif command.lower() == 'r':
-                move = getRandomMove(board, parser)
-            elif command.lower() == 'exit' or command.lower() == 'quit':
-                return
-            try:
-                move = parser.parse(command)
-            except ValueError as error:
-                print("%s" % error)
-                continue
+            move = playerMove(playerSide, board, 0, -99999, 99999)
             makeMove(move, board)
 
         else:
-            print("AI thinking...")
             move = ai.getBestMove()
             move.notation = parser.notationForMove(move)
             makeMove(move, board)
 
+def playerMove(self, board, depth, alpha, beta):
+    #if board.currentSide == playerSide:
+    if depth == aiDepth:
+        return #evaluate
+
+    legalMoves = board.getAllMovesLegal(True)
+
+    for move in legalMoves:
+        score = aiMove(board.movePieceToPosition(move.piece, move), board, depth - 1, alpha, beta)
+
+        board.undoLastMove()
+
+    if score >= beta:
+        return beta
+    if score > alpha:
+        alpha = score
+
+    return alpha
+
+
+def aiMove(self, board, depth, alpha, beta):
+
+    print("AI thinking...")
+
+    if depth == aiDepth:
+        return #evaluate
+
+    legalMoves = board.getAllMovesLegal(False)
+    for move in legalMoves:
+        score = playerMove(board.movePieceToPosition(move), board, depth - 1, alpha, beta)
+        board.undoLastMove()
+
+        if score <= alpha:
+            return alpha
+
+        if score < beta:
+            beta = score
+            
+    return beta
+
+            
+
 board = Board()
-playerSide = askForPlayerSide()
+playerSide = True
 print()
-aiDepth = askForDepthOfAI()
+aiDepth = 1
 opponentAI = AI(board, not playerSide, aiDepth)
 
 try:
