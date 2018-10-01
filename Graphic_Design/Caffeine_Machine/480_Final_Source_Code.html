@@ -1,1226 +1,613 @@
 
-
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-<title>480_Final_Project</title>
-
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
-<meta name="robots" content="noindex, nofollow">
-
-<meta name="googlebot" content="noindex, nofollow">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>480_Final_Project</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
 
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
-
-<script
-
-type="text/javascript"
-
-src="/js/lib/dummy.js"
-
-
-
-></script>
-
-
-
-<link rel="stylesheet" type="text/css" href="/css/result-light.css">
-
-
-
-<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/initShaders.js"></script>
-
-<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/webgl-utils.js"></script>
-
-<script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/MV.js"></script>
-
-<script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/coffeeCup_vtx.js"></script>
-
-<script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/coffeeCup_fce.js"></script>
-
-<script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/cylinder_fce.js"></script>
-
-<script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/cylinder_vtx1.js"></script>
-
-<style type="text/css">
-
-body 
-
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/initShaders.js"></script>
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/webgl-utils.js"></script>
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/MV.js"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/coffeeCup_vtx.js"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/coffeeCup_fce.js"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/cylinder_fce.js"></script>
+      <script type="text/javascript" src="https://cdn.rawgit.com/Smilesc/Project-Resources/master/cylinder_vtx1.js"></script>
+  <style type="text/css">
+    body 
 {
-
-background:#fff;
-
-padding:0;
-
-margin:50px;
-
-font-weight: bold;
-
-overflow:hidden;
-
-background-color: grey;
-
+    background:#fff;
+    padding:0;
+    margin:50px;
+    font-weight: bold;
+    overflow:hidden;
+    background-color: grey;
 }
-
-
 
 #title{
-
-color: black;
-
-font-family: arial;
-
-font-size: 300%;
-
-font-variant: small-caps;
-
-text-decoration: underline;
-
-width: 400px;
-
-height: 200px;
-
+    color: black;
+    font-family: arial;
+    font-size: 300%;
+    font-variant: small-caps;
+    text-decoration: underline;
+    width: 400px;
+    height: 200px;
 }
-
-
 
 #warning{
-
-padding-left: 10px;
-
+  padding-left: 10px;
 }
-
-
 
 #container
-
 {
-
-margin: auto;
-
-width: 512px;
-
-height: 512px;
-
+    margin: auto;
+    width: 512px;
+    height: 512px;
 }
-
-
 
 #toolbar
-
 {
-
-width: 500px;
-
-height: 25px;
-
-padding-left: 25px;
-
-padding-top: 5px;
-
-background-color: rgb(200,200,200);
-
-position: relative;
-
-z-index: 0;
-
+    width: 500px;
+    height: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+    background-color: rgb(200,200,200);
+    position: relative;
+    z-index: 0;
 }
-
-
 
 #volumeSelect
-
 {
-
-width: 500px;
-
-height: 25px;
-
-padding-left: 25px;
-
-padding-top: 5px;
-
-background-color: rgb(200,200,200);
-
-position: relative;
-
-z-index: 0;
-
+    width: 500px;
+    height: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+    background-color: rgb(200,200,200);
+    position: relative;
+    z-index: 0;
 }
-
-
 
 #view
-
 {
-
-padding-top: 50px;
-
-height: 350px;
-
-
-
+     padding-top: 50px;
+     height: 350px;
+     
 }
-
-
 
 select
-
 {
-
-width: 150px;
-
+    width: 150px;
 }
-
-</style>
-
-
-
+  </style>
+  
 </head>
-
 <body>
-
-
-
+  
 <script id="vertex-shader" type="x-shader/x-vertex">
-
 attribute vec4 vPosition;
-
 attribute vec4 vNormal;
-
-
-
+    
 uniform float xang;
-
 uniform float yang;
-
 uniform float zang;
-
 uniform float scale;
-
 uniform float yScale;
-
 uniform float xtrans;
-
 uniform float ytrans;
-
 uniform float ztrans;
 
-
-
 uniform vec4 cm;
-
 uniform vec4 lightPosition;
-
-
-
+    
 varying vec3 N, L, E;
 
-
-
 void main()
-
 {
 
-
-
-float s_z = sin( zang );
-
-float c_z = cos( zang );
-
-
-
-float s_y = sin( yang );
-
-float c_y = cos( yang );
-
-
-
-float s_x = sin( xang );
-
-float c_x = cos( xang );
-
-
-
-mat4 Rz = mat4( c_z, -s_z, 0.0, 0.0,
-
-s_z, c_z, 0.0, 0.0,
-
-0.0, 0.0, 1.0, 0.0,
-
-0.0, 0.0, 0.0, 1.0 );
-
-
-
-mat4 Ry = mat4( c_y, 0.0, -s_y, 0.0,
-
-0.0, 1.0, 0.0, 0.0,
-
-s_y, 0.0, c_y, 0.0,
-
-0.0, 0.0, 0.0, 1.0 );
-
-
-
-mat4 Rx = mat4( 1.0, 0.0, 0.0, 0.0,
-
-0.0, c_x, s_x, 0.0,
-
-0.0, -s_x, c_x, 0.0,
-
-0.0, 0.0, 0.0, 1.0 );
-
-
-
-mat4 S = mat4( scale, 0.0, 0.0, 0.0,
-
-0.0, yScale, 0.0, 0.0,
-
-0.0, 0.0, scale, 0.0,
-
-0.0, 0.0, 0.0, 1.0 );
-
-
-
-mat4 T = mat4( 1.0, 0.0, 0.0, xtrans,
-
-0.0, 1.0, 0.0, ytrans,
-
-0.0, 0.0, 1.0, ztrans,
-
-0.0, 0.0, 0.0, 1.0 );
-
-
-
-mat4 ctm = Rx*Ry*Rz*S*T;
-
-
-
-vec4 p_point = vPosition*ctm;
-
-vec4 p_eye = -p_point;
-
-vec4 p_light = lightPosition;
-
-
-
-L = normalize( ( p_light.xyz - p_point.xyz ) );
-
-E = normalize( p_eye.xyz - p_point.xyz );
-
-N = normalize( ( ctm*vNormal ).xyz );
-
-
-
-gl_Position = p_point;
-
-
+    float s_z = sin( zang );
+    float c_z = cos( zang );
+    
+    float s_y = sin( yang );
+    float c_y = cos( yang );
+    
+    float s_x = sin( xang );
+    float c_x = cos( xang );
+    
+    mat4 Rz = mat4( c_z, -s_z, 0.0, 0.0,
+		           			s_z, c_z, 0.0, 0.0,
+		           			0.0, 0.0, 1.0, 0.0,
+		           			0.0, 0.0, 0.0, 1.0 );
+    
+    mat4 Ry = mat4( c_y, 0.0, -s_y, 0.0,
+		           			0.0, 1.0, 0.0, 0.0,
+		           			s_y, 0.0, c_y, 0.0,
+		           			0.0, 0.0, 0.0, 1.0 );
+    
+    mat4 Rx = mat4( 1.0, 0.0, 0.0, 0.0,
+		          			0.0, c_x, s_x, 0.0,
+		           			0.0, -s_x, c_x, 0.0,
+		           			0.0, 0.0, 0.0, 1.0 );
+    
+    mat4 S = mat4( 	scale, 0.0, 0.0, 0.0,
+		           			0.0, yScale, 0.0, 0.0,
+		           			0.0, 0.0, scale, 0.0,
+		           			0.0, 0.0, 0.0, 1.0 );
+               
+   	mat4 T = mat4( 	1.0, 0.0, 0.0, xtrans,
+		           			0.0, 1.0, 0.0, ytrans,
+		           			0.0, 0.0, 1.0, ztrans,
+		           			0.0, 0.0, 0.0, 1.0 );
+    
+    mat4 ctm = Rx*Ry*Rz*S*T;
+    
+    vec4 p_point = vPosition*ctm;
+    vec4 p_eye = -p_point;
+    vec4 p_light = lightPosition;
+    
+    L = normalize( ( p_light.xyz - p_point.xyz ) );
+    E =  normalize( p_eye.xyz - p_point.xyz );
+    N = normalize( ( ctm*vNormal ).xyz );
+    
+    gl_Position = p_point;
 
 }
-
 </script>
-
-
 
 <script id="fragment-shader" type="x-shader/x-fragment">
-
 precision mediump float;
-
-
-
+    
 uniform vec4 ambientProduct;
-
 uniform vec4 diffuseProduct;
-
 uniform vec4 specularProduct;
-
 uniform float shininess;
-
-
-
+    
 varying vec3 N, L, E;
 
-
-
 void main()
-
 {
+    
+    vec4 ambient = ambientProduct;
+    
+    vec3 H = normalize( L + E );
+    
+    vec4  diffuse = diffuseProduct * max( dot(L, N), 0.0 );
 
+    vec4  specular = specularProduct * pow( max(dot(N, H), 0.0), shininess );
+    
+    if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
 
+    vec4 fColor = ambient + diffuse +specular;
 
-vec4 ambient = ambientProduct;
-
-
-
-vec3 H = normalize( L + E );
-
-
-
-vec4 diffuse = diffuseProduct * max( dot(L, N), 0.0 );
-
-
-
-vec4 specular = specularProduct * pow( max(dot(N, H), 0.0), shininess );
-
-
-
-if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
-
-
-
-vec4 fColor = ambient + diffuse +specular;
-
-
-
-gl_FragColor = fColor;
-
-
-
+    gl_FragColor = fColor;
+    
 }
-
 </script>
 
-
-
 <body onload="config()">
-
-<div id="container"> 
-
-<div id="view">
-
-<header1 id = title> Caffeine Machine</header1>
-
-<canvas id="gl-canvas" width="512" height="512">
-
+    <div id="container">    
+        <div id="view">
+        <header1 id = title> Caffeine Machine</header1>
+            <canvas id="gl-canvas" width="512" height="512">
 Oops ... your browser doesn't support the HTML5 canvas element
-
 </canvas>
+        </div>
+        <div id="toolbar">
+            
+            Beverage:
+            <select id="beverage">
+                <option value="0">Select</option>
+                <option value="16">Dark Roast</option>
+                <option value="19">Medium Roast</option>
+                <option value="22">Blond Roast</option>
+                <option value="10">Iced Coffee</option>
+                <option value="13">Cold Brewed Coffee</option>
+                <option value="75">Espresso</option>
+                <option value="2">Black Tea</option>
+                <option value="2">Green Tea</option>
+                <option value="6">Chai Latte</option>
+                <option value="4">Green Tea Latte</option>
+                <option value="3">Starbucks Refresher</option>
+                <option value="6">Coffee-Based Frappucino</option>
+                <option value="10">Redbull</option>
+                <option value="10">Monster</option>
+                <option value="3">Coca-Cola</option>
+                <option value="100">5 Hour Energy</option>
+            </select>
+            
+            Volume:
+            <select id="quantity">   
+                <option value="0">Select</option>
+                <option value="1">1oz</option>
+                <option value="2">2oz</option>
+                <option value="4">4oz</option>
+                <option value="8">8oz</option>
+                <option value="16">16oz</option>
+                <option value="20">20oz</option>
+                <option value="24">24oz</option>
+                <option value="30">30oz</option>
+            </select>
+            <button type = button onclick = createProportionateCyl()> Go </button>
 
-</div>
+        </div>
+        <div id="volumeSelect">
+            Cup Caffeine Limit:
+            <select id="volume">   
+                <option value="50">50mg</option>
+                <option value="100">100mg</option>
+                <option value="150">150mg</option>
+                <option value="200">200mg</option>
+                <option value="250">250mg</option>
+                <option value="300">300mg</option>
+                <option value="350">350mg</option>
+                <option value="400" selected = true>Daily Max: 400mg</option>
+            </select>
+            <button type = button onclick = setCupVolume()> Set </button>
+            <header3 id = warning onclick = setText()>  </header3>
 
-<div id="toolbar">
-
-
-
-Beverage:
-
-<select id="beverage">
-
-<option value="0">Select</option>
-
-<option value="16">Dark Roast</option>
-
-<option value="19">Medium Roast</option>
-
-<option value="22">Blond Roast</option>
-
-<option value="10">Iced Coffee</option>
-
-<option value="13">Cold Brewed Coffee</option>
-
-<option value="75">Espresso</option>
-
-<option value="2">Black Tea</option>
-
-<option value="2">Green Tea</option>
-
-<option value="6">Chai Latte</option>
-
-<option value="4">Green Tea Latte</option>
-
-<option value="3">Starbucks Refresher</option>
-
-<option value="6">Coffee-Based Frappucino</option>
-
-<option value="10">Redbull</option>
-
-<option value="10">Monster</option>
-
-<option value="3">Coca-Cola</option>
-
-<option value="100">5 Hour Energy</option>
-
-</select>
-
-
-
-Volume:
-
-<select id="quantity"> 
-
-<option value="0">Select</option>
-
-<option value="1">1oz</option>
-
-<option value="2">2oz</option>
-
-<option value="4">4oz</option>
-
-<option value="8">8oz</option>
-
-<option value="16">16oz</option>
-
-<option value="20">20oz</option>
-
-<option value="24">24oz</option>
-
-<option value="30">30oz</option>
-
-</select>
-
-<button type = button onclick = createProportionateCyl()> Go </button>
-
-
-
-</div>
-
-<div id="volumeSelect">
-
-Cup Caffeine Limit:
-
-<select id="volume"> 
-
-<option value="50">50mg</option>
-
-<option value="100">100mg</option>
-
-<option value="150">150mg</option>
-
-<option value="200">200mg</option>
-
-<option value="250">250mg</option>
-
-<option value="300">300mg</option>
-
-<option value="350">350mg</option>
-
-<option value="400" selected = true>Daily Max: 400mg</option>
-
-</select>
-
-<button type = button onclick = setCupVolume()> Set </button>
-
-<header3 id = warning onclick = setText()> </header3>
-
-
-
-</div>
-
-</div>
-
+        </div>
+    </div>
 </body>
+  <!-- TODO: Missing CoffeeScript 2 -->
 
-<!-- TODO: Missing CoffeeScript 2 -->
-
-
-
-<script type="text/javascript">
+  <script type="text/javascript">
 
 
-
-
-
-
-
+    
 console.clear();
 
-
-
 var gl;
-
 var vPosition, vNormal;
-
 var xang, yang, zang, sx, cm;
 
-
-
 var cupVolume;
-
 var program;
-
 var caffeineContent;
 
-
-
 // Light Source
-
 var lightPosition = vec4(1.0, -0.2, 1.0, 1.0 );
 
-
-
 // Light Source Color Components
-
 var lightAmbient = vec4(0.73, 0.8, 0.98, 1.0 );
-
 var lightDiffuse = vec4( 0.8, 0.78, 0.53, 1.0 );
-
 var lightSpecular = vec4( 1.0, 1.0, 1.0, 1.0 );
 
-
-
 // Material Properties
-
-var materialAmbient = vec4( 0.53, 1.0, 0.98, 1.0 ); // k_a
-
-var materialDiffuse = vec4( 0.8, 0.78, 0.53, 1.0); // k_d
-
+var materialAmbient = vec4( 0.53, 1.0, 0.98, 1.0 );  // k_a
+var materialDiffuse = vec4( 0.8, 0.78, 0.53, 1.0);  // k_d
 var materialSpecular = vec4( 1.0, 1.0, 1.0, 1.0 ); // k_s
-
 var materialShininess = 100.0;
-
-
 
 var ambientProduct, diffuseProduct, specularProduct;
 
-
-
 function config() {
-
-
-
-var canvas = document.getElementById( "gl-canvas" );
-
-
-
-gl = WebGLUtils.setupWebGL( canvas );
-
-if ( !gl ) { alert( "WebGL isn't available" ); }
-
-
-
-gl.clearDepth(1.0); 
-
-gl.enable(gl.DEPTH_TEST); 
-
-gl.depthFunc(gl.LEQUAL); 
-
-
-
-//
-
-// Configure WebGL
-
-//
-
-gl.viewport( 0, 0, canvas.width, canvas.height );
-
-
-
-// Load shaders and initialize attribute buffers
-
-program = initShaders( gl, "vertex-shader", "fragment-shader" );
-
-gl.useProgram( program );
-
-
-
-vPosition = gl.getAttribLocation( program, "vPosition" );
-
-vNormal = gl.getAttribLocation( program, "vNormal" );
-
-vCylinder = gl.getAttribLocation( program, "vCylinder" );
-
-
-
-xang = gl.getUniformLocation( program, "xang" );
-
-yang = gl.getUniformLocation( program, "yang" );
-
-zang = gl.getUniformLocation( program, "zang" );
-
-sx = gl.getUniformLocation( program, "scale" );
-
-yScale = gl.getUniformLocation( program, "yScale" );
-
-cm = gl.getUniformLocation( program, "cm" );
-
-xtrans = gl.getUniformLocation( program, "xtrans" );
-
-ytrans = gl.getUniformLocation( program, "ytrans" );
-
-ztrans = gl.getUniformLocation( program, "ztrans" );
-
-
-
-cupVolume = 400;
-
-
-
-//sets up the 3D space, scale, and center of mass for objects
-
-gl.uniform1f( sx, 1.0 );
-
-gl.uniform4f( cm, 0.0, 0.0, 0.0, 0.0);
-
-
-
-var cylArray = new Array();
-
-var cupArray = new Array();
-
-
-
-lightingModel();
-
-rotateX(90);
-
-rotateY(90);
-
-scale(12);
-
-scaleY(12);
-
-
-
-//create cup mesh and normals from vertices and faces
-
-cupArray = createMesh(V, F); 
-
-//get mesh
-
-cupMesh = cupArray[0]; 
-
-//get normals
-
-cupNormals = cupArray[1];
-
-//allocate space in the GPU for the arrays
-
-bufferData(cupMesh, cupNormals);
-
-//send model to GPU to render
-
-render(cupMesh);
-
-
-
+     
+    var canvas = document.getElementById( "gl-canvas" );
+    
+    gl = WebGLUtils.setupWebGL( canvas );
+    if ( !gl ) { alert( "WebGL isn't available" ); }
+    
+    gl.clearDepth(1.0);                
+    gl.enable(gl.DEPTH_TEST);           
+    gl.depthFunc(gl.LEQUAL); 
+
+    //
+    //  Configure WebGL
+    //
+    gl.viewport( 0, 0, canvas.width, canvas.height );
+    
+    //  Load shaders and initialize attribute buffers
+    program = initShaders( gl, "vertex-shader", "fragment-shader" );
+    gl.useProgram( program );
+       
+    vPosition = gl.getAttribLocation( program, "vPosition" );
+    vNormal = gl.getAttribLocation( program, "vNormal" );
+    vCylinder = gl.getAttribLocation( program, "vCylinder" );
+    
+    xang = gl.getUniformLocation( program, "xang" );
+    yang = gl.getUniformLocation( program, "yang" );
+    zang = gl.getUniformLocation( program, "zang" );
+    sx = gl.getUniformLocation( program, "scale" );
+    yScale = gl.getUniformLocation( program, "yScale" );
+    cm = gl.getUniformLocation( program, "cm" );
+    xtrans = gl.getUniformLocation( program, "xtrans" );
+    ytrans = gl.getUniformLocation( program, "ytrans" );
+    ztrans = gl.getUniformLocation( program, "ztrans" );
+    
+    cupVolume = 400;
+    
+    //sets up the 3D space, scale, and center of mass for objects
+    gl.uniform1f( sx, 1.0 );
+    gl.uniform4f( cm, 0.0, 0.0, 0.0, 0.0);
+    
+    var cylArray = new Array();
+		var cupArray = new Array();
+    
+    lightingModel();
+    rotateX(90);
+    rotateY(90);
+    scale(12);
+    scaleY(12);
+
+    //create cup mesh and normals from vertices and faces
+    cupArray = createMesh(V, F); 
+    //get mesh
+    cupMesh = cupArray[0]; 
+    //get normals
+    cupNormals = cupArray[1];
+    //allocate space in the GPU for the arrays
+    bufferData(cupMesh, cupNormals);
+    //send model to GPU to render
+    render(cupMesh);
+         
 }
-
-
 
 function createProportionateCyl(){
-
-
-
-heightProportion = calculateVolume();
-
-
-
-if (caffeineContent > cupVolume){
-
-var overflow = caffeineContent - cupVolume;
-
-console.log(overflow + "mg over limit!")
-
-setText(overflow + "mg over limit!");
-
+	
+	heightProportion = calculateVolume();
+  
+  if (caffeineContent > cupVolume){
+  		var overflow = caffeineContent - cupVolume;
+  		console.log(overflow + "mg over limit!")
+      setText(overflow + "mg over limit!");
+  }
+  
+  else{
+  		setText("");
+  		createCylinder(VC, FC, ((heightProportion/3)+0.02), heightProportion);
+ 			createCup();
+  }
+  
 }
-
-
-
-else{
-
-setText("");
-
-createCylinder(VC, FC, ((heightProportion/3)+0.02), heightProportion);
-
-createCup();
-
-}
-
-
-
-}
-
-
 
 function setText(string){
-
-document.getElementById('warning').innerHTML = string;
-
+	document.getElementById('warning').innerHTML = string;
 }
-
-
 
 function lightingModel(){
 
-
-
-ambientProduct = mult(lightAmbient, materialAmbient);
-
-diffuseProduct = mult(lightDiffuse, materialDiffuse);
-
-specularProduct = mult(lightSpecular, materialSpecular);
-
-
-
-gl.uniform4fv( gl.getUniformLocation( program, "ambientProduct"), flatten(ambientProduct) );
-
-gl.uniform4fv( gl.getUniformLocation( program, "diffuseProduct"), flatten(diffuseProduct) );
-
-gl.uniform4fv( gl.getUniformLocation( program, "specularProduct"), flatten(specularProduct) ); 
-
-gl.uniform4fv( gl.getUniformLocation( program, "lightPosition" ), flatten(lightPosition) );
-
-gl.uniform1f( gl.getUniformLocation( program, "shininess" ),materialShininess );
-
-
+    ambientProduct = mult(lightAmbient, materialAmbient);
+    diffuseProduct = mult(lightDiffuse, materialDiffuse);
+    specularProduct = mult(lightSpecular, materialSpecular);
+    
+    gl.uniform4fv( gl.getUniformLocation( program, "ambientProduct"), flatten(ambientProduct) );
+    gl.uniform4fv( gl.getUniformLocation( program, "diffuseProduct"), flatten(diffuseProduct) );
+    gl.uniform4fv( gl.getUniformLocation( program, "specularProduct"), flatten(specularProduct) );  
+    gl.uniform4fv( gl.getUniformLocation( program, "lightPosition" ), flatten(lightPosition) );
+    gl.uniform1f( gl.getUniformLocation( program, "shininess" ),materialShininess );
 
 }
-
-
 
 function createCup(){
+    //adjust color
+    materialAmbient[0] = 0.53;
+    materialAmbient[1] = 1.0;
+    materialAmbient[2] = 0.98;
+    lightingModel();
+    
+    //reset transformations
+    rotateZ(180);
+    rotateX(-90);
+    translateZ(0);
+    translateY(0);
+    scale(12);
+    scaleY(12);
 
-//adjust color
-
-materialAmbient[0] = 0.53;
-
-materialAmbient[1] = 1.0;
-
-materialAmbient[2] = 0.98;
-
-lightingModel();
-
-
-
-//reset transformations
-
-rotateZ(180);
-
-rotateX(-90);
-
-translateZ(0);
-
-translateY(0);
-
-scale(12);
-
-scaleY(12);
-
-
-
-//create and draw cup
-
-cupArray = createMesh(V, F); 
-
-cupMesh = cupArray[0]; 
-
-cupNormals = cupArray[1];
-
-bufferData(cupMesh, cupNormals);
-
-render(cupMesh);
-
-
-
+    //create and draw cup
+    cupArray = createMesh(V, F); 
+    cupMesh = cupArray[0]; 
+    cupNormals = cupArray[1];
+    bufferData(cupMesh, cupNormals);
+    render(cupMesh);
 
 
 }
-
-
 
 function createCylinder(VC, FC, transY, scalY){
-
-//adjust color and set transformations
-
-materialAmbient[0] = 1.0;
-
-materialAmbient[1] = 0.1;
-
-materialAmbient[2] = 0.2;
-
-lightingModel();
-
-scale(0.5);
-
-scaleY(scalY);
-
-rotateZ(270);
-
-rotateX(90);
-
-translateY(transY);
-
-translateZ(-1.1);
-
-
-
-//lower half of cyl
-
-cylArray = createMesh(VC, FC);
-
-cylMesh = cylArray[0]; 
-
-cylNormals = cylArray[1]; 
-
-bufferData(cylMesh, cylNormals);
-
-render(cylMesh);
-
-
-
-rotateZ(90);
-
-
-
-//upper half of cyl
-
-cylArray = createMesh(VC, FC);
-
-cylMesh = cylArray[0]; 
-
-cylNormals = cylArray[1]; 
-
-bufferData(cylMesh, cylNormals);
-
-render(cylMesh);
-
-
-
-
-
+		//adjust color and set transformations
+		materialAmbient[0] = 1.0;
+    materialAmbient[1] = 0.1;
+    materialAmbient[2] = 0.2;
+    lightingModel();
+	  scale(0.5);
+    scaleY(scalY);
+    rotateZ(270);
+    rotateX(90);
+    translateY(transY);
+    translateZ(-1.1);
+    
+    //lower half of cyl
+    cylArray = createMesh(VC, FC);
+    cylMesh = cylArray[0]; 
+    cylNormals = cylArray[1]; 
+    bufferData(cylMesh, cylNormals);
+    render(cylMesh);
+    
+    rotateZ(90);
+    
+    //upper half of cyl
+    cylArray = createMesh(VC, FC);
+    cylMesh = cylArray[0]; 
+    cylNormals = cylArray[1]; 
+    bufferData(cylMesh, cylNormals);
+    render(cylMesh);
+    
+    
 }
-
-
 
 function setCupVolume(){
-
-
-
-var selectVolume = document.getElementById('volume');
-
-var volume = selectVolume.options[selectVolume.selectedIndex].value; 
-
-cupVolume = volume;
-
-createProportionateCyl();
-
-
-
+	
+  var selectVolume = document.getElementById('volume');
+  var volume = selectVolume.options[selectVolume.selectedIndex].value; 
+	cupVolume = volume;
+  createProportionateCyl();
+  
 }
-
-
 
 function calculateVolume(){
 
-
-
-var selectBev = document.getElementById('beverage');
-
-var beverage = selectBev.options[selectBev.selectedIndex].value; 
-
-
-
-var selectQnt = document.getElementById('quantity');
-
-var quantity = selectQnt.options[selectQnt.selectedIndex].value; 
-
-
-
-caffeineContent = beverage * quantity;
-
-
-
-var caffeineRatio = (caffeineContent/cupVolume)*1.35; 
-
-
-
-console.log("caffeineContent: " + caffeineContent);
-
-console.log("caffeine %: " + caffeineRatio);
-
-
-
-return caffeineRatio;
-
-
-
+	var selectBev = document.getElementById('beverage');
+  var beverage = selectBev.options[selectBev.selectedIndex].value; 
+  
+  var selectQnt = document.getElementById('quantity');
+  var quantity = selectQnt.options[selectQnt.selectedIndex].value; 
+  
+  caffeineContent = beverage * quantity;
+  
+  var caffeineRatio = (caffeineContent/cupVolume)*1.35; 
+  
+  console.log("caffeineContent: " + caffeineContent);
+  console.log("caffeine %: " + caffeineRatio);
+  
+  return caffeineRatio;
+	
 }
-
-
 
 function translateX(unit){
 
-
-
-gl.uniform1f( xtrans, unit);
-
-
+	gl.uniform1f( xtrans, unit);
 
 }
-
-
 
 function translateY(unit){
 
-
-
-gl.uniform1f( ytrans, unit);
-
-
+	gl.uniform1f( ytrans, unit);
 
 }
-
-
 
 function translateZ(unit){
 
-
-
-gl.uniform1f( ztrans, unit);
-
-
+	gl.uniform1f( ztrans, unit);
 
 }
-
-
 
 function rotateX(deg) {
 
-
-
-var ang_deg = deg;
-
-
-
-var radian = ang_deg * (Math.PI/180.0);
-
-
-
-gl.uniform1f( xang, radian );
-
-
-
+    var ang_deg = deg;
+    
+    var radian =  ang_deg * (Math.PI/180.0);
+    
+    gl.uniform1f( xang, radian );
+    
 }
-
-
-
 
 
 function rotateY(deg) {
 
-
-
-var ang_deg = deg; 
-
-
-
-var radian = ang_deg * (Math.PI/180.0);
-
-
-
-gl.uniform1f( yang, radian );
-
-
-
+    var ang_deg = deg; 
+    
+    var radian =  ang_deg * (Math.PI/180.0);
+    
+    gl.uniform1f( yang, radian );
+    
 }
-
-
 
 function rotateZ(deg) {
 
-
-
-var ang_deg = deg; 
-
-
-
-var radian = ang_deg * (Math.PI/180.0);
-
-
-
-gl.uniform1f( zang, radian );
-
-
-
+    var ang_deg = deg; 
+    
+    var radian =  ang_deg * (Math.PI/180.0);
+    
+    gl.uniform1f( zang, radian );
+    
 }
-
-
-
 
 
 function scale(amt) {
 
-
-
-var s_val = amt;
-
-
-
-gl.uniform1f( sx, s_val );
-
-
-
+    var s_val = amt;
+    
+    gl.uniform1f( sx, s_val );
+    
 }
-
-
 
 function scaleY(amt){
 
-
-
-gl.uniform1f(yScale, amt);
-
-
-
+		gl.uniform1f(yScale, amt);
+    
 }
-
-
 
 function createMesh(vertices, faces) {
 
-
-
-var outputArray = new Array();
-
-var mesh = new Array();
-
-var normals = new Array();
-
-
-
-for ( var i=0; i<faces.length; i++ ) {
-
-
-
-var v1 = vertices[ faces[i][0] ];
-
-var v2 = vertices[ faces[i][1] ];
-
-var v3 = vertices[ faces[i][2] ];
-
-
-
-for ( var j=0; j<v1.length; j++ ) mesh.push( v1[j] );
-
-for ( var j=0; j<v2.length; j++ ) mesh.push( v2[j] );
-
-for ( var j=0; j<v3.length; j++ ) mesh.push( v3[j] );
-
-
-
-var t1 = subtract(v2, v1);
-
-var t2 = subtract(v3, v1);
-
-var normal = normalize(cross(t1, t2)); //dot product
-
-normal = vec3(normal);
-
-
-
-normals.push( normal );
-
-normals.push( normal );
-
-normals.push( normal );
-
-
-
+		var outputArray = new Array();
+    var mesh = new Array();
+		var normals = new Array();
+    
+    for ( var i=0; i<faces.length; i++ ) {
+        
+        var v1 = vertices[ faces[i][0] ];
+        var v2 = vertices[ faces[i][1] ];
+        var v3 = vertices[ faces[i][2] ];
+        
+        for ( var j=0; j<v1.length; j++ ) mesh.push( v1[j] );
+        for ( var j=0; j<v2.length; j++ ) mesh.push( v2[j] );
+        for ( var j=0; j<v3.length; j++ ) mesh.push( v3[j] );
+        
+        var t1 = subtract(v2, v1);
+        var t2 = subtract(v3, v1);
+        var normal = normalize(cross(t1, t2)); //dot product
+        normal = vec3(normal);
+        
+        normals.push( normal );
+        normals.push( normal );
+        normals.push( normal );
+        
+    }
+    
+    outputArray[0] = mesh;
+    outputArray[1] = normals;
+    return outputArray;
+    
+    
 }
-
-
-
-outputArray[0] = mesh;
-
-outputArray[1] = normals;
-
-return outputArray;
-
-
-
-
-
-}
-
-
 
 function bufferData(theMesh, theNormals){
 
-
-
-var nBuffer = gl.createBuffer();
-
-
-
-gl.bindBuffer( gl.ARRAY_BUFFER, nBuffer);
-
-gl.vertexAttribPointer( vNormal, 3, gl.FLOAT, false, 0, 0 );
-
-gl.enableVertexAttribArray( vNormal);
-
-
-
-gl.bufferData( gl.ARRAY_BUFFER, flatten(theNormals), gl.STATIC_DRAW );
-
-
-
-var vBuffer = gl.createBuffer();
-
-
-
-gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer );
-
-gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
-
-gl.enableVertexAttribArray( vPosition );
-
-
-
-gl.bufferData( gl.ARRAY_BUFFER, flatten(theMesh), gl.STATIC_DRAW ); 
-
-
+    var nBuffer = gl.createBuffer();
+    
+    gl.bindBuffer( gl.ARRAY_BUFFER, nBuffer);
+    gl.vertexAttribPointer( vNormal, 3, gl.FLOAT, false, 0, 0 );
+    gl.enableVertexAttribArray( vNormal);
+     
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(theNormals), gl.STATIC_DRAW );
+        
+    var vBuffer = gl.createBuffer();
+    
+    gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer );
+    gl.vertexAttribPointer( vPosition, 3, gl.FLOAT, false, 0, 0 );
+    gl.enableVertexAttribArray( vPosition );
+        
+    gl.bufferData( gl.ARRAY_BUFFER, flatten(theMesh), gl.STATIC_DRAW ); 
 
 }
-
-
 
 function render(theMesh){
-
-for ( var i = 0; i < theMesh.length/3; i += 3) gl.drawArrays( gl.TRIANGLES, i, 3 );
-
+		for ( var i = 0; i < theMesh.length/3; i += 3) gl.drawArrays( gl.TRIANGLES, i, 3 );
 }
-
-
-
-
 
 
 
 </script>
 
-
-
-<script>
-
-// tell the embed parent frame the height of the content
-
-if (window.parent && window.parent.parent){
-
-window.parent.parent.postMessage(["resultsFrame", {
-
-height: document.body.getBoundingClientRect().height,
-
-slug: "mgtt7Le9"
-
-}], "*")
-
-}
-
-</script>
-
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "mgtt7Le9"
+      }], "*")
+    }
+  </script>
 </body>
-
 </html>
-
