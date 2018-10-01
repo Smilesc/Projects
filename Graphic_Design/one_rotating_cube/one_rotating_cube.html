@@ -1,58 +1,32 @@
+
 <!DOCTYPE html>
-<!-- saved from url=(0057)http://fiddle.jshell.net/Smilesc/ocnujpyd/233/show/light/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>cube3</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  
 
-  
-
-  
-  
-  
-
-  
-
-  <script type="text/javascript" src="./jquery.js.download"></script>
-
-  
-
-  
-
-  
-
-  
-    <link rel="stylesheet" type="text/css" href="./result-light.css">
-  
-
-  
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"
     
-      <script type="text/javascript" src="./webgl-utils.js.download"></script>
-    
-  
-    
-      <script type="text/javascript" src="./initShaders.js.download"></script>
-    
-  
-    
-      <script type="text/javascript" src="./MV.js.download"></script>
-    
-  
+  ></script>
 
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/webgl-utils.js"></script>
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/initShaders.js"></script>
+      <script type="text/javascript" src="http://www.cs.unm.edu/~angel/WebGL/7E/Common/MV.js"></script>
   <style type="text/css">
     
   </style>
-
-  <title>cube3 by Smilesc</title>
-
   
 </head>
-
-<body onload="config()">
+<body>
   <script id="vertex-shader" type="x-shader/x-vertex">
 attribute vec4 vPosition;
 attribute vec4 vColor;
@@ -121,7 +95,7 @@ void main()
 }
 </script>
 
-
+<body onload="config()">
     <div id="container">    
         <div id="view">
             <canvas id="gl-canvas" width="512" height="512">
@@ -129,17 +103,15 @@ void main()
              </canvas>
         </div>
     </div>
+</body>
 
 
+  <!-- TODO: Missing CoffeeScript 2 -->
 
-  
-
-
-
+  <script type="text/javascript">
 
 
-<script type="text/javascript">//<![CDATA[
-
+    
 console.clear();
 
 var gl;
@@ -148,7 +120,7 @@ var xang, yang, zang, sx, cm;
 
 var mesh = new Array();
 var color = new Array();
-var offset = 260;
+var offset = 256;
 var newX = 0;
 var newY = 0;
 
@@ -371,22 +343,18 @@ function render() {
     
 }
 
-//]]> 
+
 
 </script>
 
   <script>
-  // tell the embed parent frame the height of the content
-  if (window.parent && window.parent.parent){
-    window.parent.parent.postMessage(["resultsFrame", {
-      height: document.body.getBoundingClientRect().height,
-      slug: "ocnujpyd"
-    }], "*")
-  }
-</script>
-
-
-
-
-
-</body></html>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "ocnujpyd"
+      }], "*")
+    }
+  </script>
+</body>
+</html>
