@@ -16,7 +16,7 @@ clean:
 	/bin/rm -f p1 *.o *.gz
 
 run:
-	./p1 8888
+	./p1 8645
 
 tarball:
 	tar -cvzf p1sol.tar.gz *

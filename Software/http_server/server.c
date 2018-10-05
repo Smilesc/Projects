@@ -164,7 +164,7 @@ int accept_client(int server_socket_fd)
 			char *entity_body = 
 				"<html><body><h2>CSCI 340 (Operating Systems) Homework 2</h2><table border=1 width=\"50%\"><tr><th>Key</th><th>Value</th></tr>";
 			// char *end_type = strchr(request, ' ');
-			char *begin_pairs = strchr(request, '?');
+			char *begin_pairs = strchr(request, '?') + 1;
 			//char *end_pairs = strchr(request, "HTTP") - 1;
 
 			//char url_only[end_pairs - begin_pairs];
@@ -182,14 +182,15 @@ int accept_client(int server_socket_fd)
 			char c = *(request);
 			
 
-			printf("TYPe: %c\n", request[0]);
-			printf("request[1]: %c\n", request[1]);
+			printf("TYPE: %c\n", request[0]);
+			//printf("request[1]: %c\n", request[1]);
 			if (request[0] == 71)
 			{
 				printf("in if******\n");
 				static char *token;
 				
-				while(strcmp(begin_pairs, space) != 0)
+				int i = begin_pairs[0];
+				while(request[i] != 32)
 				{
 					
 					printf("in for\n");
@@ -205,7 +206,7 @@ int accept_client(int server_socket_fd)
 						sprintf(entity_body, "<td>%s</td></tr>", token);
 						free(token);
 					}
-					begin_pairs++;
+					i++;
 				}
 				strcat(entity_body, "</table></body></html>");
 			}
