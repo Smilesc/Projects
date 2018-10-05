@@ -161,14 +161,14 @@ int accept_client(int server_socket_fd)
 			key = last, value = munsell
 			------------------------------------------------------
 			*/
-			char *entity_body = 
+			static char *entity_body = 
 				"<html><body><h2>CSCI 340 (Operating Systems) Homework 2</h2><table border=1 width=\"50%\"><tr><th>Key</th><th>Value</th></tr>";
 			// char *end_type = strchr(request, ' ');
-			char *begin_pairs = strchr(request, '?') + 1;
+			char *parse_mark = strchr(request, '?') + 1;
 			//char *end_pairs = strchr(request, "HTTP") - 1;
 
-			//char url_only[end_pairs - begin_pairs];
-			//strncpy(url_only, begin_pairs + 1, end_pairs - begin_pairs);
+			//char url_only[end_pairs - parse_mark];
+			//strncpy(url_only, parse_mark + 1, end_pairs - parse_mark);
 
 			// char type[end_type - request];
 			// strncpy(type, request, end_type - request);
@@ -179,35 +179,36 @@ int accept_client(int server_socket_fd)
 			char *equals = "=";
 			char *space = " ";
 
-			char c = *(request);
-			
-
 			printf("TYPE: %c\n", request[0]);
 			//printf("request[1]: %c\n", request[1]);
 			if (request[0] == 71)
 			{
 				printf("in if******\n");
 				static char *token;
+				printf("did statements\n");
+
+				char parse_item = 0;
 				
-				int i = begin_pairs[0];
-				while(request[i] != 32)
+				while(strcmp(parse_item, space) != 0)
 				{
+					int parse_item = *parse_mark;
 					
 					printf("in for\n");
-					strcat(token, begin_pairs);
+					strcat(token, parse_mark);
 
-					if(strcmp(begin_pairs, equals) == 0)
+					if(strcmp(parse_item, equals) == 0)
 					{
 						sprintf(entity_body, "<tr><td>%s</td>", token);
 						free(token);
 					}
-					if(strcmp(begin_pairs, amp) == 0)
+					if(strcmp(parse_item, amp) == 0)
 					{
 						sprintf(entity_body, "<td>%s</td></tr>", token);
 						free(token);
 					}
-					i++;
+					parse_mark++;
 				}
+				printf("after while\n");
 				strcat(entity_body, "</table></body></html>");
 			}
 			else if (request[0] == 80)
