@@ -9,6 +9,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -98,14 +99,17 @@ int accept_client(int server_socket_fd)
 	// -------------------------------------
 	// Modify code to fork a child process
 	// -------------------------------------
-
+	int child = fork();
+	
 	if (client_socket_fd >= 0)
 	{
-
-		if (fork() == 0)
+		if(child > 0 || child < 0)
 		{
-			printf("forking\n");
-
+			exit(0);
+		}
+		else
+		{
+			printf("----Forked----\n");
 			bzero(request, 2048);
 
 			read(client_socket_fd, request, 2047);
@@ -157,71 +161,55 @@ int accept_client(int server_socket_fd)
 			key = last, value = munsell
 			------------------------------------------------------
 			*/
-			static char *entity_body = 
-				"<html> \
-					<body> \
-						<h2>CSCI 340 (Operating Systems) Homework 2</h2> \
-						<table border=1 width=\"50%\"> \
-							<tr> \
-								<th>Key</th> \
-								<th>Value</th> \
-							</tr>";
-			char *end_type = strchr(request, ' ');
+			char *entity_body = 
+				"<html><body><h2>CSCI 340 (Operating Systems) Homework 2</h2><table border=1 width=\"50%\"><tr><th>Key</th><th>Value</th></tr>";
+			// char *end_type = strchr(request, ' ');
 			char *begin_pairs = strchr(request, '?');
 			//char *end_pairs = strchr(request, "HTTP") - 1;
 
 			//char url_only[end_pairs - begin_pairs];
 			//strncpy(url_only, begin_pairs + 1, end_pairs - begin_pairs);
 
-			char type[end_type - request];
-			strncpy(type, request, end_type - request);
+			// char type[end_type - request];
+			// strncpy(type, request, end_type - request);
 
-			char *token_end;
+			//char *token_end;
 
-			if (strcmp(type, "GET") == 0)
+			char *amp = "&";
+			char *equals = "=";
+			char *space = " ";
+
+			char c = *(request);
+			
+
+			printf("TYPe: %c\n", request[0]);
+			printf("request[1]: %c\n", request[1]);
+			if (request[0] == 71)
 			{
-				printf("in GET\n");
+				printf("in if******\n");
+				static char *token;
 				
-				char *token_start = begin_pairs + 1;
-				printf("token_start:%c\n", *token_start);
-
-				//parse tokens
-				while (strcmp(token_start, " ") != 0)
+				while(strcmp(begin_pairs, space) != 0)
 				{
-					char amp[2] = "&";
-					token_end = strtok(request, amp);
-
-					char token[token_end - token_start];
-					strncpy(token, token_start, token_end - token_start);
-
-					printf("past strncpy\n");
-					char *equals_sign = strchr(token, '=');
-
-					char key[equals_sign - token_start];
-					strncpy(key, token, equals_sign - token_start);
-
-					char value[token_end - equals_sign];
-					strncpy(value, (equals_sign + 1), token_end - equals_sign);
-					printf("past all string copies\n");
-					//HTML things here
-
-					sprintf(entity_body, "<tr> \
-											<td>%s</td> \
-											<td>%s</td> \
-										</tr>", key, value);
-					printf("past sprintf\n");
 					
-					printf(entity_body, "<tr> \
-											<td>%s</td> \
-											<td>%s</td> \
-										</tr>\n", key, value);
+					printf("in for\n");
+					strcat(token, begin_pairs);
 
-					
-					token_start = token_end + 1;
+					if(strcmp(begin_pairs, equals) == 0)
+					{
+						sprintf(entity_body, "<tr><td>%s</td>", token);
+						free(token);
+					}
+					if(strcmp(begin_pairs, amp) == 0)
+					{
+						sprintf(entity_body, "<td>%s</td></tr>", token);
+						free(token);
+					}
+					begin_pairs++;
 				}
-				sprintf(entity_body, "</table></body></html>");
+				strcat(entity_body, "</table></body></html>");
 			}
-			else if (strcmp(type, "POST") == 0)
+			else if (request[0] == 80)
 			{
 			}
 

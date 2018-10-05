@@ -1,12 +1,8 @@
 
 #include <stdio.h>
 int main( int argc, char *argv[] ) {
-    char * mystring = "this,string,is,great";
-    char my_delim = ",";
+    char * my_string = "abcdefg";
 
-    printf(mystring);
-    strtok(mystring, my_delim);
-
-    printf("%s\n", mystring);
+    printf("my string:%s", my_string);
 }
 
