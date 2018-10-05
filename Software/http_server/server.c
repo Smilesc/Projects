@@ -185,23 +185,23 @@ int accept_client(int server_socket_fd)
 			{
 				printf("in if******\n");
 				static char *token;
-				printf("did statements\n");
-
-				char parse_item = 0;
 				
-				while(strcmp(parse_item, space) != 0)
+
+				//char parse_item = 0;
+				printf("did statements\n");
+				while(strcmp(parse_mark, space) != 0)
 				{
-					int parse_item = *parse_mark;
+					//int parse_item = *parse_mark;
 					
 					printf("in for\n");
 					strcat(token, parse_mark);
 
-					if(strcmp(parse_item, equals) == 0)
+					if(strcmp(parse_mark, equals) == 0)
 					{
 						sprintf(entity_body, "<tr><td>%s</td>", token);
 						free(token);
 					}
-					if(strcmp(parse_item, amp) == 0)
+					if(strcmp(parse_mark, amp) == 0)
 					{
 						sprintf(entity_body, "<td>%s</td></tr>", token);
 						free(token);
