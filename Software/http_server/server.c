@@ -7,6 +7,7 @@
 // -----------------------------------
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -85,65 +86,52 @@ int accept_client(int server_socket_fd)
 			read(client_socket_fd, request, 2047);
 
 			if (DEBUG)
+			{
 				printf("Here is the http message:\n%s\n\n", request);
+			}
 
-			// -------------------------------------
-			// TODO:
-			// -------------------------------------
-			// Generate the correct http response when a GET or POST method is sent
-			// from the client to the server.
-			//
-			// In general, you will parse the request character array to:
-			// 1) Determine if a GET or POST method was used
-			// 2) Then retrieve the key/value pairs (see below)
-			// -------------------------------------
-
-			/*
-			------------------------------------------------------
-			GET method key/values are located in the URL of the request message
-			? - indicates the beginning of the key/value pairs in the URL
-			& - is used to separate multiple key/value pairs 
-			= - is used to separate the key and value
-			
-			Example:
-			
-			http://localhost/?first=brent&last=munsell
-			
-			two &'s indicated two key/value pairs (first=brent and last=munsell)
-			key = first, value = brent
-			key = last, value = munsell
-			------------------------------------------------------
-			*/
-
-			/*
-			------------------------------------------------------
-			POST method key/value pairs are located in the entity body of the request message
-			? - indicates the beginning of the key/value pairs
-			& - is used to delimit multiple key/value pairs 
-			= - is used to delimit key and value
-			
-			Example:
-			
-			first=brent&last=munsell
-			
-			two &'s indicated two key/value pairs (first=brent and last=munsell)
-			key = first, value = brent
-			key = last, value = munsell
-			------------------------------------------------------
-			*/
 			static char entity_body[2000] = "<html><body><h2>CSCI 340 (Operating Systems) Homework 2</h2><table border=1 width=\"50%\"><tr><th>Key</th><th>Value</th></tr>";
 			char *end_type = strchr(request, ' ');
 			char *begin_pairs = strchr(request, '?');
-			char type[end_type - request];
-			strncpy(type, request, end_type - request);
+			int type_length = end_type - request;
+			char type[type_length];
+			strncpy(type, request, type_length);
+			type[type_length] = '\0';
 
 			printf("TYPE: %s\n", type);
-			if (strcmp(type, "GET") == 0)
+			if ((strcmp(type, "GET") == 0) && (begin_pairs == NULL))
 			{
+				printf("Ok so we're dealing with a file here\n");
+				//Extract file name
+				char *begin_file = strchr(request, '/') + 1;
+				char *end_file = strchr(begin_file, ' ');
+
+				int file_length = end_file - begin_file;
+
+				char file_name[file_length];
+				strncpy(file_name, begin_file, file_length);
+				file_name[file_length] = '\0';
+
+				//printf("File: %s\n", file_name);
+
+				FILE *file = fopen(file_name, "r");
+
+				//Parse file to string
+				char c = fgetc(file);
+				for (int i = 0; c != EOF; i++)
+				{
+					entity_body[i] = c;
+					c = fgetc(file);
+				}
+			}
+
+			else if (strcmp(type, "GET") == 0)
+			{
+
 				char *token_start = begin_pairs + 1;
 
 				while (1)
-				{	
+				{
 					//find end of key/value pair
 					char *token_end = strchr(token_start, '&');
 					if (token_end == NULL)
@@ -160,7 +148,7 @@ int accept_client(int server_socket_fd)
 
 					//extract value
 					char value[token_end - key_end];
-					int val_len = token_end - key_end;
+					int val_len = token_end - key_end - 1;
 					strncpy(value, (key_end + 1), val_len);
 					value[val_len] = '\0';
 
@@ -173,6 +161,7 @@ int accept_client(int server_socket_fd)
 
 					token_start = token_end + 1;
 					printf("entity_body: %s\n", entity_body);
+					printf("key:%s, value:%s\n", key, value);
 
 					if (token_end[0] == ' ')
 					{
@@ -181,12 +170,52 @@ int accept_client(int server_socket_fd)
 				}
 				strcat(entity_body, "</table></body></html>");
 			}
-			else if (strcmp(type, "POST") == 0)
+			if (strcmp(type, "POST") == 0)
 			{
-			}
-			// THIS IS AN EXAMPLE ENTITY BODY
-			//char* entity_body = "<html><body><h2>CSCI 340 (Operating Systems) Homework 2</h2><table border=1 width=\"50%\"><tr><th>Key</th><th>Value</th></tr></table></body></html>";
+				char *body = strstr(request, "\r\n\r\n") + 4;
+				char *token_end = strchr(body, '&');
+					if (token_end == NULL)
+					{
+						token_end = strchr(body, ' ');
+					}
+				strcat(entity_body, "<tr>");
 
+				while (1)
+				{
+					//find end of key/value pair
+					char *token_end = strchr(body, '&');
+					if (token_end == NULL)
+					{
+						token_end = strchr(body, '\0');
+					}
+
+					//extract key
+					char *key_end = strchr(body, '=');
+					int key_len = key_end - body;
+					char key[key_len];
+					strncpy(key, body, key_len);
+					key[key_len] = '\0';
+
+					//extract value
+					char value[token_end - key_end];
+					int val_len = token_end - key_end - 1;
+					strncpy(value, (key_end + 1), val_len);
+					value[val_len] = '\0';
+
+					//HTML things here
+					strcat(entity_body, "<td>");
+					strcat(entity_body, value);
+					strcat(entity_body, "</td>");
+
+					body = token_end + 1;
+
+					if (token_end[0] == '\0')
+					{
+						break;
+					}
+				}
+				strcat(entity_body, "</tr></table></body></html>");
+			}
 			char response[512];
 			sprintf(response, "HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s", (int)strlen(entity_body), entity_body);
 
@@ -196,11 +225,19 @@ int accept_client(int server_socket_fd)
 			write(client_socket_fd, response, strlen(response));
 
 			close(client_socket_fd);
+			exit(0);
+		}
+		else if (child > 0)
+		{
+			close(client_socket_fd);
+		}
+		else
+		{
+			return FAIL;
 		}
 	}
 	else
 	{
-
 		exit_status = FAIL;
 	}
 
