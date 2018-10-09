@@ -97,14 +97,6 @@ static void sig_int_handler( int sig ) {
 
 static void sig_child_handler( int sig ) {
 
-	// -------------------------------------
-	// TODO:
-	// -------------------------------------
-	// You complete child signal handler code to remove child process from process 
-	// table (i.e. reap the child)
-	// -------------------------------------
 	wait(0);
-
-	
 
 } // end sig_child_handler function

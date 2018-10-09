@@ -98,10 +98,8 @@ int accept_client(int server_socket_fd)
 			strncpy(type, request, type_length);
 			type[type_length] = '\0';
 
-			printf("TYPE: %s\n", type);
 			if ((strcmp(type, "GET") == 0) && (begin_pairs == NULL))
 			{
-				printf("Ok so we're dealing with a file here\n");
 				//Extract file name
 				char *begin_file = strchr(request, '/') + 1;
 				char *end_file = strchr(begin_file, ' ');
@@ -111,8 +109,6 @@ int accept_client(int server_socket_fd)
 				char file_name[file_length];
 				strncpy(file_name, begin_file, file_length);
 				file_name[file_length] = '\0';
-
-				//printf("File: %s\n", file_name);
 
 				FILE *file = fopen(file_name, "r");
 
@@ -170,14 +166,12 @@ int accept_client(int server_socket_fd)
 				}
 				strcat(entity_body, "</table></body></html>");
 			}
+			
 			if (strcmp(type, "POST") == 0)
 			{
+				//Locate body
 				char *body = strstr(request, "\r\n\r\n") + 4;
-				char *token_end = strchr(body, '&');
-					if (token_end == NULL)
-					{
-						token_end = strchr(body, ' ');
-					}
+
 				strcat(entity_body, "<tr>");
 
 				while (1)
@@ -189,12 +183,8 @@ int accept_client(int server_socket_fd)
 						token_end = strchr(body, '\0');
 					}
 
-					//extract key
+					//extract key end
 					char *key_end = strchr(body, '=');
-					int key_len = key_end - body;
-					char key[key_len];
-					strncpy(key, body, key_len);
-					key[key_len] = '\0';
 
 					//extract value
 					char value[token_end - key_end];
