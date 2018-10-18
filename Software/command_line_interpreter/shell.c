@@ -159,27 +159,76 @@ int execute(command_t *p_cmd)
 
 	if (p_cmd->argc != ERROR)
 	{
+
 		int fd[2];
-		pipe(fd);
-
-		child1_pid = fork();
-		child2_pid = fork();
-
-		for(int i = 0; i < p_cmd->argc; i++)
+		char input[100];
+		input[0] = '\0';
+		char output[100];
+		output[0] = '\0';
+		//child1_pid = fork();
+		if((child2_pid = fork()) >  0)
 		{
-			printf("arg %d: %s\n", i, p_cmd->argv[i]);
+			child1_pid = fork();
+		
+
+		//printf("%s, %d, %c \n", p_cmd->path, p_cmd->argc, *p_cmd->argv[1]);
+
+		
+
+		int PIPE = 0;
+		char * a_pipe;
+		//char my_string[100];
+
+		int i;
+		for (i = 0; i < p_cmd->argc; i++)
+		{
+			if (*p_cmd->argv[i] == '|')
+			{
+				PIPE = 1;
+				a_pipe = p_cmd->argv[i];
+				break;
+			}
+			else
+			{
+				strcat(input, p_cmd->argv[i]);
+				strcat(input, " ");
+			}
 		}
-
-		//sending child
-		if (child1_pid == 0)
+		
+		for(i = i + 1; i < p_cmd->argc; i++)
 		{
+			if(*p_cmd->argv[i] == '|' || *p_cmd->argv[i] == '\0')
+			{
+				break;
+			}
+			else
+			{
+				strcat(output, p_cmd->argv[i]);
+				strcat(output, " ");
+
+			}
+		}
+		printf("input: %s\n",input);
+		printf("output: %s\n", output);
+		//printf("input: %s, output: %s \n", input, output);
+
+		if (PIPE)
+		{
+			pipe(fd);
+		}
+		}
+		//sending child
+		if (child2_pid == 0)
+		{
+			printf("I AM THE SENDER\n");
+			printf("PATH: %s\n", p_cmd->path);
 			close(0);
 			dup(fd[0]);
 			close(fd[1]);
-
+			char*cargs1[] = { input };
 			p_cmd->argv[p_cmd->argc] = NULL;
 
-			execv(p_cmd->path, p_cmd->argv);
+			execv(p_cmd->path, cargs1);
 			perror("child process terminated in error condition!");
 			exit(1);
 		}
@@ -189,15 +238,19 @@ int execute(command_t *p_cmd)
 		}
 
 		//recieving child
-		if (child2_pid == 0)
+		if (child1_pid == 0)
 		{
+			printf("I AM THE RECIEVER\n");
+			find_fullpath(output, p_cmd);
+			printf("PATH: %s\n", p_cmd->path);
 			close(1);
 			dup(fd[1]);
 			close(fd[0]);
+			char*cargs2[] = { output };
 			
 			p_cmd->argv[p_cmd->argc] = NULL;
 
-			execv(p_cmd->path, p_cmd->argv);
+			execv(p_cmd->path, cargs2);
 			perror("child process terminated in error condition!");
 			exit(1);
 		}
