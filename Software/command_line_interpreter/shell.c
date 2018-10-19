@@ -166,66 +166,76 @@ int execute(command_t *p_cmd)
 		char output[100];
 		output[0] = '\0';
 		//child1_pid = fork();
-		if((child2_pid = fork()) >  0)
+		if ((child2_pid = fork()) > 0)
 		{
 			child1_pid = fork();
-		
 
-		//printf("%s, %d, %c \n", p_cmd->path, p_cmd->argc, *p_cmd->argv[1]);
+			//printf("%s, %d, %c \n", p_cmd->path, p_cmd->argc, *p_cmd->argv[1]);
 
-		
+			int PIPE = 0;
+			int REDIRECT = 0;
 
-		int PIPE = 0;
-		char * a_pipe;
-		//char my_string[100];
+			int i;
 
-		int i;
-		for (i = 0; i < p_cmd->argc; i++)
-		{
-			if (*p_cmd->argv[i] == '|')
+			//find pipe or file redirect, identify first command
+			for (i = 0; i < p_cmd->argc; i++)
 			{
-				PIPE = 1;
-				a_pipe = p_cmd->argv[i];
-				break;
+				if (*p_cmd->argv[i] == '|')
+				{
+					printf("Found pipe");
+					PIPE = 1;
+					break;
+				}
+				else if (*p_cmd->argv[i] == '>')
+				{
+					printf("Found file redirect");
+					REDIRECT = 1;
+					break;
+				}
+				else
+				{
+					strcat(input, p_cmd->argv[i]);
+					strcat(input, " ");
+				}
 			}
-			else
+			
+
+			//Find second command
+			for (i = i + 1; i < p_cmd->argc; i++)
 			{
-				strcat(input, p_cmd->argv[i]);
-				strcat(input, " ");
+				if (*p_cmd->argv[i] == '\0')
+				{
+					break;
+				}
+
+				else
+				{
+					strcat(output, p_cmd->argv[i]);
+					strcat(output, " ");
+				}
+			}
+
+			printf("input: %s\n", input);
+			printf("output: %s\n", output);
+			//printf("input: %s, output: %s \n", input, output);
+
+			if (PIPE)
+			{
+				pipe(fd);
 			}
 		}
-		
-		for(i = i + 1; i < p_cmd->argc; i++)
-		{
-			if(*p_cmd->argv[i] == '|' || *p_cmd->argv[i] == '\0')
-			{
-				break;
-			}
-			else
-			{
-				strcat(output, p_cmd->argv[i]);
-				strcat(output, " ");
 
-			}
-		}
-		printf("input: %s\n",input);
-		printf("output: %s\n", output);
-		//printf("input: %s, output: %s \n", input, output);
-
-		if (PIPE)
-		{
-			pipe(fd);
-		}
-		}
-		//sending child
+		//recieving child
 		if (child2_pid == 0)
 		{
-			printf("I AM THE SENDER\n");
+			printf("I AM THE Reciever\n");
 			printf("PATH: %s\n", p_cmd->path);
-			close(0);
-			dup(fd[0]);
-			close(fd[1]);
-			char*cargs1[] = { input };
+
+			close(0); //close standard in
+			dup(fd[0]); //make start of pipe standard in -- take input from pipe
+			close(fd[1]); //close end of pipe --
+
+			char *cargs1[] = {input};
 			p_cmd->argv[p_cmd->argc] = NULL;
 
 			execv(p_cmd->path, cargs1);
@@ -237,17 +247,20 @@ int execute(command_t *p_cmd)
 			perror("Unable to fork child process!");
 		}
 
-		//recieving child
+		//sending child
 		if (child1_pid == 0)
 		{
-			printf("I AM THE RECIEVER\n");
-			find_fullpath(output, p_cmd);
+			printf("I AM THE Sender\n");
+			//char * my_command = 'wc';
+			find_fullpath(output, p_cmd->argv);
+			p_cmd->path = "/usr/bin/wc";
 			printf("PATH: %s\n", p_cmd->path);
-			close(1);
-			dup(fd[1]);
-			close(fd[0]);
-			char*cargs2[] = { output };
-			
+
+			close(1); //close standard out
+			dup(fd[1]); //make end of pipe standard out -- send output to pipe
+			close(fd[0]); //close beginning of pipe
+			char *cargs2[] = {output};
+
 			p_cmd->argv[p_cmd->argc] = NULL;
 
 			execv(p_cmd->path, cargs2);
