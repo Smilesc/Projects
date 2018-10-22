@@ -10,6 +10,7 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <fcntl.h>
 #include "shell.h"
 
 // --------------------------------------------
@@ -162,6 +163,7 @@ int execute(command_t *p_cmd)
 
 		int fd[2];
 		int command_index;
+		int output_file;
 		//p_cmd->argv[p_cmd->argc] = NULL;
 
 		int PIPE = 0;
@@ -172,14 +174,12 @@ int execute(command_t *p_cmd)
 		{
 			if (*p_cmd->argv[i] == '|')
 			{
-				printf("Found pipe \n");
 				command_index = i;
 				PIPE = 1;
 				break;
 			}
 			else if (*p_cmd->argv[i] == '>')
 			{
-				printf("Found file redirect \n");
 				command_index = i;
 				REDIRECT = 1;
 				break;
@@ -189,52 +189,28 @@ int execute(command_t *p_cmd)
 		if (PIPE)
 		{
 			pipe(fd);
-		}
-		else if (REDIRECT)
-		{
-			REDIRECT;
-		}
-		else
-		{
-			p_cmd->argv[p_cmd->argc] = NULL;
-			execv(p_cmd->path, p_cmd->argv);
-			perror("child process terminated in error condition!");
-			exit(1);
-		}
 
-		// child1_pid = fork();
-		// child2_pid = fork();
-
-		if ((child1_pid = fork()) == 0)
-		{
-			if (PIPE)
+			if ((child1_pid = fork()) == 0)
 			{
-				close(1);	 //close standard ininput
-				dup(fd[1]);   //make start of pipe standard in -- take input from pipe
-				close(fd[0]); //close end of pipe --
+				close(1);
+				close(fd[0]);
+				dup(fd[1]);
 
 				p_cmd->argv[p_cmd->argc] = NULL;
 				p_cmd->argv[command_index] = NULL;
 				p_cmd->path = p_cmd->argv[0];
 				find_fullpath(p_cmd->path, p_cmd);
-				
+
 				execv(p_cmd->path, p_cmd->argv);
 				perror("child process terminated in error condition!");
 				exit(1);
 			}
-			else if (REDIRECT)
+			else if (child1_pid < 0)
 			{
-				REDIRECT;
+				perror("Unable to fork child process!");
 			}
-		}
-		else if (child1_pid < 0)
-		{
-			perror("Unable to fork child process!");
-		}
 
-		if ((child2_pid = fork()) == 0)
-		{
-			if (PIPE)
+			if ((child2_pid = fork()) == 0)
 			{
 				close(0);	 //close standard out
 				dup(fd[0]);   //make end of pipe standard out -- send output to pipe
@@ -249,18 +225,46 @@ int execute(command_t *p_cmd)
 				perror("child process terminated in error condition!");
 				exit(1);
 			}
-			else if (REDIRECT)
+			else if (child2_pid < 0)
 			{
-				REDIRECT;
+				perror("Unable to fork child process!");
+			}
+
+			close(fd[0]);
+			close(fd[1]);
+		}
+		else if (REDIRECT)
+		{
+			output_file = open(p_cmd->argv[command_index + 1], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP);
+			if (!output_file)
+			{
+				fprintf(stderr, "Failed to open file");
+			}
+			else if ((child1_pid = fork()) == 0)
+			{
+				p_cmd->argv[command_index] = NULL;
+				dup2(output_file, 1);
+				execv(p_cmd->path, p_cmd->argv);
+				perror("child process terminated in error condition!");
+				exit(1);
+			}
+			close(output_file);
+		}
+		else
+		{
+			if ((child1_pid = fork()) == 0)
+			{
+				p_cmd->argv[p_cmd->argc] = NULL;
+				execv(p_cmd->path, p_cmd->argv);
+				perror("child process terminated in error condition!");
+				exit(1);
+			}
+			else if (child1_pid < 0)
+			{
+
+				perror("Unable to fork child process!");
 			}
 		}
-		else if (child2_pid < 0)
-		{
-			perror("Unable to fork child process!");
-		}
-
-		close(fd[0]);
-		close(fd[1]);
 
 		if (wait(&child_process_status) < 0)
 			status = ERROR;
