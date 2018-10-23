@@ -235,7 +235,7 @@ int execute(command_t *p_cmd)
 		}
 		else if (REDIRECT)
 		{
-			output_file = open(p_cmd->argv[command_index + 1], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP);
+			output_file = open(p_cmd->argv[command_index + 1], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP );
 			if (!output_file)
 			{
 				fprintf(stderr, "Failed to open file");
