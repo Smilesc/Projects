@@ -126,7 +126,19 @@ void parse( web_t* web_struct ) {
 	//
 	// Note: you will need to malloc the links array
 
+	char * an_href = strstr(web_struct->webpage, "href");
+	char parse_text[200];
+	strncpy(parse_text, an_href, 200); 
+	char * quote_begin = strchr(parse_text, '"') + 1;
+	
+	char * quote_end = strchr(quote_begin, '"');
+	int link_length = quote_end - quote_begin;
+	char link[link_length];
+	strncpy(link, quote_begin, link_length);
+	link[link_length] = '\0';
+
 	if ( WEB_DEBUG ) {
+		printf("MYQUOTES: href: %s, link: %s, length: %d \n", parse_text, link, link_length);
 		printf("URL=%s\n", web_struct->url ); 
 		printf("CNT=%d\n", web_struct->link_cnt );
 		printf("WEBPAGE=%s\n", web_struct->webpage );

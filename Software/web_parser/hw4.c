@@ -67,9 +67,9 @@ int main( int argc, char *argv[] ) {
 
 		for ( i=0; i<num_urls; i++ ) {
 
-			if ( DEBUG ) {
+			if ( 0 ) {
 				printf("URL=%s\n", web_array[i].url ); 
-				printf("CNT=%d\n", web_array[i].link_cnt );
+				printf("CNTO=%d\n", web_array[i].link_cnt );
 				printf("WEBPAGE=%s\n", web_array[i].webpage );
 			}
 	
@@ -82,6 +82,10 @@ int main( int argc, char *argv[] ) {
 			//
 			// If one thread cannot be created (i.e. an error occurs) you may exit
 			// the entire program.
+
+			th_run(index);
+
+
 
 			
 
