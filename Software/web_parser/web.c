@@ -3,7 +3,7 @@
 // CSCI 340 - Operating Systems
 // Fall 2018
 // web.c header file
-// 
+//
 // Homework 4
 //
 // -----------------------------------
@@ -19,91 +19,90 @@
 // global variable used by the write_callback function
 size_t length = 0;
 
-
 // ------------------------------------
 // Function prototype that is used by the curl library to
-// retrieve the webpage (in the response message) and 
+// retrieve the webpage (in the response message) and
 // store in the web_t webpage field.
-// 
+//
 //
 // Arguments:	web_t pointer
 //
 // Return:     	OK on success, FAIL on error
 //
 
-size_t write_callback(void *ptr, size_t size, size_t nmemb, char** buffer ) {
+size_t write_callback(void *ptr, size_t size, size_t nmemb, char **buffer)
+{
 
 	// -------------------------------------
 	// Please do not modify this code
 	// -------------------------------------
 
-	*buffer = (char*)realloc( *buffer, ( length + size*nmemb )*sizeof( char* ) ); 
+	*buffer = (char *)realloc(*buffer, (length + size * nmemb) * sizeof(char *));
 
-	strcat( *buffer, (char*) ptr );
+	strcat(*buffer, (char *)ptr);
 
-	length += (size*nmemb);
+	length += (size * nmemb);
 
 	return size * nmemb;
 
 } // end write_callback function
 
 // ------------------------------------
-// Function prototype that connects to the web address 
+// Function prototype that connects to the web address
 // specified in the web_t url field and retrieves
 // the html webpage (using the curl c-library)
-// 
+//
 //
 // Arguments:	web_t pointer
 //
 // Return:     	OK on success, FAIL on error
 //
 
-int get_webpage( web_t* web_struct ) {
+int get_webpage(web_t *web_struct)
+{
 
 	// -------------------------------------
 	// Please do not modify this code
 	// -------------------------------------
 
 	CURL *curl;
-  	CURLcode error_code = FAIL;
+	CURLcode error_code = FAIL;
 
 	length = 0;
 
-  	curl = curl_easy_init();
+	curl = curl_easy_init();
 
-  	if ( curl ) {
+	if (curl)
+	{
 
-	    	web_struct->webpage = malloc( sizeof( char ) * length );
+		web_struct->webpage = malloc(sizeof(char) * length);
 
-	    	curl_easy_setopt(curl, CURLOPT_URL, web_struct->url );
-	    	curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-	    	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-	    	curl_easy_setopt(curl, CURLOPT_WRITEDATA, &web_struct->webpage );
-	 
-	    	error_code = curl_easy_perform( curl );
+		curl_easy_setopt(curl, CURLOPT_URL, web_struct->url);
+		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &web_struct->webpage);
 
-		curl_easy_cleanup( curl );
+		error_code = curl_easy_perform(curl);
 
+		curl_easy_cleanup(curl);
 	}
-    
-	return ( error_code == OK ) ? OK : FAIL;
+
+	return (error_code == OK) ? OK : FAIL;
 
 } // end get_response function
 
-
-
 // ------------------------------------
-// Function prototype that parses webpage/URL 
+// Function prototype that parses webpage/URL
 // pointed at by client socket
-// 
+//
 //
 // Arguments:	web_t pointer
 //
 // Return:     	OK on success, FAIL on error
 //
-void parse( web_t* web_struct ) {
+void parse(web_t *web_struct)
+{
 
-	
 	// -----------------------------------------
 	// TODO:
 	// -----------------------------------------
@@ -115,33 +114,61 @@ void parse( web_t* web_struct ) {
 	//
 	// An example (from the usatoday website)
 	// href="/story/news/politics/2018/10/23/donald-trump-looks-ahead-life-after-midterms/1732675002/"
-	// 
+	//
 	// If the word "trump" is in the href string, then
-	// the entire href string value is added to the links 
+	// the entire href string value is added to the links
 	// array and the link_cnt field (also in the web_t struct)
 	// is incremented by one.
-	// 
+	//
 	// Pseudocode example,
 	// links[ link_cnt++ ]="/story/news/politics/2018/10/23/donald-trump-looks-ahead-life-after-midterms/1732675002/"
 	//
 	// Note: you will need to malloc the links array
 
-	char * an_href = strstr(web_struct->webpage, "href");
-	char parse_text[200];
-	strncpy(parse_text, an_href, 200); 
-	char * quote_begin = strchr(parse_text, '"') + 1;
-	
-	char * quote_end = strchr(quote_begin, '"');
-	int link_length = quote_end - quote_begin;
-	char link[link_length];
-	strncpy(link, quote_begin, link_length);
-	link[link_length] = '\0';
+	//find href
+	web_struct->links = malloc(sizeof(char) * 20000);
+	//char *an_href = strstr(web_struct->webpage, "href");
 
-	if ( WEB_DEBUG ) {
-		printf("MYQUOTES: href: %s, link: %s, length: %d \n", parse_text, link, link_length);
-		printf("URL=%s\n", web_struct->url ); 
-		printf("CNT=%d\n", web_struct->link_cnt );
-		printf("WEBPAGE=%s\n", web_struct->webpage );
+	for (char *an_href = strstr(web_struct->webpage, "href"); an_href != NULL; an_href = strstr(web_struct->webpage, "href"))
+	{
+		//grab text after href to find link in
+		char href_chunk[200];
+		strncpy(href_chunk, an_href, 200);
+		href_chunk[200] = '\0';
+
+		//find delimiting quotes
+		char *quote_begin = strchr(href_chunk, '"') + 1;
+		char * quote_end = malloc(strlen(web_struct->webpage));
+		quote_end = strchr(quote_begin, '"');
+
+		//parse out link text
+		int link_length = quote_end - quote_begin;
+		char link[link_length];
+		strncpy(link, quote_begin, link_length);
+		link[link_length] = '\0';
+
+		if (strstr(link, "trump") != NULL)
+		{
+			printf("found a trump\n");
+			web_struct->links[web_struct->link_cnt++] = link;
+		}
+
+		//strncpy(web_struct->webpage, quote_end, strlen(web_struct->webpage) - (quote_end - web_struct->webpage));
+		//web_struct->webpage[strlen(web_struct->webpage)] = '\0';
+		web_struct->webpage = quote_end;
+	
+
+		if (WEB_DEBUG)
+		{
+			for (int i = 0; i < web_struct->link_cnt; i++)
+			{
+				printf("ALINK: %s\n", web_struct->links[i]);
+			}
+			printf("MYLINK: %s\n", link);
+			printf("URL=%s\n", web_struct->url);
+			printf("CNT=%d\n", web_struct->link_cnt);
+			printf("WEBPAGE=%s\n", web_struct->webpage);
+		}
 	}
 
 } // end parse function
