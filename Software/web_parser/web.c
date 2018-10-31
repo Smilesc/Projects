@@ -127,7 +127,7 @@ void parse(web_t *web_struct)
 
 	//find href
 	web_struct->links = malloc(sizeof(char) * 20000);
-	//char *link_start = strstr(web_struct->webpage, "href");
+
 	char *link_start;
 	while (1)
 	{
@@ -135,12 +135,13 @@ void parse(web_t *web_struct)
 		if (link_start != NULL)
 		{
 			link_start += 6;
+
 			//grab text after href to find link in
 			char href_chunk[200];
 			strncpy(href_chunk, link_start, 200);
 			href_chunk[200] = '\0';
 
-			//find delimiting quotes
+			//find end of link
 			char * quote_end = strchr(link_start, '"');
 
 			//parse out link text
@@ -153,25 +154,9 @@ void parse(web_t *web_struct)
 			{
 				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 300);
 				strcpy(web_struct->links[web_struct->link_cnt++], link);
-				//printf("ALINK: %s\n", web_struct->links[web_struct->link_cnt - 1]);
-				//printf("CNT=%d\n", web_struct->link_cnt);
 			}
 
-			//strncpy(web_struct->webpage, quote_end, strlen(web_struct->webpage) - (quote_end - web_struct->webpage));
-			//web_struct->webpage[strlen(web_struct->webpage)] = '\0';
 			web_struct->webpage = quote_end;
-
-			if (WEB_DEBUG)
-			{
-				// for (int i = 0; i < web_struct->link_cnt; i++)
-				// {
-				// 	printf("ALINK: %s\n", web_struct->links[i]);
-				// }
-				// printf("MYLINK: %s\n", link);
-				//printf("URL=%s\n", web_struct->url);
-				// printf("CNT=%d\n", web_struct->link_cnt);
-				//printf("WEBPAGE=%s\n", web_struct->webpage);
-			}
 		}
 		else
 		{
