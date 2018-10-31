@@ -83,7 +83,11 @@ int main( int argc, char *argv[] ) {
 			// If one thread cannot be created (i.e. an error occurs) you may exit
 			// the entire program.
 
+			//pthread_create();
 			th_run(index);
+
+			//pthread_join();
+			printf("%d\n", i);
 
 
 

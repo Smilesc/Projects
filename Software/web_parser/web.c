@@ -127,47 +127,54 @@ void parse(web_t *web_struct)
 
 	//find href
 	web_struct->links = malloc(sizeof(char) * 20000);
-	//char *an_href = strstr(web_struct->webpage, "href");
-
-	for (char *an_href = strstr(web_struct->webpage, "href"); an_href != NULL; an_href = strstr(web_struct->webpage, "href"))
+	//char *link_start = strstr(web_struct->webpage, "href");
+	char *link_start;
+	while (1)
 	{
-		//grab text after href to find link in
-		char href_chunk[200];
-		strncpy(href_chunk, an_href, 200);
-		href_chunk[200] = '\0';
-
-		//find delimiting quotes
-		char *quote_begin = strchr(href_chunk, '"') + 1;
-		char * quote_end = malloc(strlen(web_struct->webpage));
-		quote_end = strchr(quote_begin, '"');
-
-		//parse out link text
-		int link_length = quote_end - quote_begin;
-		char link[link_length];
-		strncpy(link, quote_begin, link_length);
-		link[link_length] = '\0';
-
-		if (strstr(link, "trump") != NULL)
+		link_start = strstr(web_struct->webpage, "href=");
+		if (link_start != NULL)
 		{
-			printf("found a trump\n");
-			web_struct->links[web_struct->link_cnt++] = link;
-		}
+			link_start += 6;
+			//grab text after href to find link in
+			char href_chunk[200];
+			strncpy(href_chunk, link_start, 200);
+			href_chunk[200] = '\0';
 
-		//strncpy(web_struct->webpage, quote_end, strlen(web_struct->webpage) - (quote_end - web_struct->webpage));
-		//web_struct->webpage[strlen(web_struct->webpage)] = '\0';
-		web_struct->webpage = quote_end;
-	
+			//find delimiting quotes
+			char * quote_end = strchr(link_start, '"');
 
-		if (WEB_DEBUG)
-		{
-			for (int i = 0; i < web_struct->link_cnt; i++)
+			//parse out link text
+			int link_length = quote_end - link_start;
+			char link[link_length];
+			strncpy(link, link_start, link_length);
+			link[link_length] = '\0';
+
+			if (strstr(link, "trump") != NULL)
 			{
-				printf("ALINK: %s\n", web_struct->links[i]);
+				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 200);
+				strcpy(web_struct->links[web_struct->link_cnt++], link);
+				printf("ALINK: %s\n", web_struct->links[web_struct->link_cnt - 1]);
 			}
-			printf("MYLINK: %s\n", link);
-			printf("URL=%s\n", web_struct->url);
-			printf("CNT=%d\n", web_struct->link_cnt);
-			printf("WEBPAGE=%s\n", web_struct->webpage);
+
+			//strncpy(web_struct->webpage, quote_end, strlen(web_struct->webpage) - (quote_end - web_struct->webpage));
+			//web_struct->webpage[strlen(web_struct->webpage)] = '\0';
+			web_struct->webpage = quote_end;
+
+			if (WEB_DEBUG)
+			{
+				// for (int i = 0; i < web_struct->link_cnt; i++)
+				// {
+				// 	printf("ALINK: %s\n", web_struct->links[i]);
+				// }
+				// printf("MYLINK: %s\n", link);
+				printf("URL=%s\n", web_struct->url);
+				// printf("CNT=%d\n", web_struct->link_cnt);
+				// printf("WEBPAGE=%s\n", web_struct->webpage);
+			}
+		}
+		else
+		{
+			break;
 		}
 	}
 
