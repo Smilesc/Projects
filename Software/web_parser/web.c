@@ -7,7 +7,7 @@
 // Homework 4
 //
 // -----------------------------------
-
+#define _GNU_SOURCE
 #include <string.h>
 #include <stdio.h>
 #include <netdb.h>
@@ -149,11 +149,12 @@ void parse(web_t *web_struct)
 			strncpy(link, link_start, link_length);
 			link[link_length] = '\0';
 
-			if (strstr(link, "trump") != NULL)
+			if (strcasestr(link, "trump") != NULL)
 			{
-				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 200);
+				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 300);
 				strcpy(web_struct->links[web_struct->link_cnt++], link);
-				printf("ALINK: %s\n", web_struct->links[web_struct->link_cnt - 1]);
+				//printf("ALINK: %s\n", web_struct->links[web_struct->link_cnt - 1]);
+				//printf("CNT=%d\n", web_struct->link_cnt);
 			}
 
 			//strncpy(web_struct->webpage, quote_end, strlen(web_struct->webpage) - (quote_end - web_struct->webpage));
@@ -167,9 +168,9 @@ void parse(web_t *web_struct)
 				// 	printf("ALINK: %s\n", web_struct->links[i]);
 				// }
 				// printf("MYLINK: %s\n", link);
-				printf("URL=%s\n", web_struct->url);
+				//printf("URL=%s\n", web_struct->url);
 				// printf("CNT=%d\n", web_struct->link_cnt);
-				// printf("WEBPAGE=%s\n", web_struct->webpage);
+				//printf("WEBPAGE=%s\n", web_struct->webpage);
 			}
 		}
 		else

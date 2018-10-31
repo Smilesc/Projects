@@ -67,10 +67,10 @@ int main( int argc, char *argv[] ) {
 
 		for ( i=0; i<num_urls; i++ ) {
 
-			if ( 0 ) {
+			if ( !DEBUG ) {
 				printf("URL=%s\n", web_array[i].url ); 
 				printf("CNTO=%d\n", web_array[i].link_cnt );
-				printf("WEBPAGE=%s\n", web_array[i].webpage );
+				//printf("WEBPAGE=%s\n", web_array[i].webpage );
 			}
 	
 			index[i] = i;
@@ -82,12 +82,15 @@ int main( int argc, char *argv[] ) {
 			//
 			// If one thread cannot be created (i.e. an error occurs) you may exit
 			// the entire program.
-
-			if(!pthread_create(thread_array[i], NULL, th_run, index)){
-				exit(1);
+		// 	th_run(index);
+		// }
+			//printf("ABOUOT TO DO THREADS\n");
+			void * thread_run = &th_run;
+			if(!(pthread_create(&thread_array[i], NULL, thread_run, &index[i]) == OK)){
+				printf("Thread create failed: %d \n", i);
+				exit(-1);
 			}
-
-			//th_run(index);
+			
 			printf("%d\n", i);
 	
 		}
@@ -99,8 +102,8 @@ int main( int argc, char *argv[] ) {
 		// the entire program.
 		for(int i = 0; i < num_urls; i++)
 		{
-			if(!(pthread_join(thread_array[i], NULL))){
-				exit(1);
+			if(!(pthread_join(thread_array[i], NULL) == OK)){
+				exit(-2);
 			}
 
 		}
@@ -180,22 +183,24 @@ int write_url_file( char* file_path, web_t* web_array, int num_urls ) {
 	//      .
 	//
 
+	FILE * file = fopen(file_path, "w");
 
-	//TODO: return FAIL on error
-	FILE * file = fopen(file_path, "a");
+	if (!(file == OK))
+	{
+		return FAIL;
+	}
 
 	for(int i = 0; i < num_urls; i++)
 	{
-		for(int j; j < sizeof(web_array); j++)
+		for(int j = 0; j < (web_array + i)->link_cnt; j++)
 		{
-			fprintf(file, "%s, %s \n", web_array->links[j], file_path);
+			//printf("MU FILE STUFF: %s, %s \n", (web_array + i)->url, (web_array + i)->links[j]);
+			web_t * my_web_struct = &web_array[i];
+			fprintf(file, "%s, %s \n", (web_array + i)->url, (web_array + i)->links[j]);
 		}
 	}
 
 	fclose(file);
-
-
-	
 
 	return OK;
 
