@@ -83,19 +83,13 @@ int main( int argc, char *argv[] ) {
 			// If one thread cannot be created (i.e. an error occurs) you may exit
 			// the entire program.
 
-			//pthread_create();
-			th_run(index);
+			if(!pthread_create(thread_array[i], NULL, th_run, index)){
+				exit(1);
+			}
 
-			//pthread_join();
+			//th_run(index);
 			printf("%d\n", i);
-
-
-
-			
-
-
-
-			
+	
 		}
 
 		// -------------------------------------------------------------
@@ -103,7 +97,13 @@ int main( int argc, char *argv[] ) {
 		//
 		// If one thread cannot be joined (i.e. an error occurs) you may exit
 		// the entire program.
+		for(int i = 0; i < num_urls; i++)
+		{
+			if(!(pthread_join(thread_array[i], NULL))){
+				exit(1);
+			}
 
+		}
 		
 
 		// -------------------------------------------------------------
@@ -111,8 +111,7 @@ int main( int argc, char *argv[] ) {
 		// Note: please do not change this file name (used for testing purposes)
 		// output file name = "make_merica_great_again.txt"
 		
-		
-		
+		write_url_file("make_merica_great_again.txt", web_array, num_urls);
 
 	} else {
 
@@ -180,6 +179,21 @@ int write_url_file( char* file_path, web_t* web_array, int num_urls ) {
 	//	.
 	//      .
 	//
+
+
+	//TODO: return FAIL on error
+	FILE * file = fopen(file_path, "a");
+
+	for(int i = 0; i < num_urls; i++)
+	{
+		for(int j; j < sizeof(web_array); j++)
+		{
+			fprintf(file, "%s, %s \n", web_array->links[j], file_path);
+		}
+	}
+
+	fclose(file);
+
 
 	
 
