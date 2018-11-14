@@ -78,51 +78,91 @@ void scheduler()
 	// Very simple, run min-heapify on
 	// linked list to create priority
 	// queue
-	int i = 0;
-	job_t *smallest;
-	int smallest_index;
 
-	while (i <= pq_size)
-	{
-		job_t *current = get_list_element_(i);
-		job_t *left = get_list_element_((2 * i) + 1);
-		job_t *right = get_list_element_((2 * i) + 2);
 
-		int left_index = (2 * i) + 1;
-		int right_index = (2 * i) + 2;
+	// int i = 0;
+	// job_t *smallest;
+	// int smallest_index;
+	
+	// while (i <= pq_size)
+	// {
+	// 	job_t *current = get_list_element_(i);
+	// 	job_t *left = get_list_element_((2 * i) + 1);
+	// 	job_t *right = get_list_element_((2 * i) + 2);
 
-		//job_t * smallest = current;
+	// 	int left_index = (2 * i) + 1;
+	// 	int right_index = (2 * i) + 2;
 
-		if (left->srt < current->srt)
-		{
-			smallest = left;
-			smallest_index = left_index;
+	// 	//job_t * smallest = current;
+
+	// 	if (right->srt < current->srt)
+	// 	{
+	// 		smallest = right;
+	// 		smallest_index = right_index;
+	// 	}
+	// 	else
+	// 	{
+	// 		smallest = current;
+	// 		smallest_index = i;
+	// 	}
+
+	// 	if (left->srt < get_list_element_(smallest_index)->srt)
+	// 	{
+	// 		smallest = left;
+	// 		smallest_index = left_index;
+	// 	}
+	// 	if (smallest_index != i)
+	// 	{
+	// 		job_t *temp = current;
+
+	// 		current = smallest;
+	// 		smallest = temp;
+
+	// 		//i = smallest_index;
+	// 	}
+	// 	else
+	// 	{
+	// 		break;
+	// 	}
+	// }
+
+	//printf("pq_size: %d\n", pq_size);
+	int i;
+	for(i = floor((pq_size + 1)/2); i >= 1;){
+		int k = i;
+		job_t * v = get_list_element_(i);
+		int heap = 0;
+		printf("in first for \n");
+		
+		while(heap != 1 && (2 * k) <= pq_size){
+			int j = 2 * k;
+			printf("in while \n");
+
+			if(j < pq_size){ //if there are two children
+				printf("in first if \n");
+				printf("j: %d\n", j);
+				if(get_list_element_(j)->srt < get_list_element_(j + 1)->srt){
+					printf("in second if\n");
+					j = j + 1;
+				}
+			}
+			if(v >= get_list_element_(j)){
+				printf("in third if \n");
+				heap = 1;
+			}
+			else{
+				printf("in else\n");
+				job_t * temp = get_list_element_(k); //maybe a temp would fix this?
+				get_list_element_(k) = get_list_element_(j); //this is the direct translation
+				printf("after pointer assignment\n");
+				k = j;
+			}
 		}
-		else
-		{
-			smallest = current;
-			smallest_index = i;
-		}
-
-		if (right->srt > get_list_element_(smallest_index)->srt)
-		{
-			smallest = right;
-			smallest_index = right_index;
-		}
-		if (smallest_index != i)
-		{
-			job_t *temp = current;
-
-			current = smallest;
-			smallest = temp;
-
-			i = smallest_index;
-		}
-		else
-		{
-			break;
-		}
+		printf("out of while\n");
+		* get_list_element_(k) = * v;
 	}
+	pq_head = get_list_element_(0);
+	pq_tail = get_list_element_(pq_size);
 
 } // end scheduler function
 
@@ -146,7 +186,8 @@ void dispatcher()
 	// cannot remove a job from priority queue:
 	// 	- if it is empty
 	// 	- if cpu or forker is adding a job
-
+	scheduler();
+	print_pq();
 	while (TRUE)
 	{
 
