@@ -93,7 +93,7 @@ void scheduler()
 
 		//job_t * smallest = current;
 
-		if ((left_index <= pq_size) && (left < current))
+		if (left->srt < current->srt)
 		{
 			smallest = left;
 			smallest_index = left_index;
@@ -104,7 +104,7 @@ void scheduler()
 			smallest_index = i;
 		}
 
-		if ((right <= pq_size) && (right > get_list_element_(smallest_index)))
+		if (right->srt > get_list_element_(smallest_index)->srt)
 		{
 			smallest = right;
 			smallest_index = right_index;
@@ -116,7 +116,7 @@ void scheduler()
 			current = smallest;
 			smallest = temp;
 
-			i = smallest;
+			i = smallest_index;
 		}
 		else
 		{
