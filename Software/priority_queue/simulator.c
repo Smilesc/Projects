@@ -80,87 +80,58 @@ void scheduler()
 	// queue
 
 
-	// int i = 0;
-	// job_t *smallest;
-	// int smallest_index;
-	
-	// while (i <= pq_size)
-	// {
-	// 	job_t *current = get_list_element_(i);
-	// 	job_t *left = get_list_element_((2 * i) + 1);
-	// 	job_t *right = get_list_element_((2 * i) + 2);
-
-	// 	int left_index = (2 * i) + 1;
-	// 	int right_index = (2 * i) + 2;
-
-	// 	//job_t * smallest = current;
-
-	// 	if (right->srt < current->srt)
-	// 	{
-	// 		smallest = right;
-	// 		smallest_index = right_index;
-	// 	}
-	// 	else
-	// 	{
-	// 		smallest = current;
-	// 		smallest_index = i;
-	// 	}
-
-	// 	if (left->srt < get_list_element_(smallest_index)->srt)
-	// 	{
-	// 		smallest = left;
-	// 		smallest_index = left_index;
-	// 	}
-	// 	if (smallest_index != i)
-	// 	{
-	// 		job_t *temp = current;
-
-	// 		current = smallest;
-	// 		smallest = temp;
-
-	// 		//i = smallest_index;
-	// 	}
-	// 	else
-	// 	{
-	// 		break;
-	// 	}
-	// }
-
 	//printf("pq_size: %d\n", pq_size);
 	int i;
-	for(i = floor((pq_size + 1)/2); i >= 1;){
+	for(i = floor(pq_size/2); i >= 0; i--){
+		//printf("i = %d\n", i);
 		int k = i;
-		job_t * v = get_list_element_(i);
+		int v = get_list_element_(k)->srt;
 		int heap = 0;
-		printf("in first for \n");
 		
-		while(heap != 1 && (2 * k) <= pq_size){
-			int j = 2 * k;
-			printf("in while \n");
+		while(heap != 1 && (2 * k + 1) <= pq_size){
+			int j = 2 * k + 1;
 
 			if(j < pq_size){ //if there are two children
-				printf("in first if \n");
-				printf("j: %d\n", j);
-				if(get_list_element_(j)->srt < get_list_element_(j + 1)->srt){
-					printf("in second if\n");
+
+				if(get_list_element_(j)->srt >= get_list_element_(j + 1)->srt){
+
 					j = j + 1;
 				}
 			}
-			if(v >= get_list_element_(j)){
-				printf("in third if \n");
+			if(v <= get_list_element_(j)->srt){
 				heap = 1;
 			}
 			else{
-				printf("in else\n");
-				job_t * temp = get_list_element_(k); //maybe a temp would fix this?
-				get_list_element_(k) = get_list_element_(j); //this is the direct translation
-				printf("after pointer assignment\n");
+				//printf("in else\n");
+
+				job_t * temp = malloc(sizeof(job_t *));
+
+				job_t * k_point = get_list_element_(k);
+				job_t * j_point = get_list_element_(j);
+
+				temp->e_time = k_point->e_time;
+				temp->s_time = k_point->s_time;
+				temp->srt = k_point->srt;
+
+				k_point->e_time = j_point->e_time;
+				k_point->s_time = j_point->s_time;
+				k_point->srt = j_point->srt;	
+
+				j_point->e_time = temp->e_time;
+				j_point->s_time = temp->s_time;
+				j_point->srt = temp->srt;	
+
+				printf("j is %d, k is %d, switched %d and %d\n\n", j,k,j_point->srt, k_point->srt);
 				k = j;
+				
 			}
+			//printf("loop\n");
 		}
-		printf("out of while\n");
-		* get_list_element_(k) = * v;
+		//printf("out of while\n");
+		//* get_list_element_(k) = * v;
+		get_list_element_(k)->srt = v;
 	}
+	printf("out of for\n");
 	pq_head = get_list_element_(0);
 	pq_tail = get_list_element_(pq_size);
 
@@ -292,23 +263,22 @@ void forker()
 //
 job_t *get_list_element_(int index_position)
 {
-
 	// --------------------------------
 	// TODO: Add code here
 	// --------------------------------
-	if (index_position < 0 || index_position < pq_size || index_position > pq_size)
+	if (index_position < 0 || index_position > pq_size)
 	{
 		return NULL;
 	}
-
 	//starts at priority queue head
-	job_t *current_index = pq_head;
+	job_t *current_index = malloc(sizeof(job_t *));
+	current_index = pq_head;
 
 	int i;
 	//increments pointer to index_position
 	for (i = 0; i < index_position; i++)
 	{
-		current_index++;
+		current_index = current_index->next;
 	}
 
 	return current_index;
@@ -364,7 +334,6 @@ void print_pq()
 
 		if (DEBUG)
 		{
-
 			printf("--------------------------\n");
 			printf("job_t[%d]->e_time = %d\n", ++count, job->e_time);
 			printf("job_t[%d]->s_time = %d\n", count, job->s_time);
