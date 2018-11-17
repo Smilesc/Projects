@@ -8,6 +8,7 @@
 // -----------------------------------
 
 #include "simulator.h"
+#include <semaphore.h>
 
 // ------------------------------------
 // Function that initializes the simulator
@@ -56,6 +57,12 @@ void initialize()
 	// ----------------------------------------------
 	// TODO: Initialize your locking variables here
 
+	add_to_pq = malloc(sizeof(sem_t));
+	scheduler_lock = malloc(sizeof(sem_t));
+
+	sem_init(add_to_pq, 0, 1);
+	sem_init(scheduler_lock, 0, 1);
+
 } // end initialize function
 
 // ------------------------------------
@@ -80,10 +87,9 @@ void scheduler()
 	// queue
 
 
-	//printf("pq_size: %d\n", pq_size);
 	int i;
 	for(i = floor(pq_size/2); i >= 0; i--){
-		//printf("i = %d\n", i);
+
 		int k = i;
 		int v = get_list_element_(k)->srt;
 		int heap = 0;
@@ -102,7 +108,6 @@ void scheduler()
 				heap = 1;
 			}
 			else{
-				//printf("in else\n");
 
 				job_t * temp = malloc(sizeof(job_t *));
 
@@ -121,14 +126,10 @@ void scheduler()
 				j_point->s_time = temp->s_time;
 				j_point->srt = temp->srt;	
 
-				printf("j is %d, k is %d, switched %d and %d\n\n", j,k,j_point->srt, k_point->srt);
 				k = j;
 				
 			}
-			//printf("loop\n");
 		}
-		//printf("out of while\n");
-		//* get_list_element_(k) = * v;
 		get_list_element_(k)->srt = v;
 	}
 	printf("out of for\n");
@@ -155,11 +156,10 @@ void dispatcher()
 	// concurrency constraints
 	// -------------------------
 	// cannot remove a job from priority queue:
-	// 	- if it is empty
-	// 	- if cpu or forker is adding a job
-	scheduler();
-	print_pq();
-	while (TRUE)
+	// 	- if it is empty - DONE
+	// 	- if cpu or forker is adding a job - DONE
+	
+	while (TRUE && pq_size != 0)
 	{
 
 		// --------------------------------
@@ -169,6 +169,21 @@ void dispatcher()
 		// 2. remove job from priority queue (update pq_size)
 		// 3. hand job off to cpu (set cpu_job equal to job)
 		// 4. goto (1) and repeat
+
+		sem_wait(scheduler_lock);	
+		scheduler();
+		sem_post(scheduler_lock);
+
+		sem_wait(add_to_pq);
+		job_t * new_head = pq_head->next;
+		job_t * old_head = pq_head;
+		pq_head = new_head;
+
+		pq_size--;
+		sem_post(add_to_pq);
+
+		cpu_job = old_head;
+		print_pq();
 	}
 
 } // end dispatcher function
@@ -192,11 +207,11 @@ void cpu()
 	// concurrency constraints
 	// -------------------------
 	// cannot add job to priority queue:
-	// 	- if it is full
-	// 	- if dispatcher is running scheduler to remove next job
+	// 	- if it is full - DONE
+	// 	- if dispatcher is running scheduler to remove next job - DONE
 	// 	- if forker is adding a job
 
-	while (TRUE)
+	while (TRUE && pq_size < MAX_JOBS)
 	{
 
 		// --------------------------------
@@ -209,6 +224,24 @@ void cpu()
 		// 2.b. if cpu_job is finished (srt==0)
 		//      free job_t malloc'd memory
 		// 3. goto (1) and repeat
+
+		//run cpu job
+		cpu_job->e_time++;
+		cpu_job->srt--;
+
+		if(cpu_job->srt > 0){
+			sem_wait(add_to_pq);
+			sem_wait(scheduler_lock);
+			pq_tail->next = cpu_job;
+			pq_tail = cpu_job;
+			pq_size++;
+			sem_post(scheduler_lock);
+			sem_post(add_to_pq);
+		}
+		else{
+			free(cpu_job);
+		}
+
 	}
 
 } // end cpu function
@@ -232,7 +265,7 @@ void forker()
 	// 	- if dispatcher is running scheduler to remove next job
 	// 	- if cpu is adding a job
 
-	while (TRUE)
+	while (TRUE && pq_size < MAX_JOBS)
 	{
 
 		// --------------------------------
@@ -245,6 +278,20 @@ void forker()
 		// 2. add job to linked list (update list_size)
 		// 3. sleep for nanoseconds (you determine)
 		// 4. goto (1) and repeat
+
+		job_t * new_job;
+		new_job = malloc(sizeof(job_t));
+		new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME + 1);
+		new_job->e_time = ZERO;
+		new_job->srt = (new_job->s_time - new_job->e_time);
+
+		sem_wait(add_to_pq);
+		pq_tail->next = new_job;
+		pq_tail = new_job;
+		pq_size++;
+		sem_post(add_to_pq);
+
+		nsleep(10);
 	}
 
 } // end forker
