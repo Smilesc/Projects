@@ -44,7 +44,7 @@ void initialize()
 
 		job->next = malloc(sizeof(job_t));
 		job = job->next;
-		job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME + 1);
+		job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
 		job->e_time = ZERO;
 		job->srt = (job->s_time - job->e_time);
 
@@ -59,9 +59,21 @@ void initialize()
 
 	add_to_pq = malloc(sizeof(sem_t));
 	scheduler_lock = malloc(sizeof(sem_t));
+	isEmpty = malloc(sizeof(sem_t));
+	isFull = malloc(sizeof(sem_t));
+	dispatch_run = malloc(sizeof(sem_t));
+	dispatch_allowance = malloc(sizeof(sem_t));
+	cpu_allowance = malloc(sizeof(sem_t));
+
+
 
 	sem_init(add_to_pq, 0, 1);
 	sem_init(scheduler_lock, 0, 1);
+	sem_init(isEmpty, 0, INITIAL_JOBS);
+	sem_init(isFull, 0, MAX_JOBS - INITIAL_JOBS);
+	//sem_init(dispatch_run, 0, 0);
+	sem_init(cpu_allowance, 0, 0);
+	sem_init(dispatch_allowance, 0, 1);
 
 } // end initialize function
 
@@ -86,33 +98,38 @@ void scheduler()
 	// linked list to create priority
 	// queue
 
-
 	int i;
-	for(i = floor(pq_size/2); i >= 0; i--){
+	for (i = floor(pq_size / 2); i >= 0; i--)
+	{
 
 		int k = i;
 		int v = get_list_element_(k)->srt;
 		int heap = 0;
-		
-		while(heap != 1 && (2 * k + 1) <= pq_size){
+
+		while (heap != 1 && (2 * k + 1) <= pq_size)
+		{
 			int j = 2 * k + 1;
 
-			if(j < pq_size){ //if there are two children
+			if (j < pq_size)
+			{ //if there are two children
 
-				if(get_list_element_(j)->srt >= get_list_element_(j + 1)->srt){
+				if (get_list_element_(j)->srt >= get_list_element_(j + 1)->srt)
+				{
 
 					j = j + 1;
 				}
 			}
-			if(v <= get_list_element_(j)->srt){
+			if (v <= get_list_element_(j)->srt)
+			{
 				heap = 1;
 			}
-			else{
+			else
+			{
 
-				job_t * temp = malloc(sizeof(job_t *));
+				job_t *temp = malloc(sizeof(job_t *));
 
-				job_t * k_point = get_list_element_(k);
-				job_t * j_point = get_list_element_(j);
+				job_t *k_point = get_list_element_(k);
+				job_t *j_point = get_list_element_(j);
 
 				temp->e_time = k_point->e_time;
 				temp->s_time = k_point->s_time;
@@ -120,19 +137,18 @@ void scheduler()
 
 				k_point->e_time = j_point->e_time;
 				k_point->s_time = j_point->s_time;
-				k_point->srt = j_point->srt;	
+				k_point->srt = j_point->srt;
 
 				j_point->e_time = temp->e_time;
 				j_point->s_time = temp->s_time;
-				j_point->srt = temp->srt;	
+				j_point->srt = temp->srt;
 
 				k = j;
-				
 			}
 		}
 		get_list_element_(k)->srt = v;
 	}
-	printf("out of for\n");
+
 	pq_head = get_list_element_(0);
 	pq_tail = get_list_element_(pq_size);
 
@@ -158,8 +174,8 @@ void dispatcher()
 	// cannot remove a job from priority queue:
 	// 	- if it is empty - DONE
 	// 	- if cpu or forker is adding a job - DONE
-	
-	while (TRUE && pq_size != 0)
+
+	while (TRUE)
 	{
 
 		// --------------------------------
@@ -170,20 +186,28 @@ void dispatcher()
 		// 3. hand job off to cpu (set cpu_job equal to job)
 		// 4. goto (1) and repeat
 
-		sem_wait(scheduler_lock);	
-		scheduler();
-		sem_post(scheduler_lock);
+		sem_wait(dispatch_allowance);
+		printf("dispatcher: start\n");
 
+		sem_wait(isEmpty);
 		sem_wait(add_to_pq);
-		job_t * new_head = pq_head->next;
-		job_t * old_head = pq_head;
-		pq_head = new_head;
+
+		scheduler();
+		print_pq();
+
+		job_t *old_head = pq_head;
+		
+		pq_head = pq_head->next;
+
+		old_head->next = NULL;
+		cpu_job = old_head;
 
 		pq_size--;
+		sem_post(isFull);
 		sem_post(add_to_pq);
 
-		cpu_job = old_head;
-		print_pq();
+		printf("dispatcher: finish\n");
+		sem_post(cpu_allowance);
 	}
 
 } // end dispatcher function
@@ -208,10 +232,10 @@ void cpu()
 	// -------------------------
 	// cannot add job to priority queue:
 	// 	- if it is full - DONE
-	// 	- if dispatcher is running scheduler to remove next job - DONE
+	// 	- if dispatcher is running scheduler to remove next job
 	// 	- if forker is adding a job
 
-	while (TRUE && pq_size < MAX_JOBS)
+	while (TRUE)
 	{
 
 		// --------------------------------
@@ -224,25 +248,40 @@ void cpu()
 		// 2.b. if cpu_job is finished (srt==0)
 		//      free job_t malloc'd memory
 		// 3. goto (1) and repeat
+		//printf("trying cpu\n");
+		if (pq_size > 0)
+		{
+			sem_wait(cpu_allowance);
+			printf("cpu: start\n");
 
-		//run cpu job
-		cpu_job->e_time++;
-		cpu_job->srt--;
-
-		if(cpu_job->srt > 0){
+			sem_wait(isFull);
 			sem_wait(add_to_pq);
-			sem_wait(scheduler_lock);
-			pq_tail->next = cpu_job;
-			pq_tail = cpu_job;
-			pq_size++;
-			sem_post(scheduler_lock);
-			sem_post(add_to_pq);
-		}
-		else{
-			free(cpu_job);
-		}
 
+			cpu_job->e_time++;
+			cpu_job->srt--;
+
+			if (cpu_job->srt > 0)
+			{
+				printf("\n\nadding job to end of queue\n");
+				pq_tail->next = cpu_job;
+				printf("pq_tail srt: %d\n", pq_tail->srt);
+				pq_tail = cpu_job;
+				printf("pq_tail job after, srt: %d\n\n", pq_tail->srt);
+				pq_size++;
+			}
+			else
+			{
+				free(cpu_job);
+			}
+
+			sem_post(isEmpty);
+			sem_post(add_to_pq);
+			sem_post(dispatch_allowance);
+		}
+		printf("cpu: finish\n");
 	}
+
+	
 
 } // end cpu function
 
@@ -265,7 +304,7 @@ void forker()
 	// 	- if dispatcher is running scheduler to remove next job
 	// 	- if cpu is adding a job
 
-	while (TRUE && pq_size < MAX_JOBS)
+	while (TRUE)
 	{
 
 		// --------------------------------
@@ -279,19 +318,27 @@ void forker()
 		// 3. sleep for nanoseconds (you determine)
 		// 4. goto (1) and repeat
 
-		job_t * new_job;
-		new_job = malloc(sizeof(job_t));
-		new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME + 1);
-		new_job->e_time = ZERO;
-		new_job->srt = (new_job->s_time - new_job->e_time);
+		// printf("forker: start\n");
 
-		sem_wait(add_to_pq);
-		pq_tail->next = new_job;
-		pq_tail = new_job;
-		pq_size++;
-		sem_post(add_to_pq);
+		// job_t *new_job;
+		// new_job = malloc(sizeof(job_t));
+		// new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
+		// new_job->e_time = ZERO;
+		// new_job->srt = (new_job->s_time - new_job->e_time);
 
-		nsleep(10);
+		// //sem_wait(scheduler_lock);
+		// sem_wait(isFull);
+		// sem_wait(add_to_pq);
+
+		// pq_tail->next = new_job;
+		// pq_tail = new_job;
+		// pq_size++;
+		// nsleep(10000);
+		// sem_post(isEmpty);
+		// sem_post(add_to_pq);
+		// //sem_post(scheduler_lock);
+
+		// printf("forker: finish\n");
 	}
 
 } // end forker
