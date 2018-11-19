@@ -61,17 +61,15 @@ void initialize()
 	scheduler_lock = malloc(sizeof(sem_t));
 	isEmpty = malloc(sizeof(sem_t));
 	isFull = malloc(sizeof(sem_t));
-	dispatch_run = malloc(sizeof(sem_t));
+	i_want_to_run = malloc(sizeof(sem_t));
 	dispatch_allowance = malloc(sizeof(sem_t));
 	cpu_allowance = malloc(sizeof(sem_t));
-
-
 
 	sem_init(add_to_pq, 0, 1);
 	sem_init(scheduler_lock, 0, 1);
 	sem_init(isEmpty, 0, INITIAL_JOBS);
 	sem_init(isFull, 0, MAX_JOBS - INITIAL_JOBS);
-	//sem_init(dispatch_run, 0, 0);
+	sem_init(i_want_to_run, 0, 1);
 	sem_init(cpu_allowance, 0, 0);
 	sem_init(dispatch_allowance, 0, 1);
 
@@ -185,29 +183,41 @@ void dispatcher()
 		// 2. remove job from priority queue (update pq_size)
 		// 3. hand job off to cpu (set cpu_job equal to job)
 		// 4. goto (1) and repeat
-
-		sem_wait(dispatch_allowance);
-		printf("dispatcher: start\n");
-
+		// if (pq_size + 1 > 0)
+		// {
 		sem_wait(isEmpty);
-		sem_wait(add_to_pq);
+		printf("dispatch: decremented isEmpty\n");
+		sem_wait(dispatch_allowance);
+		printf("dispatch: used dispatch allowance\n");
+		sem_wait(i_want_to_run);
+		printf("dispatch: set i_want_to_run\n\n");
+
+		printf("\n\n----------dispatch: begin---------\n");
 
 		scheduler();
 		print_pq();
 
 		job_t *old_head = pq_head;
-		
-		pq_head = pq_head->next;
+
+		if (pq_size + 1 > 0)
+		{
+			pq_head = pq_head->next;
+		}
 
 		old_head->next = NULL;
 		cpu_job = old_head;
 
 		pq_size--;
-		sem_post(isFull);
-		sem_post(add_to_pq);
 
-		printf("dispatcher: finish\n");
+		//printf("dispatcher: finish\n");
+		sem_post(isFull);
+		printf("dispatch: added to isFull\n");
 		sem_post(cpu_allowance);
+		printf("\ndispatch: gave cpu allowance\n");
+		sem_post(i_want_to_run);
+		printf("\ndispatch end: released i_want_to_run\n");
+
+		//}
 	}
 
 } // end dispatcher function
@@ -249,39 +259,65 @@ void cpu()
 		//      free job_t malloc'd memory
 		// 3. goto (1) and repeat
 		//printf("trying cpu\n");
-		if (pq_size > 0)
-		{
+
+		// if (pq_size + 1 > 0)
+		// {
+		sem_wait(cpu_allowance);
+		printf("cpu: used cpu allowance\n");
+		if(pq_size + 1 >= MAX_JOBS){ //not sure if == or >=
+			printf("posting early allowance\n");
+			sem_post(dispatch_allowance);
 			sem_wait(cpu_allowance);
-			printf("cpu: start\n");
+			
+		}
+		// if(cpu_job->srt != 0){
+		// 	printf("cpu_job srt: %d\n", cpu_job->srt);
+		// 	sem_wait(isFull);
+		// 	printf("cpu: after isFull\n");
+		// }
+		sem_wait(i_want_to_run);
+		printf("cpu: set i_want_to_run\n");
+		printf("----------begin cpu----------\n");
+		//printf("cpu: start\n");
 
-			sem_wait(isFull);
-			sem_wait(add_to_pq);
+		cpu_job->e_time++;
+		cpu_job->srt--;
 
-			cpu_job->e_time++;
-			cpu_job->srt--;
-
-			if (cpu_job->srt > 0)
+		if (cpu_job->srt > 0)
+		{
+			//sem_wait(isFull);
+			printf("cpu: decremented isFull\n");
+			if (pq_size + 1 > 0)
 			{
-				printf("\n\nadding job to end of queue\n");
+				printf("\nadding job to end of queue\n\n");
 				pq_tail->next = cpu_job;
-				printf("pq_tail srt: %d\n", pq_tail->srt);
 				pq_tail = cpu_job;
-				printf("pq_tail job after, srt: %d\n\n", pq_tail->srt);
-				pq_size++;
 			}
 			else
 			{
-				free(cpu_job);
+				pq_head = cpu_job;
+				pq_tail = cpu_job;
 			}
-
+			pq_size++;
 			sem_post(isEmpty);
-			sem_post(add_to_pq);
-			sem_post(dispatch_allowance);
+			printf("cpu: incremented isEmpty\n");
 		}
-		printf("cpu: finish\n");
+		else
+		{
+			printf("\nTHROW DAT BIT AWAY\n\n");
+			free(cpu_job);
+			sem_post(isFull);
+			printf("cpu: incremented isFull\n");
+		}
+
+		sem_post(dispatch_allowance);
+		printf("cpu: gave dispatch allowance\n");
+		sem_post(i_want_to_run);
+		printf("---cpu end: released i_want_to_run---\n");
 	}
 
-	
+	//printf("cpu: finish, pq_size: %d\n", pq_size + 1);
+	//}
 
 } // end cpu function
 
@@ -307,38 +343,37 @@ void forker()
 	while (TRUE)
 	{
 
-		// --------------------------------
-		// TODO: Basic algorithm
-		// --------------------------------
-		// 1. Create a new job
-		//    - s_time is a random number in [MIN_EXE_TIME MAX_EXE_TIME]
-		//    - s_time is intialized to zero
-		//	  - see initialize function for an example
-		// 2. add job to linked list (update list_size)
-		// 3. sleep for nanoseconds (you determine)
-		// 4. goto (1) and repeat
+		// 	// --------------------------------
+		// 	// TODO: Basic algorithm
+		// 	// --------------------------------
+		// 	// 1. Create a new job
+		// 	//    - s_time is a random number in [MIN_EXE_TIME MAX_EXE_TIME]
+		// 	//    - s_time is intialized to zero
+		// 	//	  - see initialize function for an example
+		// 	// 2. add job to linked list (update list_size)
+		// 	// 3. sleep for nanoseconds (you determine)
+		// 	// 4. goto (1) and repeat
+		sem_wait(isFull);
+		printf("forker: decremented isFull\n");
+		sem_wait(i_want_to_run);
+		printf("forker: set i_want_to_run\n");
+		printf("------------forker: start---------\n");
 
-		// printf("forker: start\n");
+		job_t *new_job;
+		new_job = malloc(sizeof(job_t));
+		new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
+		new_job->e_time = ZERO;
+		new_job->srt = (new_job->s_time - new_job->e_time);
 
-		// job_t *new_job;
-		// new_job = malloc(sizeof(job_t));
-		// new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
-		// new_job->e_time = ZERO;
-		// new_job->srt = (new_job->s_time - new_job->e_time);
+		pq_tail->next = new_job;
+		pq_tail = new_job;
+		pq_size++;
 
-		// //sem_wait(scheduler_lock);
-		// sem_wait(isFull);
-		// sem_wait(add_to_pq);
-
-		// pq_tail->next = new_job;
-		// pq_tail = new_job;
-		// pq_size++;
-		// nsleep(10000);
-		// sem_post(isEmpty);
-		// sem_post(add_to_pq);
-		// //sem_post(scheduler_lock);
-
-		// printf("forker: finish\n");
+		sem_post(isEmpty);
+		printf("forker: incremented isEmpty\n");
+		sem_post(i_want_to_run);
+		printf("----forker: released i_want_to_run----\n");
+		nsleep(1000);
 	}
 
 } // end forker

@@ -22,8 +22,8 @@
 #define UNK -1
 #define TRUE 1
 
-#define INITIAL_JOBS 4
-#define MAX_JOBS 100
+#define INITIAL_JOBS 2
+#define MAX_JOBS 5
 #define MIN_SERVICE_TIME 5
 #define MAX_SERVICE_TIME 50
 #define RAND_SEED 1010		// TODO: May change this seed constant
@@ -62,7 +62,7 @@ sem_t * add_to_pq;
 sem_t * scheduler_lock;
 sem_t * isEmpty;
 sem_t * isFull;
-sem_t * dispatch_run;
+sem_t * i_want_to_run;
 sem_t * dispatch_allowance;
 sem_t * cpu_allowance;
 
