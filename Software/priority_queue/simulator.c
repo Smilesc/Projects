@@ -168,13 +168,8 @@ void dispatcher()
 	{
 
 		sem_wait(isEmpty);
-		printf("dispatch: decremented isEmpty\n");
 		sem_wait(dispatch_allowance);
-		printf("dispatch: used dispatch allowance\n");
 		sem_wait(i_want_to_run);
-		printf("dispatch: set i_want_to_run\n\n");
-
-		printf("\n\n----------dispatch: begin---------\n");
 
 		scheduler();
 		print_pq();
@@ -191,14 +186,8 @@ void dispatcher()
 
 		pq_size--;
 
-		//sem_post(isFull);
-		printf("dispatch: added to isFull\n");
 		sem_post(cpu_allowance);
-		printf("\ndispatch: gave cpu allowance\n");
 		sem_post(i_want_to_run);
-		printf("\ndispatch end: released i_want_to_run\n");
-
-		//}
 	}
 
 } // end dispatcher function
@@ -230,11 +219,7 @@ void cpu()
 	{
 
 		sem_wait(cpu_allowance);
-		printf("cpu: used cpu allowance\n");
-
 		sem_wait(i_want_to_run);
-		printf("cpu: set i_want_to_run\n");
-		printf("----------begin cpu----------\n");
 
 		cpu_job->e_time++;
 		cpu_job->srt--;
@@ -244,11 +229,8 @@ void cpu()
 		// }
 		if (cpu_job->srt > 0)
 		{
-			printf("cpu: decremented isFull\n");
-
 			if (pq_size + 1 > 0)
 			{
-				printf("\nadding job to end of queue\n\n");
 				pq_tail->next = cpu_job;
 				pq_tail = cpu_job;
 			}
@@ -259,14 +241,11 @@ void cpu()
 			}
 			pq_size++;
 			sem_post(isEmpty);
-			printf("cpu: incremented isEmpty\n");
 		}
 		else
 		{
-			printf("\nTHROW DAT BIT AWAY\n\n");
 			free(cpu_job);
 			sem_post(isFull);
-			printf("cpu: incremented isFull\n");
 		}
 
 		if (pq_size + 1 != MAX_JOBS)
@@ -275,9 +254,7 @@ void cpu()
 		}
 
 		sem_post(dispatch_allowance);
-		printf("cpu: gave dispatch allowance\n");
 		sem_post(i_want_to_run);
-		printf("---cpu end: released i_want_to_run---\n");
 	}
 
 } // end cpu function
@@ -305,10 +282,7 @@ void forker()
 	{
 		sem_wait(forker_allowance);
 		sem_wait(isFull);
-		printf("forker: decremented isFull: pq_size = %d \n", pq_size);
 		sem_wait(i_want_to_run);
-		printf("forker: set i_want_to_run\n");
-		printf("------------forker: start---------\n");
 
 		job_t *new_job;
 		new_job = malloc(sizeof(job_t));
@@ -321,10 +295,8 @@ void forker()
 		pq_size++;
 
 		sem_post(isEmpty);
-		printf("forker: incremented isEmpty\n");
 
 		sem_post(i_want_to_run);
-		printf("----forker: released i_want_to_run----\n");
 		nsleep(10000);
 	}
 
