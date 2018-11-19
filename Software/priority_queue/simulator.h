@@ -23,7 +23,7 @@
 #define TRUE 1
 
 #define INITIAL_JOBS 2
-#define MAX_JOBS 5
+#define MAX_JOBS 1000
 #define MIN_SERVICE_TIME 5
 #define MAX_SERVICE_TIME 50
 #define RAND_SEED 1010		// TODO: May change this seed constant
@@ -58,8 +58,6 @@ static job_t* pq_tail; // tail (last element) of the priority queue
 // pthread_mutex_t, pthread_mutex_init, pthread_mutex_lock, 
 // pthread_mutex_unlock, etc.
 
-sem_t * add_to_pq;
-sem_t * scheduler_lock;
 sem_t * isEmpty;
 sem_t * isFull;
 sem_t * i_want_to_run;
