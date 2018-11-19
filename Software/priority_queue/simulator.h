@@ -23,7 +23,7 @@
 #define TRUE 1
 
 #define INITIAL_JOBS 2
-#define MAX_JOBS 1000
+#define MAX_JOBS 5
 #define MIN_SERVICE_TIME 5
 #define MAX_SERVICE_TIME 50
 #define RAND_SEED 1010		// TODO: May change this seed constant
@@ -63,7 +63,7 @@ sem_t * isFull;
 sem_t * i_want_to_run;
 sem_t * dispatch_allowance;
 sem_t * cpu_allowance;
-
+sem_t * forker_allowance;
 
 
 // ------------------------------------

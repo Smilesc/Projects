@@ -62,12 +62,14 @@ void initialize()
 	i_want_to_run = malloc(sizeof(sem_t));
 	dispatch_allowance = malloc(sizeof(sem_t));
 	cpu_allowance = malloc(sizeof(sem_t));
+	forker_allowance = malloc(sizeof(sem_t));
 
 	sem_init(isEmpty, 0, INITIAL_JOBS);
 	sem_init(isFull, 0, MAX_JOBS - INITIAL_JOBS);
 	sem_init(i_want_to_run, 0, 1);
 	sem_init(cpu_allowance, 0, 0);
 	sem_init(dispatch_allowance, 0, 1);
+	sem_init(forker_allowance, 0, 1);
 
 } // end initialize function
 
@@ -189,7 +191,6 @@ void dispatcher()
 
 		pq_size--;
 
-		//printf("dispatcher: finish\n");
 		//sem_post(isFull);
 		printf("dispatch: added to isFull\n");
 		sem_post(cpu_allowance);
@@ -221,35 +222,15 @@ void cpu()
 	// concurrency constraints
 	// -------------------------
 	// cannot add job to priority queue:
-	// 	- if it is full - DONE
+	// 	- if it is full
 	// 	- if dispatcher is running scheduler to remove next job
 	// 	- if forker is adding a job
 
 	while (TRUE)
 	{
 
-		// --------------------------------
-		// TODO: Basic algorithm
-		// --------------------------------
-		// 1. run cpu job for only one time quantum
-		//    and then update e_time and srt fields
-		// 2.a. if cpu_job is not finished (srt>0)
-		//      add to priority queue (update pq_size)
-		// 2.b. if cpu_job is finished (srt==0)
-		//      free job_t malloc'd memory
-		// 3. goto (1) and repeat
-		//printf("trying cpu\n");
-
-		// if (pq_size + 1 > 0)
-		// {
 		sem_wait(cpu_allowance);
 		printf("cpu: used cpu allowance\n");
-		if (pq_size + 1 >= MAX_JOBS)
-		{ //not sure if == or >=
-			printf("posting early allowance\n");
-			sem_post(dispatch_allowance);
-			sem_wait(cpu_allowance);
-		}
 
 		sem_wait(i_want_to_run);
 		printf("cpu: set i_want_to_run\n");
@@ -257,11 +238,11 @@ void cpu()
 
 		cpu_job->e_time++;
 		cpu_job->srt--;
-		if (pq_size + 1 == MAX_JOBS)
-		{
-			//do nothing;
-		}
-		else if (cpu_job->srt > 0)
+		// if (pq_size + 1 == MAX_JOBS)
+		// {
+		// 	//do nothing;
+		// }
+		if (cpu_job->srt > 0)
 		{
 			printf("cpu: decremented isFull\n");
 
@@ -284,8 +265,13 @@ void cpu()
 		{
 			printf("\nTHROW DAT BIT AWAY\n\n");
 			free(cpu_job);
-			//sem_post(isFull);
+			sem_post(isFull);
 			printf("cpu: incremented isFull\n");
+		}
+
+		if (pq_size + 1 != MAX_JOBS)
+		{
+			sem_post(forker_allowance);
 		}
 
 		sem_post(dispatch_allowance);
@@ -293,9 +279,6 @@ void cpu()
 		sem_post(i_want_to_run);
 		printf("---cpu end: released i_want_to_run---\n");
 	}
-
-	//printf("cpu: finish, pq_size: %d\n", pq_size + 1);
-	//}
 
 } // end cpu function
 
@@ -320,45 +303,29 @@ void forker()
 
 	while (TRUE)
 	{
-
-		// 	// --------------------------------
-		// 	// TODO: Basic algorithm
-		// 	// --------------------------------
-		// 	// 1. Create a new job
-		// 	//    - s_time is a random number in [MIN_EXE_TIME MAX_EXE_TIME]
-		// 	//    - s_time is intialized to zero
-		// 	//	  - see initialize function for an example
-		// 	// 2. add job to linked list (update list_size)
-		// 	// 3. sleep for nanoseconds (you determine)
-		// 	// 4. goto (1) and repeat
-		
-		//sem_wait(isFull);
+		sem_wait(forker_allowance);
+		sem_wait(isFull);
 		printf("forker: decremented isFull: pq_size = %d \n", pq_size);
 		sem_wait(i_want_to_run);
 		printf("forker: set i_want_to_run\n");
 		printf("------------forker: start---------\n");
-		if (pq_size + 1 == MAX_JOBS)
-		{
-			//do nothing;
-		}
-		else
-		{
-			job_t *new_job;
-			new_job = malloc(sizeof(job_t));
-			new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
-			new_job->e_time = ZERO;
-			new_job->srt = (new_job->s_time - new_job->e_time);
 
-			pq_tail->next = new_job;
-			pq_tail = new_job;
-			pq_size++;
+		job_t *new_job;
+		new_job = malloc(sizeof(job_t));
+		new_job->s_time = MIN_SERVICE_TIME + rand() % (MAX_SERVICE_TIME - MIN_SERVICE_TIME + 1);
+		new_job->e_time = ZERO;
+		new_job->srt = (new_job->s_time - new_job->e_time);
 
-			sem_post(isEmpty);
-			printf("forker: incremented isEmpty\n");
-		}
+		pq_tail->next = new_job;
+		pq_tail = new_job;
+		pq_size++;
+
+		sem_post(isEmpty);
+		printf("forker: incremented isEmpty\n");
+
 		sem_post(i_want_to_run);
 		printf("----forker: released i_want_to_run----\n");
-		nsleep(1000000000000000000);
+		nsleep(10000);
 	}
 
 } // end forker
