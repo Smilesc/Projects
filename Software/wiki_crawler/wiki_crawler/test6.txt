@@ -1,0 +1,402 @@
+<div class="mw-parser-output"><div role="note" class="hatnote navigation-not-searchable">For other uses, see <a href="/wiki/King_(disambiguation)" class="mw-disambig" title="King (disambiguation)">King (disambiguation)</a>.</div>
+<table class="vertical-navbox nowraplinks" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%;width:17.0em;"><tbody><tr><th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em"><span style="font-size:16px; line-height: 130%;"><a href="/wiki/Royal_and_noble_ranks" title="Royal and noble ranks">Imperial, royal, noble and<br>chivalric ranks</a></span></th></tr><tr><td style="padding:0.2em 0 0.4em"><a href="/wiki/File:Heraldic_Imperial_Crown_(Gules_Mitre).svg" class="image"><img alt="Heraldic Imperial Crown (Gules Mitre).svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/120px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png" width="120" height="106" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/180px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/240px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png 2x" data-file-width="559" data-file-height="496"></a></td></tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Emperor" title="Emperor">Emperor / Empress</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a class="mw-selflink selflink">King</a> / <a href="/wiki/Queen_regnant" title="Queen regnant">Queen</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Archduke" title="Archduke">Archduke / Archduchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Grand_Prince" class="mw-redirect" title="Grand Prince">Grand Prince / Grand Princess</a> <br> <a href="/wiki/Grand_Duke" class="mw-redirect" title="Grand Duke">Grand Duke / Grand Duchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Prince" title="Prince">Prince</a> / <a href="/wiki/Princess" title="Princess">Princess</a> / <a href="/wiki/Infante" title="Infante">Infante / Infanta</a> / <a href="/wiki/Kr%C3%B3lewicz" title="Królewicz">Królewicz / królewna</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Duke" title="Duke">Duke / Duchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/F%C3%BCrst" title="Fürst">Sovereign Prince / Sovereign Princess <br>/ Fürst / Fürstin</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Marquess" title="Marquess">Marquess / Marquis / Marchioness</a> / <br><a href="/wiki/Margrave" title="Margrave">Margrave</a> / <a href="/wiki/Landgrave" title="Landgrave">Landgrave</a> / <br><a href="/wiki/Count_Palatine" class="mw-redirect" title="Count Palatine">Count Palatine</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Count" title="Count">Count / Countess</a> / <a href="/wiki/Earl" title="Earl">Earl</a> <br> <a href="/wiki/Burgrave" title="Burgrave">Burgrave</a> / <a href="/wiki/Ch%C3%A2telain" title="Châtelain">Châtelain</a> / <a href="/wiki/Castellan" title="Castellan">Castellan</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Viscount" title="Viscount">Viscount / Viscountess</a> / <a href="/wiki/Vidame" title="Vidame">Vidame</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Baron" title="Baron">Baron / Baroness</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Baronet" title="Baronet">Baronet / Baronetess</a> <br> <a href="/wiki/Knight#Hereditary_knighthoods" title="Knight">Hereditary Knight</a> / <a href="/wiki/Lady" title="Lady">Lady</a> / <a href="/wiki/Ritter" title="Ritter">Ritter</a> / <a href="/wiki/Ridder_(title)" title="Ridder (title)">Ridder</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Knight" title="Knight">Knight</a> / <a href="/wiki/Dame" title="Dame">Dame</a> <br> <a href="/wiki/Knighthood" class="mw-redirect" title="Knighthood">Chevalier</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Esquire" title="Esquire">Esquire</a> / <a href="/wiki/Laird" title="Laird">Laird</a> / <a href="/wiki/Edler" title="Edler">Edler</a> / <a href="/wiki/Jonkheer" title="Jonkheer">Jonkheer</a> / <a href="/wiki/Junker" title="Junker">Junker</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Gentleman" title="Gentleman">Gentleman</a> / <a href="/wiki/Younger_(title)" title="Younger (title)">Younger</a> / <a href="/wiki/Maid_(title)" title="Maid (title)">Maid</a></td>
+</tr><tr><td style="text-align:right;font-size:115%"><div class="plainlinks hlist navbar mini"><ul><li class="nv-view"><a href="/wiki/Template:Royal_and_noble_ranks" title="Template:Royal and noble ranks"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Royal_and_noble_ranks" title="Template talk:Royal and noble ranks"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Royal_and_noble_ranks&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Heraldic_Royal_Crown_of_the_King_of_the_Romans_(1486-c.1700).svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg/220px-Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg.png" width="220" height="165" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg/330px-Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg/440px-Heraldic_Royal_Crown_of_the_King_of_the_Romans_%281486-c.1700%29.svg.png 2x" data-file-width="663" data-file-height="496"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Heraldic_Royal_Crown_of_the_King_of_the_Romans_(1486-c.1700).svg" class="internal" title="Enlarge"></a></div><a href="/wiki/Heraldic_crown" class="mw-redirect" title="Heraldic crown">Heraldic crown</a> of the <a href="/wiki/King_of_the_Romans" title="King of the Romans">King of the Romans</a> (variant used in the early modern period)</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Corona_ferrea,_Monza,_Tesoro_del_Duomo.jpg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg/220px-Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg" width="220" height="146" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg/330px-Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg/440px-Corona_ferrea%2C_Monza%2C_Tesoro_del_Duomo.jpg 2x" data-file-width="575" data-file-height="382"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Corona_ferrea,_Monza,_Tesoro_del_Duomo.jpg" class="internal" title="Enlarge"></a></div>The <a href="/wiki/Iron_Crown_of_the_Lombards" class="mw-redirect" title="Iron Crown of the Lombards">Iron Crown of the Lombards</a>, a surviving example of an early medieval royal crown</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Gesta_Theodorici_-_Theodoric_the_Great_(455-526).jpg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg/220px-Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg" width="220" height="333" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg/330px-Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg/440px-Gesta_Theodorici_-_Theodoric_the_Great_%28455-526%29.jpg 2x" data-file-width="1161" data-file-height="1758"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Gesta_Theodorici_-_Theodoric_the_Great_(455-526).jpg" class="internal" title="Enlarge"></a></div>12th-century depiction of <a href="/wiki/Theodoric_the_Great" class="mw-redirect" title="Theodoric the Great">Theodoric the Great</a>, <a href="/wiki/Ostrogothic_Kingdom" title="Ostrogothic Kingdom">King of the Ostrogoths</a>.</div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Louis_XIV_of_France.jpg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/220px-Louis_XIV_of_France.jpg" width="220" height="313" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/330px-Louis_XIV_of_France.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Louis_XIV_of_France.jpg/440px-Louis_XIV_of_France.jpg 2x" data-file-width="1390" data-file-height="1975"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Louis_XIV_of_France.jpg" class="internal" title="Enlarge"></a></div><a href="/wiki/Louis_XIV_of_France" title="Louis XIV of France">Louis XIV of France</a>, the "Sun King" (<i>Roi-Soleil</i>), who ruled at the height of <a href="/wiki/Absolute_monarchy_in_France" title="Absolute monarchy in France">French absolutism</a> (painting by <a href="/wiki/Hyacinthe_Rigaud" title="Hyacinthe Rigaud">Hyacinthe Rigaud</a> 1701).</div></div></div>
+<p><b>King</b>, or <b>king regnant</b> is the title given to a male <a href="/wiki/Monarch" title="Monarch">monarch</a> in a variety of contexts. The female equivalent is <a href="/wiki/Queen_regnant" title="Queen regnant">queen regnant</a>,<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup> while the title of queen on its own usually refers to the <a href="/wiki/Queen_consort" title="Queen consort">consort</a> of a king. 
+</p>
+<ul><li>In the context of prehistory, antiquity and contemporary indigenous peoples, the title may refer to <a href="/wiki/Tribal_kingship" class="mw-redirect" title="Tribal kingship">tribal kingship</a>. Germanic kingship is cognate with <a href="/wiki/Indo-European_languages" title="Indo-European languages">Indo-European</a> traditions of tribal rulership (c.f. Indic <i><a href="/wiki/R%C4%81jan" class="mw-redirect" title="Rājan">rājan</a></i>, Gothic <i><a href="/wiki/Reiks" title="Reiks">reiks</a></i>, and Old Irish <i><a href="/wiki/R%C3%AD" title="Rí">rí</a></i>, etc.).</li>
+<li>In the context of classical antiquity, king may translate in Latin as <i><a href="/wiki/Rex_(king)" class="mw-redirect" title="Rex (king)">rex</a></i> and in Greek as <i><a href="/wiki/Archon" title="Archon">archon</a></i> or <i><a href="/wiki/Basileus" title="Basileus">basileus</a></i>.</li>
+<li>In classical European <a href="/wiki/Feudalism" title="Feudalism">feudalism</a>, the title of <i>king</i> as the ruler of a <i>kingdom</i> is understood to be the highest rank in the feudal order, potentially subject, at least nominally, only to an <a href="/wiki/Emperor" title="Emperor">emperor</a> (harking back to the <a href="/wiki/List_of_Roman_client_kings" title="List of Roman client kings">client kings</a> of the <a href="/wiki/Roman_Empire" title="Roman Empire">Roman Empire</a>).<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup></li>
+<li>In a modern context, the title may refer to the ruler of one of a number of modern monarchies (either absolute or constitutional). The title of <i>king</i> is used alongside other titles for monarchs: in the West, <a href="/wiki/Prince" title="Prince">prince</a>, <a href="/wiki/Emperor" title="Emperor">emperor</a>, <a href="/wiki/Archduke" title="Archduke">archduke</a>, <a href="/wiki/Duke" title="Duke">duke</a> or <a href="/wiki/Grand_duke" title="Grand duke">grand duke</a>, and in the Middle East, <a href="/wiki/Sultan" title="Sultan">sultan</a> or <a href="/wiki/Emir" title="Emir">emir</a>, etc.<sup id="cite_ref-pine_3-0" class="reference"><a href="#cite_note-pine-3">[3]</a></sup></li></ul>
+<p>The term <i>king</i> may also refer to a <a href="/wiki/King_consort" title="King consort">king consort</a>, a title that is sometimes given to the husband of a <a href="/wiki/Queen_regnant" title="Queen regnant">ruling queen</a>, but the title of <a href="/wiki/Prince_consort" title="Prince consort">prince consort</a> is sometimes granted instead. A king dowager is the male equivalent of the <a href="/wiki/Queen_dowager" title="Queen dowager">queen dowager</a>. A king father is a king dowager who is also the father of the reigning sovereign.
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Etymology"><span class="tocnumber">1</span> <span class="toctext">Etymology</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Contemporary_kings"><span class="tocnumber">3</span> <span class="toctext">Contemporary kings</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Etymology">Etymology</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=1" title="Edit section: Etymology">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div role="note" class="hatnote navigation-not-searchable">Further information: <a href="/wiki/Rex_(title)" title="Rex (title)">Rex (title)</a> and <a href="/wiki/Knyaz" title="Knyaz">Knyaz</a></div>
+<table role="presentation" class="mbox-small plainlinks sistersitebox" style="background-color:#f9f9f9;border:1px solid #aaa;color:#000">
+<tbody><tr>
+<td class="mbox-image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/40px-Wiktionary-logo-en-v2.svg.png" width="40" height="40" class="noviewer" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/60px-Wiktionary-logo-en-v2.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/80px-Wiktionary-logo-en-v2.svg.png 2x" data-file-width="512" data-file-height="512"></td>
+<td class="mbox-text plainlist">Look up <i><b><a href="https://en.wiktionary.org/wiki/cyning" class="extiw" title="wiktionary:cyning">cyning</a></b></i> in Wiktionary, the free dictionary.</td></tr></tbody></table>
+<p>The English term <i lang="en"><a href="https://en.wiktionary.org/wiki/king#English" class="extiw" title="wikt:king">king</a></i> is derived from the <a href="/wiki/Old_English_language" class="mw-redirect" title="Old English language">Anglo-Saxon</a> <i>cyning</i>, which in turn is derived from the <a href="/wiki/Common_Germanic" class="mw-redirect" title="Common Germanic">Common Germanic</a> *<i>kuningaz</i>. The Common Germanic term was borrowed into Estonian and Finnish at an early time, surviving in these languages as <i lang="fi"><a href="https://en.wiktionary.org/wiki/kuningas#Finnish" class="extiw" title="wikt:kuningas">kuningas</a></i>.
+The English term "King" translates, and is considered equivalent to, Latin <i><a href="/wiki/Rex_(title)" title="Rex (title)">rēx</a></i> and its equivalents in the various <a href="/wiki/European_languages" class="mw-redirect" title="European languages">European languages</a>. The Germanic term is notably different from the word for "King" in other Indo-European languages (<i>*rēks</i> "ruler"; <a href="/wiki/Latin" title="Latin">Latin</a> <i><a href="/wiki/King_of_Rome" title="King of Rome">rēx</a></i>, <a href="/wiki/Sanskrit_language" class="mw-redirect" title="Sanskrit language">Sanskrit</a> <i><a href="/wiki/Raja" title="Raja">rājan</a></i> and <a href="/wiki/Irish_language" title="Irish language">Irish</a> <i><a href="/wiki/R%C3%AD" title="Rí">ríg</a></i>, but see Gothic <i><a href="/wiki/Reiks" title="Reiks">reiks</a></i> and, e.g., modern German <i>Reich</i> and modern Dutch <i>rijk</i>). It is a derivation from the term <i>*kunjom</i> "kin" (<a href="/wiki/Old_English" title="Old English">Old English</a> <i lang="ang"><a href="https://en.wiktionary.org/wiki/cynn#Old_English" class="extiw" title="wikt:cynn">cynn</a></i>) by the <i>-inga-</i> suffix. The literal meaning is that of a "scion of the [noble] kin", or perhaps "son or descendant of one of noble birth" (<a href="/wiki/OED" class="mw-redirect" title="OED">OED</a>).
+</p><p>English <i>Queen</i> translates Latin <i>regina</i>; it is from Old English <i>cwen</i> "Queen, noble woman, wife" from the PIE word for "woman" (<i>*gwen-</i>).
+The Germanic term for "wife" appears to have been specialized to "wife of a King"; in <a href="/wiki/Old_Norse" title="Old Norse">Old Norse</a>, the cognate <i>kvan</i> still mostly refers to a wife generally. Scandinavian <i>drottning, dronning</i> is a feminine derivation from <i lang="gem-x-proto"><a href="https://en.wiktionary.org/wiki/Reconstruction:Proto-Germanic/druhtinaz#Proto-Germanic" class="extiw" title="wikt:Reconstruction:Proto-Germanic/druhtinaz">*druhtinaz</a></i> "Lord". The Norse <a href="/wiki/R%C3%ADgs%C3%BEula" title="Rígsþula">Rígsþula</a> ends with the emergence of Kón as a Grand son of Rig, resulting from a threesome between the mythological characters Father and Mother, and <a href="/wiki/Heimdallr" title="Heimdallr">Rig</a>, through <a href="/wiki/Earl" title="Earl">Jarl</a> and his wife <a href="/wiki/Erna_(mythology)" title="Erna (mythology)">Erna</a>. Kon is the twelfth son of Jarl and Erna, and his progeny are the Konungs, litterally, the younglings of Kon; from which the name King comes, according to this tradition.  
+</p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=2" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The English word is of Germanic origin, and historically refers to <a href="/wiki/Germanic_kingship" title="Germanic kingship">Germanic kingship</a>, in the pre-Christian period a type of <a href="/wiki/Tribal_kingship" class="mw-redirect" title="Tribal kingship">tribal kingship</a>. The <a href="/wiki/Monarchies_of_Europe" class="mw-redirect" title="Monarchies of Europe">monarchies of Europe</a> in the Christian <a href="/wiki/Middle_Ages" title="Middle Ages">Middle Ages</a> derived their claim from <a href="/wiki/Christianisation" class="mw-redirect" title="Christianisation">Christianisation</a> and the  <a href="/wiki/Divine_right_of_kings" title="Divine right of kings">divine right of kings</a>, partly influenced by the notion of <a href="/wiki/Germanic_king" class="mw-redirect" title="Germanic king">sacral kingship</a> inherited from  <a href="/wiki/Germanic_antiquity" class="mw-redirect" title="Germanic antiquity">Germanic antiquity</a>.
+</p><p>The <a href="/wiki/Early_Middle_Ages" title="Early Middle Ages">Early Middle Ages</a> begin with a fragmentation of the former <a href="/wiki/Western_Roman_Empire" title="Western Roman Empire">Western Roman Empire</a> into <a href="/wiki/Barbarian_kingdoms" title="Barbarian kingdoms">barbarian kingdoms</a>. In Western Europe, the kingdom of the <a href="/wiki/Franks" title="Franks">Franks</a> developed into the <a href="/wiki/Carolingian_Empire" title="Carolingian Empire">Carolingian Empire</a> by the 8th century, and the <a href="/wiki/Heptarchy" title="Heptarchy">kingdoms</a> of <a href="/wiki/Anglo-Saxon_England" class="mw-redirect" title="Anglo-Saxon England">Anglo-Saxon England</a> were unified into the <a href="/wiki/Kingdom_of_England" title="Kingdom of England">kingdom of England</a> by the 10th century.
+</p><p>With the breakup of the Carolingian Empire in the 9th century, the system of <a href="/wiki/Feudalism" title="Feudalism">feudalism</a> places kings at the head of a pyramid of relationships between liege lords and vassals, dependent on the regional rule of <a href="/wiki/Baron" title="Baron">barons</a>, and the intermediate positions of <a href="/wiki/Counts" class="mw-redirect" title="Counts">counts</a> (or <a href="/wiki/Earl" title="Earl">earls</a>) and <a href="/wiki/Duke" title="Duke">dukes</a>. The core of European feudal <a href="/wiki/Manorialism" title="Manorialism">manorialism</a> in the <a href="/wiki/High_Middle_Ages" title="High Middle Ages">High Middle Ages</a> were the territories of the former <a href="/wiki/Carolingian_Empire" title="Carolingian Empire">Carolingian Empire</a>, i.e. the <a href="/wiki/Kingdom_of_France" title="Kingdom of France">kingdom of France</a> and the <a href="/wiki/Holy_Roman_Empire" title="Holy Roman Empire">Holy Roman Empire</a> (centered on the nominal kingdoms of <a href="/wiki/Kingdom_of_Germany" title="Kingdom of Germany">Germany</a> and <a href="/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)" title="Kingdom of Italy (Holy Roman Empire)">Italy</a>).<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup>
+</p><p>In the course of the European Middle Ages, the <a href="/wiki/Monarchies_in_Europe" title="Monarchies in Europe">European kingdoms</a> underwent a general trend of centralisation of power, so that by the <a href="/wiki/Late_Middle_Ages" title="Late Middle Ages">Late Middle Ages</a> there were a number of large and powerful kingdoms in Europe, which would develop into the <a href="/wiki/Great_power" title="Great power">great powers</a> of Europe in the <a href="/wiki/Early_Modern_period" class="mw-redirect" title="Early Modern period">Early Modern period</a>.
+</p>
+<ul><li>In the <a href="/wiki/Iberian_Peninsula" title="Iberian Peninsula">Iberian Peninsula</a>, the remnants  of the <a href="/wiki/Visigothic_Kingdom" title="Visigothic Kingdom">Visigothic Kingdom</a>, the petty kingdoms of <a href="/wiki/Kingdom_of_Asturias" title="Kingdom of Asturias">Asturias</a> and <a href="/wiki/Kingdom_of_Pamplona" class="mw-redirect" title="Kingdom of Pamplona">Pamplona</a>, expanded into the <a href="/wiki/Kingdom_of_Portugal" title="Kingdom of Portugal">kingdom of Portugal</a>, the <a href="/wiki/Crown_of_Castile" title="Crown of Castile">Crown of Castile</a> and the <a href="/wiki/Crown_of_Aragon" title="Crown of Aragon">Crown of Aragon</a> with the ongoing <a href="/wiki/Reconquista" title="Reconquista">Reconquista</a>.</li>
+<li>In <a href="/wiki/Southern_Europe" title="Southern Europe">southern Europe</a>, the <a href="/wiki/Kingdom_of_Sicily" title="Kingdom of Sicily">kingdom of Sicily</a> was established following the <a href="/wiki/Norman_conquest_of_southern_Italy" title="Norman conquest of southern Italy">Norman conquest of southern Italy</a>. The <a href="/wiki/Kingdom_of_Sardinia" title="Kingdom of Sardinia">Kingdom of Sardinia</a> was claimed as a separate title held by the <a href="/wiki/Crown_of_Aragon" title="Crown of Aragon">Crown of Aragon</a>  in 1324. In the Balkans, the <a href="/wiki/Kingdom_of_Serbia_(medieval)" title="Kingdom of Serbia (medieval)">Kingdom of Serbia</a> was established in 1217.</li>
+<li>In eastern-<a href="/wiki/Central_Europe" title="Central Europe">central Europe</a>, the <a href="/wiki/Kingdom_of_Hungary" title="Kingdom of Hungary">Kingdom of Hungary</a> was established <a href="/wiki/Europe_in_AD_1000" class="mw-redirect" title="Europe in AD 1000">in AD 1000</a> following the Christianisation of the <a href="/wiki/Magyars" class="mw-redirect" title="Magyars">Magyars</a>. The kingdoms of <a href="/wiki/Kingdom_of_Poland_(1025%E2%80%931385)" title="Kingdom of Poland (1025–1385)">Poland</a> and <a href="/wiki/Kingdom_of_Bohemia" title="Kingdom of Bohemia">Bohemia</a> were established within the Holy Roman Empire in 1025 and 1198, respectively. In Eastern Europe, the <a href="/wiki/Kievan_Rus%27" title="Kievan Rus'">Kievan Rus'</a> consolidated into the <a href="/wiki/Grand_Duchy_of_Moscow" title="Grand Duchy of Moscow">Grand Duchy of Moscow</a>, which did not technically claim the status of kingdom until the early modern <a href="/wiki/Tsardom_of_Russia" title="Tsardom of Russia">Tsardom of Russia</a>.</li>
+<li>In <a href="/wiki/Northern_Europe" title="Northern Europe">northern Europe</a>, the tribal kingdoms of the <a href="/wiki/Viking_Age" title="Viking Age">Viking Age</a> by the 11th century expanded into the <a href="/wiki/North_Sea_Empire" title="North Sea Empire">North Sea Empire</a> under <a href="/wiki/Cnut_the_Great" title="Cnut the Great">Cnut the Great</a>,  king of Denmark, England and Norway. The <a href="/wiki/Christianization_of_Scandinavia" title="Christianization of Scandinavia">Christianization of Scandinavia</a> resulted in "consolidated" kingdoms of <a href="/wiki/Consolidation_of_Sweden" title="Consolidation of Sweden">Sweden</a> and <a href="/wiki/Norwegian_expansion_during_the_Middle_Ages" class="mw-redirect" title="Norwegian expansion during the Middle Ages">Norway</a>, and by the end of the medieval period the pan-Scandinavian <a href="/wiki/Kalmar_Union" title="Kalmar Union">Kalmar Union</a>.</li></ul>
+<h2><span class="mw-headline" id="Contemporary_kings">Contemporary kings</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=3" title="Edit section: Contemporary kings">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div role="note" class="hatnote navigation-not-searchable">Further information: <a href="/wiki/List_of_current_sovereign_monarchs" title="List of current sovereign monarchs">List of current sovereign monarchs</a>, <a href="/wiki/List_of_current_reigning_monarchies" class="mw-redirect" title="List of current reigning monarchies">List of current reigning monarchies</a>, <a href="/wiki/List_of_current_constituent_monarchs" title="List of current constituent monarchs">List of current constituent monarchs</a>, and <a href="/wiki/Queen_regnant#Current_queens_regnant" title="Queen regnant">Queen regnant § Current queens regnant</a></div>
+<table class="vertical-navbox nowraplinks plainlist" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%"><tbody><tr><td style="padding-top:0.4em;line-height:1.2em;padding-bottom:0;">Part of a series of articles on</td></tr><tr><th style="padding:0.2em 0.4em 0.2em;padding-top:0;font-size:145%;line-height:1.2em;font-size:200%;padding-top:0;font-weight:normal;padding-bottom:0.25em;"><a href="/wiki/Monarchy" title="Monarchy">Monarchy</a></th></tr><tr><td style="padding:0.2em 0 0.4em;padding:0 0 1.4em;"><a href="/wiki/File:Heraldic_Royal_Crown_(Common).svg" class="image" title="Heraldic royal crown"><img alt="Heraldic royal crown" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/43/Heraldic_Royal_Crown_%28Common%29.svg/100px-Heraldic_Royal_Crown_%28Common%29.svg.png" width="100" height="76" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/43/Heraldic_Royal_Crown_%28Common%29.svg/150px-Heraldic_Royal_Crown_%28Common%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/43/Heraldic_Royal_Crown_%28Common%29.svg/200px-Heraldic_Royal_Crown_%28Common%29.svg.png 2x" data-file-width="249" data-file-height="189"></a></td></tr><tr><td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0"><div class="NavHead" style="font-size:105%;background:transparent;text-align:left;border-top:1px solid #aaa;background:transparent;text-align:center;padding-bottom:0;">Central concepts</div><div class="NavContent" style="font-size:105%;padding:0.2em 0 0.4em;text-align:center;padding-top:0;">
+<ul><li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Monarch" title="Monarch">Monarch</a></li><li><a href="/wiki/Monarchism" title="Monarchism">Monarchism</a></li></ul></div></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Divine_right_of_kings" title="Divine right of kings">Divine right of kings</a></li><li><a href="/wiki/Mandate_of_Heaven" title="Mandate of Heaven">Mandate of Heaven</a></li></ul></div></li></ul></div></div></td>
+</tr><tr><td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0"><div class="NavHead" style="font-size:105%;background:transparent;text-align:left;border-top:1px solid #aaa;background:transparent;text-align:center;padding-bottom:0;">Types</div><div class="NavContent" style="font-size:105%;padding:0.2em 0 0.4em;text-align:center;padding-top:0;"><div class="hlist">
+<ul><li><a href="/wiki/Absolute_monarchy" title="Absolute monarchy">Absolute</a></li>
+<li><a href="/wiki/Composite_monarchy" title="Composite monarchy">Composite</a></li>
+<li><a href="/wiki/Constitutional_monarchy" title="Constitutional monarchy">Constitutional</a></li>
+<li><a href="/wiki/Diarchy" title="Diarchy">Diarchy</a></li>
+<li><a href="/wiki/Dual_monarchy" title="Dual monarchy">Dual</a></li>
+<li><a href="/wiki/Elective_monarchy" title="Elective monarchy">Elective</a></li>
+<li><a href="/wiki/Emirate" title="Emirate">Emirate</a></li>
+<li><a href="/wiki/Ethnarch" title="Ethnarch">Ethnarch</a></li>
+<li><a href="/wiki/Federal_monarchy" title="Federal monarchy">Federal</a></li>
+<li><a href="/wiki/Hereditary_monarchy" title="Hereditary monarchy">Hereditary</a></li>
+<li><a href="/wiki/Legalism_(Chinese_philosophy)" title="Legalism (Chinese philosophy)">Legalist (Chinese)</a></li>
+<li><a href="/wiki/Non-sovereign_monarchy" title="Non-sovereign monarchy">Non-sovereign</a></li>
+<li><a href="/wiki/Popular_monarchy" title="Popular monarchy">Popular</a></li>
+<li><a href="/wiki/Regent" title="Regent">Regency</a></li>
+<li><a href="/wiki/Tetrarchy" title="Tetrarchy">Tetrarch</a></li>
+<li><a href="/wiki/Universal_monarchy" title="Universal monarchy">Universal</a></li></ul>
+</div></div></div></td>
+</tr><tr><td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0"><div class="NavHead" style="font-size:105%;background:transparent;text-align:left;border-top:1px solid #aaa;background:transparent;text-align:center;padding-bottom:0;">History</div><div class="NavContent" style="font-size:105%;padding:0.2em 0 0.4em;text-align:center;padding-top:0;">
+<ul><li><a href="/wiki/Augustus#Octavian_becomes_Augustus" title="Augustus">Birth of the Roman Empire</a></li>
+<li><a href="/wiki/Magna_Carta" title="Magna Carta">Magna Carta</a></li>
+<li><a href="/wiki/Rise_of_the_Ottoman_Empire" title="Rise of the Ottoman Empire">Foundation of the Ottoman Empire</a></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Glorious_Revolution" title="Glorious Revolution">Glorious Revolution</a></li><li><a href="/wiki/French_Revolution" title="French Revolution">French Revolution</a></li></ul></div></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Trienio_Liberal" title="Trienio Liberal">Trienio Liberal</a></li><li><a href="/wiki/First_French_Empire" title="First French Empire">First French Empire</a></li></ul></div></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Liberal_Wars" title="Liberal Wars">Liberal Wars</a></li><li><a href="/wiki/Second_French_Empire" title="Second French Empire">Second French Empire</a></li></ul></div></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Italian_unification" title="Italian unification">Italian unification</a></li><li><a href="/wiki/Meiji_Restoration" title="Meiji Restoration">Meiji Restoration</a></li></ul></div></li>
+<li><a href="/wiki/Austro-Hungarian_Compromise_of_1867" title="Austro-Hungarian Compromise of 1867">Austro-Hungarian Compromise</a></li>
+<li><a href="/wiki/Unification_of_Germany" title="Unification of Germany">German unification</a></li>
+<li><a href="/wiki/5_October_1910_Revolution" class="mw-redirect" title="5 October 1910 Revolution">5 October 1910 Revolution</a></li>
+<li><a href="/wiki/Proclamation_of_the_Republic_(Brazil)" title="Proclamation of the Republic (Brazil)">Proclamation of the Republic in Brazil</a></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Xinhai_Revolution" title="Xinhai Revolution">Xinhai Revolution</a></li><li><a href="/wiki/Russian_Revolution" title="Russian Revolution">Russian Revolution</a></li></ul></div></li>
+<li><a href="/wiki/Siamese_revolution_of_1932" title="Siamese revolution of 1932">Siamese revolution of 1932</a></li>
+<li><a href="/wiki/Italian_institutional_referendum,_1946" title="Italian institutional referendum, 1946">Birth of the Italian Republic</a></li>
+<li><a href="/wiki/Spanish_transition_to_democracy" title="Spanish transition to democracy">Spanish transition to democracy</a></li>
+<li><div class="hlist hlist-separated"><ul><li><a href="/wiki/Iranian_Revolution" title="Iranian Revolution">Iranian Revolution</a></li><li><a href="/wiki/Modern_Cambodia" title="Modern Cambodia">Modern Cambodia</a></li></ul></div></li>
+<li><a href="/wiki/Nepalese_Civil_War" title="Nepalese Civil War">Nepalese Civil War</a></li></ul></div></div></td>
+</tr><tr><td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0"><div class="NavHead" style="font-size:105%;background:transparent;text-align:left;border-top:1px solid #aaa;background:transparent;text-align:center;padding-bottom:0;">Related topics</div><div class="NavContent" style="font-size:105%;padding:0.2em 0 0.4em;text-align:center;padding-top:0;"><div class="hlist">
+<ul><li><a href="/wiki/Aristocracy" title="Aristocracy">Aristocracy</a></li>
+<li><a href="/wiki/Autocracy" title="Autocracy">Autocracy</a></li>
+<li><a href="/wiki/Crowned_republic" title="Crowned republic">Crowned republic</a></li>
+<li><a href="/wiki/Conservatism" title="Conservatism">Conservatism</a></li>
+<li><a href="/wiki/Thomas_Hobbes" title="Thomas Hobbes">Thomas Hobbes</a></li>
+<li><a href="/wiki/Legitimists" title="Legitimists">Legitimists</a></li>
+<li><a href="/wiki/Orl%C3%A9anist" title="Orléanist">Orléanist</a></li>
+<li><a href="/wiki/Oligarchy" title="Oligarchy">Oligarchy</a></li>
+<li><a href="/wiki/Philosopher_king" title="Philosopher king">Philosopher king</a></li>
+<li><a href="/wiki/Primogeniture" title="Primogeniture">Primogeniture</a></li>
+<li><a href="/wiki/Royalist" title="Royalist">Royalism</a></li>
+<li><a href="/wiki/Regicide" title="Regicide">Regicide</a></li>
+<li><a href="/wiki/Regnal_number" title="Regnal number">Regnal number</a></li>
+<li><a href="/wiki/Royal_family" title="Royal family">Royal family</a></li>
+<li><a href="/wiki/Ultra-royalist" title="Ultra-royalist">Ultra-royalist</a></li></ul>
+</div></div></div></td>
+</tr><tr><td style="padding:0.3em 0.4em 0.3em;font-weight:bold;border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;padding-top:0.1em;text-align:center;">
+<a href="/wiki/Portal:Politics" title="Portal:Politics">Politics portal</a></td></tr><tr><td style="text-align:right;font-size:115%;padding-top: 0.6em;"><div class="plainlinks hlist navbar mini"><ul><li class="nv-view"><a href="/wiki/Template:Monarchism" title="Template:Monarchism"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Monarchism" title="Template talk:Monarchism"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Monarchism&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<p>Currently (as of  2016<sup class="plainlinks noexcerpt noprint asof-tag update" style="display:none;"><a class="external text" href="//en.wikipedia.org/w/index.php?title=King&amp;action=edit">[update]</a></sup>), fifteen kings and two queens regnant are recognized as the heads of state of <a href="/wiki/Sovereign_state" title="Sovereign state">sovereign states</a> (i.e. English <i>king</i> or <i>queen</i> is used as official translation of the respective native titles held by the monarchs). 
+</p><p>Most of these are heads of state of <a href="/wiki/Constitutional_monarchy" title="Constitutional monarchy">constitutional monarchies</a>; kings ruling over <a href="/wiki/Absolute_monarchy" title="Absolute monarchy">absolute monarchies</a>
+are the <a href="/wiki/King_of_Saudi_Arabia" title="King of Saudi Arabia">King of Saudi Arabia</a>, the <a href="/wiki/King_of_Bahrain" title="King of Bahrain">King of Bahrain</a> and the <a href="/wiki/King_of_Swaziland" class="mw-redirect" title="King of Swaziland">King of Swaziland</a>.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup>
+</p>
+<table class="wikitable sortable">
+
+<tbody><tr>
+<th>Monarch</th>
+<th>House</th>
+<th>Title</th>
+<th>Kingdom</th>
+<th>est.
+</th></tr>
+<tr>
+<td><a href="/wiki/Elizabeth_II" title="Elizabeth II">Elizabeth II</a> <a href="/wiki/Monarchy_of_the_United_Kingdom" title="Monarchy of the United Kingdom">Queen of the United Kingdom</a> and the <a href="/wiki/Commonwealth_realms" class="mw-redirect" title="Commonwealth realms">Commonwealth realms</a></td>
+<td><a href="/wiki/House_of_Windsor" title="House of Windsor">Windsor</a></td>
+<td><i>queen</i></td>
+<td><a href="/wiki/United_Kingdom" title="United Kingdom">United Kingdom</a> and <a href="/wiki/Commonwealth_realm" title="Commonwealth realm">Commonwealth realms</a></td>
+<td>1707 / 9th c.
+</td></tr>
+<tr>
+<td><a href="/wiki/Margrethe_II_of_Denmark" title="Margrethe II of Denmark">Margrethe II</a> <a href="/wiki/Monarchy_of_Denmark" title="Monarchy of Denmark">Queen of Denmark</a></td>
+<td><a href="/wiki/House_of_Gl%C3%BCcksburg" title="House of Glücksburg">Glücksburg</a></td>
+<td><i>dronning</i></td>
+<td><a href="/wiki/Kingdom_of_Denmark" class="mw-redirect" title="Kingdom of Denmark">Kingdom of Denmark</a></td>
+<td>10th c.
+</td></tr>
+<tr>
+<td><a href="/wiki/Harald_V_of_Norway" title="Harald V of Norway">Harald V</a> <a href="/wiki/Monarchy_of_Norway" title="Monarchy of Norway">King of Norway</a></td>
+<td><a href="/wiki/House_of_Gl%C3%BCcksburg" title="House of Glücksburg">Glücksburg</a></td>
+<td><i>konge</i></td>
+<td><a href="/wiki/Kingdom_of_Norway" class="mw-redirect" title="Kingdom of Norway">Kingdom of Norway</a></td>
+<td>11th c.
+</td></tr>
+<tr>
+<td><a href="/wiki/Carl_XVI_Gustaf_of_Sweden" title="Carl XVI Gustaf of Sweden">Carl XVI Gustaf</a> <a href="/wiki/Monarchy_of_Sweden" title="Monarchy of Sweden">King of Sweden</a></td>
+<td><a href="/wiki/House_of_Bernadotte" title="House of Bernadotte">Bernadotte</a></td>
+<td><i>konung</i></td>
+<td><a href="/wiki/Kingdom_of_Sweden" class="mw-redirect" title="Kingdom of Sweden">Kingdom of Sweden</a></td>
+<td>12th c.
+</td></tr>
+<tr>
+<td><a href="/wiki/Felipe_VI_of_Spain" title="Felipe VI of Spain">Felipe VI</a> <a href="/wiki/Monarchy_of_Spain" title="Monarchy of Spain">King of Spain</a></td>
+<td><a href="/wiki/House_of_Bourbon" title="House of Bourbon">Bourbon</a></td>
+<td><i>rey</i></td>
+<td><a href="/wiki/Kingdom_of_Spain" class="mw-redirect" title="Kingdom of Spain">Kingdom of Spain</a></td>
+<td>1978 / 1479
+</td></tr>
+<tr>
+<td><a href="/wiki/Willem-Alexander_of_the_Netherlands" title="Willem-Alexander of the Netherlands">Willem-Alexander</a> <a href="/wiki/Monarchy_of_the_Netherlands" title="Monarchy of the Netherlands">King of the Netherlands</a></td>
+<td><a href="/wiki/House_of_Amsberg" class="mw-redirect" title="House of Amsberg">Amsberg</a></td>
+<td><i>koning</i></td>
+<td><a href="/wiki/Kingdom_of_the_Netherlands" title="Kingdom of the Netherlands">Kingdom of the Netherlands</a></td>
+<td>1815
+</td></tr>
+<tr>
+<td><a href="/wiki/Philippe_of_Belgium" title="Philippe of Belgium">Philippe</a>  <a href="/wiki/Monarchy_of_Belgium" title="Monarchy of Belgium">King of the Belgians</a></td>
+<td><a href="/wiki/Saxe-Coburg_and_Gotha" title="Saxe-Coburg and Gotha">Saxe-Coburg and Gotha</a></td>
+<td><i>koning / roi</i></td>
+<td><a href="/wiki/Kingdom_of_Belgium" class="mw-redirect" title="Kingdom of Belgium">Kingdom of Belgium</a></td>
+<td>1830
+</td></tr>
+<tr>
+<td><a href="/wiki/Salman_of_Saudi_Arabia" title="Salman of Saudi Arabia">Salman</a> <a href="/wiki/King_of_Saudi_Arabia" title="King of Saudi Arabia">King of Saudi Arabia</a></td>
+<td><a href="/wiki/House_of_Saud" title="House of Saud">Saud</a></td>
+<td>ملك <i>malik</i></td>
+<td><a href="/wiki/Kingdom_of_Saudi_Arabia" class="mw-redirect" title="Kingdom of Saudi Arabia">Kingdom of Saudi Arabia</a></td>
+<td>1932
+</td></tr>
+<tr>
+<td><a href="/wiki/Abdullah_II_of_Jordan" title="Abdullah II of Jordan">Abdullah II</a> <a href="/wiki/King_of_Jordan" class="mw-redirect" title="King of Jordan">King of Jordan</a></td>
+<td><a href="/wiki/Hashemites" title="Hashemites">Hashim</a></td>
+<td>ملك <i>malik</i></td>
+<td><a href="/wiki/Hashemite_Kingdom_of_Jordan" class="mw-redirect" title="Hashemite Kingdom of Jordan">Hashemite Kingdom of Jordan</a></td>
+<td>1946
+</td></tr>
+<tr>
+<td><a href="/wiki/Mohammed_VI_of_Morocco" title="Mohammed VI of Morocco">Mohammed VI</a> <a href="/wiki/King_of_Morocco" class="mw-redirect" title="King of Morocco">King of Morocco</a></td>
+<td><a href="/wiki/Alaouite_dynasty" title="Alaouite dynasty">Alaoui</a></td>
+<td>ملك <i>malik</i></td>
+<td><a href="/wiki/Kingdom_of_Morocco" class="mw-redirect" title="Kingdom of Morocco">Kingdom of Morocco</a></td>
+<td>1956
+</td></tr>
+<tr>
+<td><a href="/wiki/Hamad_bin_Isa_Al_Khalifa" title="Hamad bin Isa Al Khalifa">Hamad bin Isa Al Khalifa</a> <a href="/wiki/King_of_Bahrain" title="King of Bahrain">King of Bahrain</a></td>
+<td><a href="/wiki/House_of_Khalifa" title="House of Khalifa">Khalifa</a></td>
+<td>ملك <i>malik</i></td>
+<td><a href="/wiki/Kingdom_of_Bahrain" class="mw-redirect" title="Kingdom of Bahrain">Kingdom of Bahrain</a></td>
+<td>1971
+</td></tr>
+<tr>
+<td><a href="/wiki/Vajiralongkorn" title="Vajiralongkorn">Vajiralongkorn</a> <a href="/wiki/King_of_Thailand" class="mw-redirect" title="King of Thailand">King of Thailand</a></td>
+<td><a href="/wiki/Chakri_Dynasty" class="mw-redirect" title="Chakri Dynasty">Chakri</a></td>
+<td>กษัตริย์ <i>kasat</i></td>
+<td><a href="/wiki/Kingdom_of_Thailand" class="mw-redirect" title="Kingdom of Thailand">Kingdom of Thailand</a></td>
+<td>1782
+</td></tr>
+<tr>
+<td><a href="/wiki/Jigme_Khesar_Namgyel_Wangchuck" title="Jigme Khesar Namgyel Wangchuck">Jigme Khesar Namgyel Wangchuck</a> <a href="/wiki/King_of_Bhutan" class="mw-redirect" title="King of Bhutan">King of Bhutan</a></td>
+<td><a href="/wiki/House_of_Wangchuck" title="House of Wangchuck">Wangchuck</a></td>
+<td>འབྲུག་རྒྱལ་པོ་ <i>druk gyalpo</i></td>
+<td><a href="/wiki/Kingdom_of_Bhutan" class="mw-redirect" title="Kingdom of Bhutan">Kingdom of Bhutan</a></td>
+<td>1907
+</td></tr>
+<tr>
+<td><a href="/wiki/Norodom_Sihamoni" title="Norodom Sihamoni">Norodom Sihamoni</a> <a href="/wiki/King_of_Cambodia" class="mw-redirect" title="King of Cambodia">King of Cambodia</a></td>
+<td><a href="/wiki/House_of_Norodom" title="House of Norodom">Norodom</a></td>
+<td>ស្ដេច  <i>sdac</i></td>
+<td><a href="/wiki/Kingdom_of_Cambodia" class="mw-redirect" title="Kingdom of Cambodia">Kingdom of Cambodia</a></td>
+<td>1993 / 1953
+</td></tr>
+<tr>
+<td><a href="/wiki/Tupou_VI" title="Tupou VI">Tupou VI</a> <a href="/wiki/King_of_Tonga" class="mw-redirect" title="King of Tonga">King of Tonga</a></td>
+<td><a href="/wiki/House_of_Tupou" class="mw-redirect" title="House of Tupou">Tupou</a></td>
+<td><i>king / tu'i</i></td>
+<td><a href="/wiki/Kingdom_of_Tonga" class="mw-redirect" title="Kingdom of Tonga">Kingdom of Tonga</a></td>
+<td>1970
+</td></tr>
+<tr>
+<td><a href="/wiki/Letsie_III_of_Lesotho" title="Letsie III of Lesotho">Letsie III</a> <a href="/wiki/King_of_Lesotho" class="mw-redirect" title="King of Lesotho">King of Lesotho</a></td>
+<td><a href="/wiki/House_of_Moshesh" class="mw-redirect" title="House of Moshesh">Moshesh</a></td>
+<td><i>king / morena</i></td>
+<td><a href="/wiki/Kingdom_of_Lesotho" class="mw-redirect" title="Kingdom of Lesotho">Kingdom of Lesotho</a></td>
+<td>1966
+</td></tr>
+<tr>
+<td><a href="/wiki/Mswati_III" title="Mswati III">Mswati III</a> <a href="/wiki/King_of_Swaziland" class="mw-redirect" title="King of Swaziland">King of Swaziland</a></td>
+<td><a href="/wiki/House_of_Dlamini" title="House of Dlamini">Dlamini</a></td>
+<td><i><a href="/wiki/Ngwenyama" title="Ngwenyama">ngwenyama</a></i></td>
+<td><a href="/wiki/Kingdom_of_Swaziland" class="mw-redirect" title="Kingdom of Swaziland">Kingdom of Swaziland</a></td>
+<td>1968
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="vertical-navbox nowraplinks" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%;width:17.0em;"><tbody><tr><th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em"><span style="font-size:16px; line-height: 130%;"><a href="/wiki/Royal_and_noble_ranks" title="Royal and noble ranks">Imperial, royal, noble and<br>chivalric ranks</a></span></th></tr><tr><td style="padding:0.2em 0 0.4em"><a href="/wiki/File:Heraldic_Imperial_Crown_(Gules_Mitre).svg" class="image"><img alt="Heraldic Imperial Crown (Gules Mitre).svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/120px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png" width="120" height="106" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/180px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg/240px-Heraldic_Imperial_Crown_%28Gules_Mitre%29.svg.png 2x" data-file-width="559" data-file-height="496"></a></td></tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Emperor" title="Emperor">Emperor / Empress</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a class="mw-selflink selflink">King</a> / <a href="/wiki/Queen_regnant" title="Queen regnant">Queen</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Archduke" title="Archduke">Archduke / Archduchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Grand_Prince" class="mw-redirect" title="Grand Prince">Grand Prince / Grand Princess</a> <br> <a href="/wiki/Grand_Duke" class="mw-redirect" title="Grand Duke">Grand Duke / Grand Duchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Prince" title="Prince">Prince</a> / <a href="/wiki/Princess" title="Princess">Princess</a> / <a href="/wiki/Infante" title="Infante">Infante / Infanta</a> / <a href="/wiki/Kr%C3%B3lewicz" title="Królewicz">Królewicz / królewna</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Duke" title="Duke">Duke / Duchess</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/F%C3%BCrst" title="Fürst">Sovereign Prince / Sovereign Princess <br>/ Fürst / Fürstin</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Marquess" title="Marquess">Marquess / Marquis / Marchioness</a> / <br><a href="/wiki/Margrave" title="Margrave">Margrave</a> / <a href="/wiki/Landgrave" title="Landgrave">Landgrave</a> / <br><a href="/wiki/Count_Palatine" class="mw-redirect" title="Count Palatine">Count Palatine</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Count" title="Count">Count / Countess</a> / <a href="/wiki/Earl" title="Earl">Earl</a> <br> <a href="/wiki/Burgrave" title="Burgrave">Burgrave</a> / <a href="/wiki/Ch%C3%A2telain" title="Châtelain">Châtelain</a> / <a href="/wiki/Castellan" title="Castellan">Castellan</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Viscount" title="Viscount">Viscount / Viscountess</a> / <a href="/wiki/Vidame" title="Vidame">Vidame</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Baron" title="Baron">Baron / Baroness</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Baronet" title="Baronet">Baronet / Baronetess</a> <br> <a href="/wiki/Knight#Hereditary_knighthoods" title="Knight">Hereditary Knight</a> / <a href="/wiki/Lady" title="Lady">Lady</a> / <a href="/wiki/Ritter" title="Ritter">Ritter</a> / <a href="/wiki/Ridder_(title)" title="Ridder (title)">Ridder</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Knight" title="Knight">Knight</a> / <a href="/wiki/Dame" title="Dame">Dame</a> <br> <a href="/wiki/Knighthood" class="mw-redirect" title="Knighthood">Chevalier</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Esquire" title="Esquire">Esquire</a> / <a href="/wiki/Laird" title="Laird">Laird</a> / <a href="/wiki/Edler" title="Edler">Edler</a> / <a href="/wiki/Jonkheer" title="Jonkheer">Jonkheer</a> / <a href="/wiki/Junker" title="Junker">Junker</a></td>
+</tr><tr><td style="padding:0 0.1em 0.4em;padding-top: 0.3em; border-bottom: 1px solid #aaa;">
+<a href="/wiki/Gentleman" title="Gentleman">Gentleman</a> / <a href="/wiki/Younger_(title)" title="Younger (title)">Younger</a> / <a href="/wiki/Maid_(title)" title="Maid (title)">Maid</a></td>
+</tr><tr><td style="text-align:right;font-size:115%"><div class="plainlinks hlist navbar mini"><ul><li class="nv-view"><a href="/wiki/Template:Royal_and_noble_ranks" title="Template:Royal and noble ranks"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Royal_and_noble_ranks" title="Template talk:Royal and noble ranks"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Royal_and_noble_ranks&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<div class="div-col columns column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em;">
+<ul><li><a href="/wiki/Royal_and_noble_ranks" title="Royal and noble ranks">Royal and noble ranks</a></li>
+<li><a href="/wiki/Royal_family" title="Royal family">Royal family</a></li>
+<li><a href="/wiki/Realm" title="Realm">Realm</a></li>
+<li><a href="/wiki/Designation_(monarchy)" title="Designation (monarchy)">Designation</a></li>
+<li><a href="/wiki/Divine_right_of_kings" title="Divine right of kings">Divine right of kings</a></li>
+<li><a href="/wiki/Sacred_king" title="Sacred king">Sacred king</a></li>
+<li><a href="/wiki/Anointing" title="Anointing">Anointing</a></li>
+<li><a href="/wiki/Coronation" title="Coronation">Coronation</a></li>
+<li><a href="/wiki/High_King" class="mw-redirect" title="High King">High King</a></li>
+<li><a href="/wiki/King_of_Kings" title="King of Kings">King of Kings</a></li>
+<li><a href="/wiki/King_consort" title="King consort">King consort</a></li>
+<li><a href="/wiki/Great_King" title="Great King">Great King</a></li>
+<li><a href="/wiki/Petty_king" class="mw-redirect" title="Petty king">Petty king</a></li>
+<li><a href="/wiki/Client_king" class="mw-redirect" title="Client king">Client king</a></li>
+<li><a href="/wiki/Germanic_kingship" title="Germanic kingship">Germanic kingship</a></li>
+<li><a href="/wiki/Buddhist_kingship" title="Buddhist kingship">Buddhist kingship</a></li>
+<li><a href="/wiki/Tribal_kingship" class="mw-redirect" title="Tribal kingship">Tribal kingship</a></li>
+<li><a href="/wiki/Big_man_(anthropology)" title="Big man (anthropology)">Big man (anthropology)</a></li></ul>
+<dl><dt>Titles translated as "king"</dt>
+<dd></dd></dl>
+<ul><li><a href="/wiki/Rex_(king)" class="mw-redirect" title="Rex (king)">Rex (king)</a></li>
+<li><a href="/wiki/Archon" title="Archon">Archon</a></li>
+<li><a href="/wiki/Basileus" title="Basileus">Basileus</a></li>
+<li><a href="/wiki/Raja" title="Raja">Raja</a></li>
+<li><a href="/wiki/R%C3%AD" title="Rí">Rí</a></li>
+<li><a href="/wiki/Shah" title="Shah">Shah</a></li>
+<li><a href="/wiki/Mepe_(title)" title="Mepe (title)">Mepe (title)</a></li>
+<li><a href="/wiki/Malik" title="Malik">Malik/Melekh</a></li>
+<li><a href="/wiki/Lugal" title="Lugal">Lugal</a></li>
+<li><a href="/wiki/Negus" title="Negus">Negus</a></li>
+<li><a href="/wiki/Mwami" title="Mwami">Mwami</a></li>
+<li><a href="/wiki/Queen_regnant" title="Queen regnant">Queen</a></li></ul>
+</div>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">There have been rare exceptions, most notably <a href="/wiki/Jadwiga_of_Poland" title="Jadwiga of Poland">Jadwiga of Poland</a> and <a href="/wiki/Mary,_Queen_of_Hungary" title="Mary, Queen of Hungary">Mary, Queen of Hungary</a>, who were crowned as King of Poland and King of Hungary respectively during the 1380s.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text">The notion of a king being below an emperor in the feudal order, just as a <a href="/wiki/Duke" title="Duke">duke</a> is the rank below a king, is more theoretical than historical. The only kingdom title held within the <a href="/wiki/Holy_Roman_Empire" title="Holy Roman Empire">Holy Roman Empire</a> was the <a href="/wiki/Kingdom_of_Bohemia" title="Kingdom of Bohemia">Kingdom of Bohemia</a>, with the Kingdoms of <a href="/wiki/Kingdom_of_Germany" title="Kingdom of Germany">Germany</a>, <a href="/wiki/Kingdom_of_Italy_(Holy_Roman_Empire)" title="Kingdom of Italy (Holy Roman Empire)">Italy</a> and <a href="/wiki/Kingdom_of_Arles" title="Kingdom of Arles">Burgundy/Arles</a> being nominal realms. The titles of <a href="/wiki/King_of_the_Germans" class="mw-redirect" title="King of the Germans">King of the Germans</a> and <a href="/wiki/King_of_the_Romans" title="King of the Romans">King of the Romans</a> were non-landed titles held by the Emperor-elect (sometimes during the lifetime of the previous Emperor, sometimes not), although there were anti-Kings at various points; Arles and Italy were either held directly by the Emperor or not at all.
+
+The <a href="/wiki/Austrian_Empire" title="Austrian Empire">Austrian</a> and <a href="/wiki/Austria-Hungary" title="Austria-Hungary">Austro-Hungarian Empires</a> technically contained various Kingdoms (<a href="/wiki/Kingdom_of_Hungary" title="Kingdom of Hungary">Hungary</a>, <a href="/wiki/Kingdom_of_Bohemia" title="Kingdom of Bohemia">Bohemia</a>, <a href="/wiki/Kingdom_of_Dalmatia" title="Kingdom of Dalmatia">Dalmatia</a>, <a href="/wiki/Kingdom_of_Illyria_(1816%E2%80%9349)" title="Kingdom of Illyria (1816–49)">Illyria</a>, <a href="/wiki/Kingdom_of_Lombardy%E2%80%93Venetia" title="Kingdom of Lombardy–Venetia">Lombardy–Venetia</a> and <a href="/wiki/Kingdom_of_Galicia_and_Lodomeria" title="Kingdom of Galicia and Lodomeria">Galicia and Lodomeria</a>, as well as the Kingdoms of <a href="/wiki/Kingdom_of_Croatia_(Habsburg)" title="Kingdom of Croatia (Habsburg)">Croatia</a> and <a href="/wiki/Kingdom_of_Slavonia" title="Kingdom of Slavonia">Slavonia</a> which were themselves subordinate titles to the Hungarian Kingdom and which were merged as <a href="/wiki/Kingdom_of_Croatia-Slavonia" title="Kingdom of Croatia-Slavonia">Croatia-Slavonia</a> in 1868), but the Emperor and the King were the same person. The <a href="/wiki/Russian_Empire" title="Russian Empire">Russian Empire</a> did not include any kingdoms. The short-lived <a href="/wiki/First_French_Empire" title="First French Empire">First French Empire</a> (1804–1814/5) did include a number of <a href="/wiki/Client_state" title="Client state">client</a> kingdoms under <a href="/wiki/Napoleon_I" class="mw-redirect" title="Napoleon I">Napoleon I</a>, such as the <a href="/wiki/Kingdom_of_Italy_(Napoleonic)" title="Kingdom of Italy (Napoleonic)">Kingdom of Italy</a>, the <a href="/wiki/Kingdom_of_Westphalia" title="Kingdom of Westphalia">Kingdom of Westphalia</a>, the <a href="/wiki/Kingdom_of_Etruria" title="Kingdom of Etruria">Kingdom of Etruria</a>, the <a href="/wiki/Kingdom_of_W%C3%BCrttemberg" title="Kingdom of Württemberg">Kingdom of Württemberg</a>, the <a href="/wiki/Kingdom_of_Bavaria" title="Kingdom of Bavaria">Kingdom of Bavaria</a>, the <a href="/wiki/Kingdom_of_Saxony" title="Kingdom of Saxony">Kingdom of Saxony</a> and the <a href="/wiki/Kingdom_of_Holland" title="Kingdom of Holland">Kingdom of Holland</a>. The <a href="/wiki/German_Empire" title="German Empire">German Empire</a> (1871-1918) included the Kingdoms of <a href="/wiki/Kingdom_of_Prussia" title="Kingdom of Prussia">Prussia</a>, Bavaria, Württemberg and Saxony, with the Prussian King also holding the Imperial title.</span>
+</li>
+<li id="cite_note-pine-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-pine_3-0">^</a></b></span> <span class="reference-text"><cite class="citation book"><a href="/wiki/L.G._Pine" class="mw-redirect" title="L.G. Pine">Pine, L.G.</a> (1992). <i>Titles: How the King became His Majesty</i>. New York: Barnes &amp; Noble. p. 86. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a> <a href="/wiki/Special:BookSources/978-1-56619-085-5" title="Special:BookSources/978-1-56619-085-5">978-1-56619-085-5</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Titles%3A+How+the+King+became+His+Majesty&amp;rft.place=New+York&amp;rft.pages=86&amp;rft.pub=Barnes+%26+Noble&amp;rft.date=1992&amp;rft.isbn=978-1-56619-085-5&amp;rft.aulast=Pine&amp;rft.aufirst=L.G.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AKing" class="Z3988"></span><style data-mw-deduplicate="TemplateStyles:r861714446">.mw-parser-output cite.citation{font-style:inherit}.mw-parser-output q{quotes:"\"""\"""'""'"}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:inherit;padding:inherit}.mw-parser-output .cs1-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lock-green.svg/9px-Lock-green.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-lock-limited a,.mw-parser-output .cs1-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lock-gray-alt-2.svg/9px-Lock-gray-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Lock-red-alt-2.svg/9px-Lock-red-alt-2.svg.png")no-repeat;background-position:right .1em center}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration,.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}</style></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text">
+see e.g. M. Mitterauer, <i>Why Europe?: The Medieval Origins of Its Special Path</i>,  University of Chicago Press (2010),
+<a rel="nofollow" class="external text" href="https://books.google.ch/books?id=0IU9fduDRIMC&amp;pg=PA28">p. 28</a>.</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"> The distinction of the title of "king" from "sultan" or "emir" in oriental monarchies is largely stylistics; the  <a href="/wiki/Sultanate_of_Oman" class="mw-redirect" title="Sultanate of Oman">Sultanate of Oman</a>, the <a href="/wiki/State_of_Qatar" class="mw-redirect" title="State of Qatar">State of Qatar</a>, the <a href="/wiki/State_of_Kuwait" class="mw-redirect" title="State of Kuwait">State of Kuwait</a> and the <a href="/wiki/United_Arab_Emirates" title="United Arab Emirates">United Arab Emirates</a> are also categorised as absolute monarchies.</span>
+</li>
+</ol></div></div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=6" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li>Thomas J. Craughwell, <i>5,000 Years of Royalty: Kings, Queens, Princes, Emperors &amp; Tsars</i> (2009).</li>
+<li>David Cannadine, Simon Price (eds.), <i>Rituals of Royalty: Power and Ceremonial in Traditional Societies</i> (1992).</li>
+<li>Jean Hani, <i>Sacred Royalty: From the Pharaoh to the Most Christian King</i> (2011).</li></ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=King&amp;action=edit&amp;section=7" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a href="/wiki/File:Commons-logo.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" width="12" height="16" class="noviewer" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376"></a> Media related to <a href="https://commons.wikimedia.org/wiki/Category:Kings" class="extiw" title="commons:Category:Kings">Kings</a> at Wikimedia Commons</li>
+<li><img alt="Wikisource" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/12px-Wikisource-logo.svg.png" width="12" height="13" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/18px-Wikisource-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/24px-Wikisource-logo.svg.png 2x" data-file-width="410" data-file-height="430"> <cite class="citation encyclopaedia">Phillip, Walter Alison (1911). "<a href="https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/King" class="extiw" title="wikisource:1911 Encyclopædia Britannica/King">King</a>". <i><a href="/wiki/Encyclop%C3%A6dia_Britannica_Eleventh_Edition" title="Encyclopædia Britannica Eleventh Edition">Encyclopædia Britannica</a></i>. <b>15</b> (11th ed.). pp. 805–806.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=King&amp;rft.btitle=Encyclop%C3%A6dia+Britannica&amp;rft.pages=805-806&amp;rft.edition=11th&amp;rft.date=1911&amp;rft.aulast=Phillip&amp;rft.aufirst=Walter+Alison&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AKing" class="Z3988"></span><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r861714446"></li></ul>
+
+<!-- 
+NewPP limit report
+Parsed by mw1254
+Cached time: 20181122091637
+Cache expiry: 1900800
+Dynamic content: false
+CPU time usage: 0.308 seconds
+Real time usage: 0.441 seconds
+Preprocessor visited node count: 1424/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 49415/2097152 bytes
+Template argument size: 962/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 1/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 7298/5000000 bytes
+Number of Wikibase entities loaded: 1/400
+Lua time usage: 0.097/10.000 seconds
+Lua memory usage: 3.53 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  300.428      1 -total
+ 25.32%   76.074      1 Template:Reflist
+ 21.11%   63.418      1 Template:Cite_book
+ 11.11%   33.375      4 Template:Wikt-lang
+  9.75%   29.284      1 Template:Monarchism
+  8.97%   26.946      1 Template:Commons_category_inline
+  8.61%   25.857      1 Template:Other_uses
+  8.34%   25.057      1 Template:Sidebar_with_collapsible_lists
+  6.58%   19.777      1 Template:Cite_EB1911
+  6.56%   19.713      1 Template:Ranks_of_Nobility
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:52374650-0!canonical and timestamp 20181122091636 and revision id 868465472
+ -->
+</div>
