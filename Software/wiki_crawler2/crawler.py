@@ -6,19 +6,14 @@ def get_request(topic):
     response = requests.get(url = URL)
 
     response2 = list(response.iter_lines())
-    parse(response2)
+    parse(response2, topic)
 
-def parse(text_response):
+def parse(text_response, topic):
 
-    afile = open("test6.txt", "w")
+    lines = []
     for item in text_response:
-        afile.write(item)
-        afile.write("\n")
-    afile.close()
+        lines.append(item.decode('utf-8'))
 
-    afile2 = open("test6.txt", "r")
-        
-    lines = afile2.readlines()
     line = ""
 
     found = False
@@ -31,7 +26,7 @@ def parse(text_response):
             exit(0)
 
         # find first <p> tag containing search term
-        if "<p>" in item_lower[0:5]:
+        if "<p>" in item_lower[0:5] and topic in item_lower:
             found = True
             line = lines[index]
             break
@@ -74,7 +69,6 @@ def parse(text_response):
             index += 1
 
     astring += "."
-    afile2.close()
 
     print(astring)
 
