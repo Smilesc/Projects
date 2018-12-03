@@ -30,7 +30,7 @@ def parse(text_response, topic):
             exit()
 
         # find first <p> tag containing search term
-        if "<p>" in item_lower[0:5] and topic_lower in item_lower:
+        if "<p>" in item_lower[0:5] and len(item_lower) > 15:
             found = True
             line = lines[index]
             break
@@ -74,8 +74,6 @@ def parse(text_response, topic):
             index += 1
 
     astring += "."
-    message1 = astring
-    print(astring) 
 
 def main(topic):
     get_request(topic)

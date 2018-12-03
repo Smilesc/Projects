@@ -8,7 +8,7 @@ import bot
 
 def client_thread(connection, address):
 
-    connection.sendall(("You are now online as " + all_clients[connection]).encode('utf_8'))
+    connection.sendall(("____________________________\nYou are now online as " + all_clients[connection]).encode('utf_8'))
     
     while(True):
         try:     
@@ -57,6 +57,7 @@ def post_to_others(message, connection):
                 remove(clients)
 
 def post_to_all(message, connection):
+    print(message)
     for clients in client_list:
         try:
             clients.sendall(message.encode('utf-8'))
@@ -77,7 +78,8 @@ client_list=[]
 
 i = 1
 all_clients = {}
-print("Server is online")
+print("___________________________________________")
+print("Server is online, listening for connections")
 
 while (True):
     connection, address = server.accept()

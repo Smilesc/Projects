@@ -1,3 +1,5 @@
+Dependencies: python request library
+
 To run the project:
 
 1. sudo python3 server.py
@@ -8,3 +10,5 @@ To run the project:
 
 To call the wiki bot, use the command !wiki, followed by the word you would like to retrieve information on
 > Ex: !wiki tiger
+
+
