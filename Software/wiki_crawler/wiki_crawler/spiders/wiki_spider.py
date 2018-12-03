@@ -18,6 +18,8 @@ class WikiSpider(scrapy.Spider):
             print("Sorry, this article does not exist") 
             exit(1)
 
+        print(type(response))
+
         afile = open("test6.txt", "w")
         afile.write(text_response)
         afile.close()
@@ -31,12 +33,13 @@ class WikiSpider(scrapy.Spider):
         for index, item in enumerate(lines):
             item_lower = item.lower()
             # find ambigous cases
-            if "refer to" or "refers to" in item:
+            if "refer to" in item or "refers to" in item:
                 print("Term too ambigous, please try again")
                 print(index)
                 exit(0)
+
             # find first <p> tag containing search term
-            if item[0] == "<" and item[1] == "p" and item[2] == ">" and self.topic.lower() in item_lower:
+            if "<p>" in item_lower[0:5]:
                 found = True
                 line = lines[index]
                 break
@@ -50,7 +53,7 @@ class WikiSpider(scrapy.Spider):
 
         astring = "" 
         index = 0
-
+        
         while line_array[index] != ".":
             # skip all text between angle brackets
             if line_array[index] == "<":

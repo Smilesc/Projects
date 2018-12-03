@@ -192,7 +192,7 @@ int write_url_file( char* file_path, web_t* web_array, int num_urls ) {
 	{
 		for(int j = 0; j < (web_array + i)->link_cnt; j++)
 		{
-			if((fprintf(file, "%s, %s \n", (web_array + i)->url, (web_array + i)->links[j])) < 0)
+			if((fprintf(file, "%s, %s\n", (web_array + i)->url, (web_array + i)->links[j])) < 0)
 			{
 				return FAIL;
 			}

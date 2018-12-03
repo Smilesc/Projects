@@ -152,7 +152,7 @@ void parse(web_t *web_struct)
 
 			if (strcasestr(link, "trump") != NULL)
 			{
-				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 300);
+				web_struct->links[web_struct->link_cnt] = malloc(sizeof(char) * 600);
 				strcpy(web_struct->links[web_struct->link_cnt++], link);
 			}
 

@@ -1,24 +1,22 @@
+import socket
+import select
+import os
 import requests
 import sys
+import re 
+
 
 def get_request(topic):
     URL = "https://en.wikipedia.org/wiki/" + topic
     response = requests.get(url = URL)
-
     response2 = list(response.iter_lines())
-    parse(response2, topic)
+    thestring = parse(response2, topic)
 
 def parse(text_response, topic):
-
-    afile = open("test6.txt", "w")
+    global astring
+    lines = []
     for item in text_response:
-        afile.write(item.decode('utf-8'))
-        afile.write("\n")
-    afile.close()
-
-    afile2 = open("test6.txt", "r")
-        
-    lines = afile2.readlines()
+        lines.append(item.decode('utf-8'))
     line = ""
 
     found = False
@@ -27,9 +25,10 @@ def parse(text_response, topic):
         item_lower = item.lower()
         # find ambigous cases
         if "refer to" in item or "refers to" in item:
+            astring = "Term too ambigous, please try again"
             print("Term too ambigous, please try again")
-            print(index)
-            exit(0)
+            # print(index)
+            exit()
 
         # find first <p> tag containing search term
         if "<p>" in item_lower[0:5] and topic_lower in item_lower:
@@ -38,8 +37,9 @@ def parse(text_response, topic):
             break
 
     if found == False:
+        astring = "Term too ambigous, please try again"
         print("Term too ambigous, please try again")
-        exit(0)
+        exit()
 
     # make line into iterable list
     line_array = list(line)
@@ -75,14 +75,11 @@ def parse(text_response, topic):
             index += 1
 
     astring += "."
-    afile2.close()
+    message1 = astring
+    print(astring) 
 
-    print(astring)
+def main(topic):
+    get_request(topic)
 
-
-def main():
-    # topic = input("Enter a topic: ")
-    get_request(sys.argv[1])
-
-if __name__ == main():
+if __name__ == "__main__":
     pass

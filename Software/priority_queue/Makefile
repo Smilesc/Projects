@@ -19,5 +19,5 @@ run:
 	./hw5
 
 tarball:
-	tar -cvzf <your last name>.tar.gz *
+	tar -cvzf miles.tar.gz simulator.c simulator.h
 

@@ -1,0 +1,6 @@
+/bin/rm -f hw5 *.o *.gz
+gcc -c -Wall -g   simulator.c
+gcc -c -Wall -g   hw5.c
+gcc simulator.o hw5.o -o hw5 -lpthread -lm
+./hw5
+Makefile:19: recipe for target 'run' failed

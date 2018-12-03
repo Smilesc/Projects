@@ -1,0 +1,2 @@
+<class 'scrapy.http.response.html.HtmlResponse'>
+Cheese is a dairy product derived from milk that is produced in a wide range of flavors, textures, and forms by coagulation of the milk protein casein.
