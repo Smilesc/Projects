@@ -9,8 +9,7 @@ import re
 def get_request(topic):
     URL = "https://en.wikipedia.org/wiki/" + topic
     response = requests.get(url = URL)
-    response2 = list(response.iter_lines())
-    thestring = parse(response2, topic)
+    parse(list(response.iter_lines()), topic)
 
 def parse(text_response, topic):
     global astring
