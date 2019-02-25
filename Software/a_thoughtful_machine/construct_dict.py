@@ -9,7 +9,7 @@ with open("Ag3_filtered.csv") as csv:
     csv_lines = csv.readlines()
 
 IMG_dict = {}
-img_num = 0
+img_num = 1
 
 
 for url in url_file:
