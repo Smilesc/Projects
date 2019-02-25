@@ -5,7 +5,7 @@ import pickle
 
 url_file = open("Image_URLS.txt")
 
-with open("No_Face_Body_Realism.csv") as csv:
+with open("Ag3_filtered.csv") as csv:
     csv_lines = csv.readlines()
 
 IMG_dict = {}
