@@ -42,11 +42,32 @@ public abstract class HashTable {
     		 * 
     		 */
     		case HASH_FUNC1:
+
+    			key = key.toLowerCase();
+    			char[] keyArray = key.toCharArray();
     			
-    			/*
-    			 * TODO: put solution here
-    			 */
-    		
+    			String alphabet = "abcdefghijklmnopqrstuvwxyz";
+    			char[] alphabetArray = alphabet.toCharArray();
+    			
+    			//int runningSum = 0;
+    			int alphabetLetter = 141;
+    			
+    			//subbing in h_k for previous var runningSum b/c of variable init issue
+    			for(int i = 0; i < keyArray.length; i++) {
+    				
+    				for(int j = 0;j < alphabetArray.length; j++) {
+    					
+    					if(keyArray[i]==alphabetArray[j]) {
+    						
+    						h_k = h_k + alphabetLetter;
+    						alphabetLetter++;
+    					}
+    				}
+    				
+    			}
+    			
+    			h_k = h_k % M;
+
     		/**
     		* Double hash function. See equation 7.6 on page 273
     		* in the supplemental course text book (chapter is 
@@ -65,10 +86,34 @@ public abstract class HashTable {
     		*/
     		default:
     			
-    			/**
-    			 * TODO: put solution here
-    			 */
+    			key = key.toLowerCase();
+    			keyArray = key.toCharArray();
     			
+    			alphabet = "abcdefghijklmnopqrstuvwxyz";
+    			alphabetArray = alphabet.toCharArray();
+    			
+    			//int runningSum = 0;
+    			alphabetLetter = 141;
+    			
+    			//subbing in h_k for previous var runningSum b/c of variable init issue
+    			for(int i = 0; i < keyArray.length; i++) {
+    				
+    				for(int j = 0;j < alphabetArray.length; j++) {
+    					
+    					if(keyArray[i]==alphabetArray[j]) {
+    						
+    						h_k = h_k + alphabetLetter;
+    						alphabetLetter++;
+    					}
+    				}
+    				
+    			}
+    			
+    			h_k = h_k % M;
+    			
+    			int s_k= h_k + 1;
+
+    			h_k = (h_k + 2 * s_k) % M; 			
     	}
     	
     	return h_k;
