@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 from sklearn import preprocessing
 import pickle
+import cv2
 from sklearn.model_selection import train_test_split
 
 data_train = pd.read_csv('train_data.csv')
