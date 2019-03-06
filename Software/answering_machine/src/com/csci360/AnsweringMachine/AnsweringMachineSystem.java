@@ -2,29 +2,57 @@ package com.csci360.AnsweringMachine;
 
 import java.util.Stack;
 import java.util.ArrayList;
-import static java.lang.System.out;
-import javafx.fxml.FXML;
 
 public class AnsweringMachineSystem {
 	
-	public Stack<Message> UnheardMessages = new Stack<Message>();
-	public ArrayList<Message> allMessages = new ArrayList<Message>();
-	public Message currentMessage = new Message("No current message");
-	public String greeting = "The user is away. Please leave a message.";
+	private final Stack<Message> UnheardMessages = new Stack<>();
+	private final ArrayList<Message> allMessages = new ArrayList<>();
+	private Message currentMessage = new Message("No current message");
+	private String greeting = "The user is away. Please leave a message.";
 	
 	public AnsweringMachineSystem() {
 		
 	}
 	
-	public Message leaveMessage(String message) {
+        /**
+         * 
+         * @param message String
+         */
+	public void leaveMessage(String message) {
 		Message newMessage = new Message(message);
 		
 		UnheardMessages.push(newMessage);
-		allMessages.add(newMessage);
-		
-		return newMessage;
+		allMessages.add(newMessage);	
 	}
-	
+        
+        /**
+         * 
+         * @return Message currentMessage
+         */
+        public Message getCurrentMessage(){
+            return this.currentMessage;
+        }
+        
+        /**
+         * 
+         * @param message 
+         */
+        public void setCurrentMessage(Message message){
+            this.currentMessage = message;
+        }
+        
+        /**
+         * 
+         * @return String currentMessage's message
+         */
+        public String getCurrentMessageText(){
+            return this.currentMessage.getMessage();
+        }
+        
+        /**
+         * 
+         * @param messageIndex 
+         */
 	public void selectDelete(int messageIndex) {
 		if(UnheardMessages.contains(allMessages.get(messageIndex))){
 			UnheardMessages.remove(messageIndex);
@@ -33,6 +61,10 @@ public class AnsweringMachineSystem {
 		allMessages.remove(messageIndex);
 	}
         
+        /**
+         * 
+         * @param message 
+         */
         public void selectDelete(Message message){    
             
             allMessages.remove(message);
@@ -40,6 +72,11 @@ public class AnsweringMachineSystem {
             
         }
 	
+        /**
+         * Retrieves any message
+         * @param messageIndex
+         * @return String
+         */
 	public String listenToAllMessage(int messageIndex) {
             String message;
             
@@ -48,15 +85,17 @@ public class AnsweringMachineSystem {
             }
             
             else{
-                message = allMessages.get(messageIndex).getMessage();
-            
-		//UnheardMessages.remove(allMessages.get(messageIndex));	
+                message = allMessages.get(messageIndex).getMessage();	
             }
             
             return message;
 	}
         
-	public Message listenToUnheardMessage(int messageIndex) {
+        /**
+         * Retrieves any unheard message
+         * @return Message
+         */
+	public Message listenToUnheardMessage() {
             Message message = new Message(null);
             
             if(UnheardMessages.isEmpty()){
@@ -70,26 +109,52 @@ public class AnsweringMachineSystem {
             return message;
 	}
         
+        /**
+         * 
+         * @param messageIndex
+         * @return Message 
+         */
 	public Message selectReplay(int messageIndex) {	
                 return allMessages.get(messageIndex);
 	}
         
-        public Message selectReplay(Message message){	
-                return message;
+        /**
+         * 
+         * @param message
+         * @return Message
+         */
+        public String selectReplay(){	
+                return getCurrentMessageText();
         }
 	
+        /**
+         * 
+         * @return String
+         */
 	public String getGreeting() {
 		return greeting;
 	}
 	
+        /**
+         * 
+         * @param greeting 
+         */
 	public void setGreeting(String greeting) {
 		this.greeting = greeting;
 	}
 	
+        /**
+         * 
+         * @return int
+         */
 	public int numUnheardMessages() {		
 		return UnheardMessages.size();
 	}
 	
+        /**
+         * 
+         * @return int 
+         */
 	public int numallMessages() {
 		return allMessages.size();
 	}

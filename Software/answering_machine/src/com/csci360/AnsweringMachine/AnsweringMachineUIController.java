@@ -20,11 +20,8 @@ import javafx.scene.text.Text;
  */
 public class AnsweringMachineUIController implements Initializable{
     
-    public Button listenToGreetingButton = new Button();
-    public Button setGreetingButton = new Button();
     private final Scanner keyboardIn = new Scanner(System.in);
     public AnsweringMachineSystem testSys = new AnsweringMachineSystem();
-    public Button playButton = new Button();
     public Text UINumUnheard = new Text();
     public Text UICurrentMessage = new Text();
     public TextField setGreetingTextField = new TextField();
@@ -32,7 +29,7 @@ public class AnsweringMachineUIController implements Initializable{
 	
   
     /**
-     * Initializes the controller class.
+     * Initialize the controller class
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -43,35 +40,47 @@ public class AnsweringMachineUIController implements Initializable{
         UINumUnheard.setText(Integer.toString(testSys.numUnheardMessages()));
       
     }    
-    //public void showTextField(){
-     //   setGreetingTextField.setOpacity(1.0);
-        
-    //}
+    
+    /**
+     * Change greeting
+     */
     public void setGreeting() {     
         System.out.println("Enter a greeting: ");
         String userInput = keyboardIn.nextLine();
         testSys.setGreeting(userInput);
     }    
     
+    /**
+     * Display greeting
+     */
     public void listenToGreeting(){
         System.out.println(testSys.getGreeting());
         UICurrentMessage.setText(testSys.getGreeting());
     }
     
+    /**
+     * Delete current message
+     */
     public void deleteMessage(){
         
-        testSys.selectDelete(testSys.currentMessage);
+        testSys.selectDelete(testSys.getCurrentMessage());
     }
     
+    /**
+     * replay message
+     */
     public void replayMessage(){
-        System.out.println(testSys.selectReplay(testSys.currentMessage).getMessage());
+        System.out.println(testSys.selectReplay());
     }
     
+    /**
+     * Display next unheard message
+     */
     public void playMessage(){
-        testSys.currentMessage = testSys.listenToUnheardMessage(0);
-        System.out.println(testSys.currentMessage.getMessage());  
+        testSys.setCurrentMessage(testSys.listenToUnheardMessage());
+        System.out.println(testSys.getCurrentMessageText());  
         UINumUnheard.setText(Integer.toString(testSys.numUnheardMessages()));
-        UICurrentMessage.setText(testSys.currentMessage.getMessage());
+        UICurrentMessage.setText(testSys.getCurrentMessageText());
     }
 
 }
