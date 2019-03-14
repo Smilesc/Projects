@@ -1,1 +1,6 @@
 /images
+/cmle-env
+/.vscode
+IMG_list_test.joblib
+IMG_list_train1.joblib
+IMG_list_train2.joblib

@@ -2,15 +2,12 @@ import urllib.request
 from PIL import Image
 from resizeimage import resizeimage
 import pickle
+import joblib
 
-url_file = open("Image_URLS.txt")
+url_file = open("Image_URLS_test.txt")
 
-with open("Ag3_filtered.csv") as csv:
-    csv_lines = csv.readlines()
-
-IMG_dict = {}
-img_num = 1
-
+IMG_list=[]
+img_num = 1232
 
 for url in url_file:
     #reformat protocol for opening (security cert is expired)
@@ -20,19 +17,23 @@ for url in url_file:
     img_file = "img" + str(img_num) + ".jpg"
 
     #retrieve image
-    urllib.request.urlretrieve(new_url, "images/" + img_file)
+    urllib.request.urlretrieve(new_url, "images/test/" + img_file)
     
-    #resize image to 400x400 box w/ black bg
-    resized_img = resizeimage.resize_contain(Image.open("images/" + img_file), [400, 400], bg_color=(0, 0, 0, 0))
-    resized_img.save("images/" + img_file)
+    #resize image to 400x400 box w/ grey bg
+    resized_img = resizeimage.resize_contain(Image.open("images/test/" + img_file), [400, 400], bg_color=(132, 132, 132, 0))
+    resized_img.save("images/test/" + img_file)
 
-    #add image and corresponding data to dict
-    IMG_dict[img_file] = csv_lines[img_num].split(',')[:-1]
+    #convert image to rgb values and flatten
+    img_px = list(resized_img.getdata())
+    img_px_flat = [x for sets in img_px for x in sets]
+
+    #add image to list
+    IMG_list.append(img_px_flat)
 
     img_num += 1
 
-with open("IMG_dict.pickle","wb") as p:
-    pickle.dump(IMG_dict, p)
+with open("IMG_list_test.joblib","wb") as p:
+    joblib.dump(IMG_list, p)
 
 url_file.close()
 
