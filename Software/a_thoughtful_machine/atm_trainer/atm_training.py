@@ -6,7 +6,6 @@ import pandas as pd
 from sklearn import svm
 from sklearn.externals import joblib
 
-# Fill in your Cloud Storage bucket name
 BUCKET_NAME = 'atm-training'
 
 data_filename = 'IMG_list_train1.joblib'
