@@ -5,11 +5,16 @@ import sys
 import pandas as pd
 from sklearn import svm
 from sklearn.externals import joblib
+from sklearn.tree import DecisionTreeClassifier
+"""
 
-BUCKET_NAME = 'atm-training'
+gcloud ml-engine jobs submit training "atm_training_3_20_19_d_tree_1" --job-dir="gs://atm_training/job_dir_200_d_tree" --package-path="./atm_trainer" --module-name="atm_trainer.atm_training" --region=us-east1 --runtime-version=1.13 --python-version=3.5 --scale-tier=BASIC
 
-data_filename = 'IMG_list_train1.joblib'
-target_filename = 'train_data1.csv'
+"""
+BUCKET_NAME = 'atm_training'
+
+data_filename = 'IMG_list_train_all.joblib'
+target_filename = 'train_data_all.csv'
 data_dir = 'gs://atm_training'
 
 # gsutil outputs everything to stderr so we need to divert it to stdout.
@@ -20,10 +25,10 @@ with open(data_filename, 'rb') as jl:
     data = joblib.load(jl)
 
 target = pd.read_csv(target_filename).values
-target = target.reshape((target.size,))
 
 # Train the model
-classifier = svm.SVC(gamma='auto', verbose=True)
+classifier = DecisionTreeClassifier()
+#classifier = svm.SVC(gamma='auto', verbose=True)
 classifier.fit(data, target)
 
 # Export the classifier to a file
