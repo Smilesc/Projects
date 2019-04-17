@@ -9,13 +9,13 @@ from sklearn.tree import DecisionTreeClassifier
 import numpy as np
 """
 
-gcloud ml-engine jobs submit training "atm_test" --job-dir="gs://atm_training/job_dir_all" --package-path="./atm_trainer" --module-name="atm_trainer.atm_training" --region=us-east1 --runtime-version=1.13 --python-version=3.5 --scale-tier=BASIC
+gcloud ml-engine jobs submit training "atm_all" --job-dir="gs://atm_training/job_dir_all" --package-path="./atm_trainer" --module-name="atm_trainer.atm_training" --region=us-east1 --runtime-version=1.13 --python-version=3.5 --scale-tier=BASIC
 
 """
 BUCKET_NAME = 'atm_training'
 
-data_filename = 'IMG_list_test.joblib'
-target_filename = 'test_data.csv'
+data_filename = 'IMG_list_all.joblib'
+target_filename = 'all_data.csv'
 data_dir = 'gs://atm_training'
 
 # gsutil outputs everything to stderr so we need to divert it to stdout.
