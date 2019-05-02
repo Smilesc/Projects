@@ -1,7 +1,6 @@
 import urllib.request
 from PIL import Image
 from resizeimage import resizeimage
-import pickle
 from sklearn.externals import joblib
 import json
 
